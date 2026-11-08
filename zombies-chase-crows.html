@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>僵尸在天上追乌鸦</title>
+<style>
+  :root{ --k: 1; }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ height:100%; }
+
+  body{
+    overflow:hidden;
+    background:#070A16;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .scene{
+    position:relative;
+    width:100vw; height:100vh;
+    overflow:hidden;
+  }
+
+  /* ---------------- 夜空 ---------------- */
+  .sky{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg,
+      #05070F 0%,
+      #0B1030 26%,
+      #161B45 52%,
+      #2A2356 74%,
+      #45305F 100%);
+  }
+
+  .stars{ position:absolute; inset:0; }
+  .star{
+    position:absolute;
+    border-radius:50%;
+    background:#FFF8E2;
+    animation:twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{ opacity:.25; transform:scale(.8) }
+    50%{ opacity:1; transform:scale(1.15) }
+  }
+
+  /* 流星 */
+  .shooting{
+    position:absolute;
+    top:16%; left:60%;
+    width:150px; height:2px;
+    background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.9));
+    transform:rotate(24deg);
+    opacity:0;
+    animation:shoot 11s ease-in infinite;
+    filter:drop-shadow(0 0 6px rgba(255,255,255,.8));
+  }
+  @keyframes shoot{
+    0%,88%{ opacity:0; transform:translate(0,0) rotate(24deg) }
+    90%{ opacity:1 }
+    96%{ opacity:0; transform:translate(-42vw, 18vw) rotate(24deg) }
+    100%{ opacity:0 }
+  }
+
+  /* ---------------- 月亮 ---------------- */
+  .moon{
+    position:absolute;
+    right:11%; top:9%;
+    width:clamp(88px,10vw,150px);
+    aspect-ratio:1;
+    border-radius:50%;
+    background:radial-gradient(circle at 36% 32%, #FDF7E2 0%, #EFE4C2 55%, #D3C69C 100%);
+    box-shadow:
+      0 0 60px 16px rgba(245,235,195,.22),
+      0 0 140px 60px rgba(200,190,255,.12),
+      inset -12px -14px 28px rgba(150,140,110,.35);
+    z-index:2;
+  }
+  .moon::before,.moon::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(170,160,130,.28);
+    box-shadow:inset 1px 1px 3px rgba(120,110,85,.35);
+  }
+  .moon::before{ width:26%; height:26%; left:22%; top:30%; }
+  .moon::after{ width:16%; height:16%; left:58%; top:58%; }
+  .moon-crater{
+    position:absolute;
+    width:11%; height:11%;
+    border-radius:50%;
+    background:rgba(170,160,130,.22);
+    left:56%; top:22%;
+  }
+
+  /* 掠过月亮的薄云 */
+  .moon-cloud{
+    position:absolute;
+    right:6%; top:16%;
+    width:34vw; height:26px;
+    border-radius:999px;
+    background:linear-gradient(90deg, rgba(30,34,70,0), rgba(40,44,88,.85), rgba(30,34,70,0));
+    filter:blur(6px);
+    animation:moonCloud 18s linear infinite;
+    z-index:3;
+  }
+  @keyframes moonCloud{
+    0%{ transform:translateX(30%); opacity:0 }
+    12%{ opacity:.9 }
+    70%{ opacity:.9 }
+    100%{ transform:translateX(-120%); opacity:0 }
+  }
+
+  /* ---------------- 云层 ---------------- */
+  .lane{
+    position:absolute; left:0; top:0;
+    width:200vw; height:100%;
+    pointer-events:none;
+    animation:scroll calc(var(--dur) * var(--k)) linear infinite;
+  }
+  @keyframes scroll{ to{ transform:translateX(-50%); } }
+
+  .lane > *{
+    position:absolute;
+    left:var(--x, 0vw);
+    top:var(--y, 0);
+  }
+  .lane > .dup{ left:calc(var(--x, 0vw) + 100vw); }
+
+  .cloud{
+    border-radius:999px;
+    background:linear-gradient(180deg, rgba(70,76,132,.55), rgba(38,42,84,.75));
+    filter:blur(1px);
+    opacity:.75;
+  }
+  .cloud::before,.cloud::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:inherit;
+  }
+  .cloud.a{ width:240px; height:52px; }
+  .cloud.a::before{ width:96px;height:96px;left:34px;top:-46px; }
+  .cloud.a::after{ width:66px;height:66px;right:38px;top:-30px; }
+  .cloud.b{ width:170px; height:38px; }
+  .cloud.b::before{ width:70px;height:70px;left:24px;top:-34px; }
+  .cloud.b::after{ width:50px;height:50px;right:24px;top:-22px; }
+
+  /* ---------------- 远山与墓园 ---------------- */
+  .horizon{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:26vh;
+    z-index:4;
+  }
+  .horizon svg{ width:100%; height:100%; display:block; }
+
+  .fog{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:34vh;
+    background:linear-gradient(180deg, rgba(58,64,116,0), rgba(72,80,132,.32) 55%, rgba(96,104,150,.5) 100%);
+    filter:blur(10px);
+    z-index:5;
+    pointer-events:none;
+  }
+  .fog.drift{
+    height:22vh;
+    bottom:2vh;
+    background:radial-gradient(ellipse at 30% 60%, rgba(150,160,200,.22), rgba(150,160,200,0) 70%);
+    animation:fogDrift 26s ease-in-out infinite alternate;
+  }
+  @keyframes fogDrift{
+    from{ transform:translateX(-6%); opacity:.7 }
+    to{ transform:translateX(6%); opacity:1 }
+  }
+
+  /* ---------------- 飞行编队 ---------------- */
+  .flight{
+    position:absolute;
+    left:0; top:0;
+    width:80vw; height:52vh;
+    z-index:8;
+    animation:flyAcross calc(30s * var(--k)) linear infinite;
+    animation-delay:-13s;
+    will-change:transform;
+  }
+  .flight.f2{
+    width:70vw; height:40vh;
+    top:6vh;
+    opacity:.62;
+    filter:blur(.6px);
+    animation-duration:calc(42s * var(--k));
+    animation-delay:-16s;
+  }
+  @keyframes flyAcross{
+    from{ transform:translateX(122vw) }
+    to{ transform:translateX(-102vw) }
+  }
+
+  .crow, .zombie{
+    position:absolute;
+    transform-origin:50% 50%;
+  }
+  .crow svg, .zombie svg{ display:block; width:100%; height:auto; overflow:visible; }
+
+  .crow{ animation:floatC calc(2.8s * var(--k)) ease-in-out infinite; }
+  @keyframes floatC{
+    0%,100%{ transform:translateY(0) rotate(-2deg) }
+    50%{ transform:translateY(-11px) rotate(3deg) }
+  }
+
+  .zombie{ animation:floatZ calc(4.2s * var(--k)) ease-in-out infinite; }
+  @keyframes floatZ{
+    0%,100%{ transform:translateY(0) rotate(-4deg) }
+    50%{ transform:translateY(-16px) rotate(2.5deg) }
+  }
+
+  .wing{
+    transform-box:view-box;
+    transform-origin:58px 38px;
+    animation:flap calc(.5s * var(--k)) ease-in-out infinite;
+  }
+  @keyframes flap{
+    0%,100%{ transform:rotate(-16deg) }
+    50%{ transform:rotate(20deg) }
+  }
+
+  .zarm{ transform-box:view-box; transform-origin:58px 80px; animation:reach calc(2.4s * var(--k)) ease-in-out infinite; }
+  @keyframes reach{
+    0%,100%{ transform:rotate(-3deg) }
+    50%{ transform:rotate(4deg) }
+  }
+
+  /* ---------------- 文案 ---------------- */
+  .hud{
+    position:absolute;
+    top:clamp(22px,4.5vh,50px);
+    left:clamp(22px,4vw,64px);
+    z-index:20;
+    color:#EDE9FB;
+    pointer-events:none;
+  }
+  .hud h1{
+    font-size:clamp(1.7rem,3.4vw,3rem);
+    font-weight:800;
+    letter-spacing:.14em;
+    color:#F4F0FF;
+    text-shadow:0 0 24px rgba(150,160,255,.45), 0 8px 30px rgba(0,0,0,.6);
+  }
+  .hud p{
+    margin-top:.75em;
+    font-size:clamp(.76rem,1vw,.95rem);
+    letter-spacing:.26em;
+    color:#A9B0DA;
+  }
+  .hud .tag{
+    display:inline-block;
+    margin-top:1.15em;
+    padding:.42em .95em;
+    border-radius:999px;
+    font-size:clamp(.68rem,.85vw,.8rem);
+    letter-spacing:.12em;
+    color:#C9CFF2;
+    background:rgba(120,130,200,.14);
+    border:1px solid rgba(160,170,230,.35);
+    backdrop-filter:blur(6px);
+  }
+
+  /* 乌鸦叫气泡 */
+  .caw{
+    position:absolute;
+    left:50%; top:30%;
+    transform:translate(-50%,0) scale(.4);
+    z-index:30;
+    padding:.5em 1em;
+    border-radius:18px 18px 18px 4px;
+    background:#F4F1FF;
+    color:#2A2350;
+    font-size:clamp(.9rem,1.4vw,1.3rem);
+    font-weight:800;
+    letter-spacing:.08em;
+    box-shadow:0 14px 30px rgba(0,0,0,.4);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .16s ease, transform .4s cubic-bezier(.2,1.7,.4,1);
+  }
+  .caw.show{ opacity:1; transform:translate(-50%,-18px) scale(1); }
+
+  .vignette{
+    position:absolute; inset:0;
+    z-index:18;
+    pointer-events:none;
+    background:radial-gradient(ellipse at 50% 48%, rgba(0,0,0,0) 48%, rgba(4,6,14,.62) 100%);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001s !important; animation-iteration-count:1 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="scene" id="scene">
+
+  <div class="sky"></div>
+  <div class="stars" id="stars"></div>
+  <div class="shooting"></div>
+
+  <div class="moon">
+    <div class="moon-crater"></div>
+  </div>
+  <div class="moon-cloud"></div>
+
+  <!-- 背景云 -->
+  <div class="lane" style="--dur:150s">
+    <div class="cloud a" style="--x:8vw;  --y:12vh; opacity:.5;"></div>
+    <div class="cloud b" style="--x:44vw; --y:26vh; opacity:.4;"></div>
+    <div class="cloud a" style="--x:72vw; --y:8vh;  opacity:.35; transform:scale(.8);"></div>
+  </div>
+
+  <!-- 远山墓园 -->
+  <div class="horizon">
+    <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
+      <path d="M0,128 C130,104 210,120 320,108 C430,96 500,120 620,112
+               C740,104 820,84 950,98 C1070,110 1160,92 1280,106
+               C1350,114 1400,108 1440,112 L1440,220 L0,220 Z" fill="#0A0C1A"/>
+      <g fill="#0A0C1A">
+        <!-- 墓碑 -->
+        <path d="M118 132 h30 v34 h-30 z M118 132 a15 15 0 0 1 30 0 z" />
+        <path d="M186 138 h22 v28 h-22 z M186 138 a11 11 0 0 1 22 0 z" />
+        <path d="M252 130 h26 v36 h-26 z M252 130 a13 13 0 0 1 26 0 z" />
+        <path d="M430 126 h24 v40 h-24 z M430 126 a12 12 0 0 1 24 0 z" />
+        <path d="M520 134 h20 v32 h-20 z M520 134 a10 10 0 0 1 20 0 z" />
+        <path d="M700 128 h26 v38 h-26 z M700 128 a13 13 0 0 1 26 0 z" />
+        <path d="M762 136 h20 v30 h-20 z M762 136 a10 10 0 0 1 20 0 z" />
+        <path d="M898 132 h24 v34 h-24 z M898 132 a12 12 0 0 1 24 0 z" />
+        <!-- 十字架 -->
+        <path d="M344 116 h8 v46 h-8 z M330 130 h36 v8 h-36 z"/>
+        <path d="M648 120 h7 v42 h-7 z M636 132 h31 v7 h-31 z"/>
+        <!-- 枯树 -->
+        <path d="M1052 150 L1052 60 L1044 44 L1052 52 L1056 38 L1060 54 L1068 42 L1062 62
+                 L1070 78 L1058 70 L1056 92 L1066 84 L1058 100 L1076 96 L1060 110
+                 L1062 150 Z"/>
+        <!-- 矮栅栏 -->
+        <path d="M1200 138 h6 v26 h-6 z M1220 138 h6 v26 h-6 z M1240 138 h6 v26 h-6 z
+                 M1260 138 h6 v26 h-6 z M1196 144 h74 v5 h-74 z"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="fog"></div>
+  <div class="fog drift"></div>
+
+  <!-- ================= 主飞行编队 ================= -->
+  <div class="flight f1">
+
+    <!-- 领头的乌鸦 -->
+    <div class="crow" style="left:6%; top:34%; width:7vw; min-width:56px;">
+      <svg viewBox="0 0 120 80">
+        <g fill="#0D111C">
+          <path d="M84 42 L116 26 L111 42 L118 58 L86 50 Z"/>
+          <ellipse cx="62" cy="44" rx="28" ry="14" transform="rotate(-8 62 44)"/>
+          <circle cx="36" cy="36" r="12.5"/>
+          <path d="M26 31 L4 38 L26 45 Z"/>
+        </g>
+        <path d="M56 38 C47 16 55 -2 78 -4 C69 12 65 28 72 40 Z" fill="#151A29"/>
+        <path d="M58 40 C50 30 48 22 52 16 C56 26 60 32 64 40 Z" fill="#0A0E18"/>
+        <circle cx="33" cy="33" r="2.4" fill="#FFD86B"/>
+      </svg>
+    </div>
+
+    <div class="crow" style="left:26%; top:22%; width:6vw; min-width:48px; animation-delay:-1.1s;">
+      <svg viewBox="0 0 120 80">
+        <g fill="#0D111C">
+          <path d="M84 42 L116 26 L111 42 L118 58 L86 50 Z"/>
+          <ellipse cx="62" cy="44" rx="28" ry="14" transform="rotate(-8 62 44)"/>
+          <circle cx="36" cy="36" r="12.5"/>
+          <path d="M26 31 L4 38 L26 45 Z"/>
+        </g>
+        <path d="M56 38 C47 16 55 -2 78 -4 C69 12 65 28 72 40 Z" fill="#151A29"/>
+        <circle cx="33" cy="33" r="2.4" fill="#FFD86B"/>
+      </svg>
+    </div>
+
+    <div class="crow" style="left:14%; top:58%; width:5.4vw; min-width:44px; animation-delay:-2s;">
+      <svg viewBox="0 0 120 80">
+        <g fill="#0D111C">
+          <path d="M84 42 L116 26 L111 42 L118 58 L86 50 Z"/>
+          <ellipse cx="62" cy="44" rx="28" ry="14" transform="rotate(-8 62 44)"/>
+          <circle cx="36" cy="36" r="12.5"/>
+          <path d="M26 31 L4 38 L26 45 Z"/>
+        </g>
+        <path d="M56 38 C47 16 55 -2 78 -4 C69 12 65 28 72 40 Z" fill="#151A29"/>
+        <circle cx="33" cy="33" r="2.4" fill="#FFD86B"/>
+      </svg>
+    </div>
+
+    <div class="crow" style="left:40%; top:44%; width:5vw; min-width:40px; animation-delay:-.6s; opacity:.9;">
+      <svg viewBox="0 0 120 80">
+        <g fill="#0D111C">
+          <path d="M84 42 L116 26 L111 42 L118 58 L86 50 Z"/>
+          <ellipse cx="62" cy="44" rx="28" ry="14" transform="rotate(-8 62 44)"/>
+          <circle cx="36" cy="36" r="12.5"/>
+          <path d="M26 31 L4 38 L26 45 Z"/>
+        </g>
+        <path d="M56 38 C47 16 55 -2 78 -4 C69 12 65 28 72 40 Z" fill="#151A29"/>
+        <circle cx="33" cy="33" r="2.4" fill="#FFD86B"/>
+      </svg>
+    </div>
+
+    <!-- 追上来的僵尸 -->
+    <div class="zombie" style="left:58%; top:30%; width:8.5vw; min-width:66px;">
+      <svg viewBox="0 0 150 210">
+        <!-- 后腿 / 前腿 -->
+        <path d="M56 124 C50 144 48 158 52 174" stroke="#2A2A3E" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M78 124 C86 142 88 156 82 170" stroke="#232334" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M38 176 L58 176 L55 187 L36 185 Z" fill="#15151F"/>
+        <path d="M70 172 L90 172 L87 183 L68 181 Z" fill="#111119"/>
+        <!-- 后手臂 -->
+        <g class="zarm">
+          <path d="M56 78 C36 70 22 66 12 64" stroke="#332E4C" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="63" rx="8" ry="7" fill="#84A96D"/>
+          <path d="M5 58 L0 54 M4 63 L-2 62 M6 68 L1 72" stroke="#84A96D" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <!-- 大衣 -->
+        <path d="M50 70 C42 90 44 112 48 130 L92 130 C96 112 98 90 90 70 Z" fill="#3B3557"/>
+        <path d="M48 130 L56 141 L62 130 L70 143 L78 130 L84 140 L92 130 Z" fill="#3B3557"/>
+        <path d="M50 70 L70 84 L90 70 L88 76 L70 90 L52 76 Z" fill="#2E2947"/>
+        <!-- 破洞 -->
+        <path d="M62 100 l9 3 -6 8 -7 -4 z" fill="#241F3C"/>
+        <!-- 领带 -->
+        <path d="M68 84 L74 86 L72 104 L69 108 L66 104 Z" fill="#8E3B4A"/>
+        <!-- 脖子 -->
+        <rect x="61" y="60" width="18" height="14" rx="6" fill="#7FA469"/>
+        <!-- 头 -->
+        <circle cx="70" cy="46" r="20" fill="#93BE7C"/>
+        <path d="M70 26 a20 20 0 0 1 19 15 c-6-6-13-9-19-9 z" fill="#84AC6D" opacity=".8"/>
+        <!-- 头发 -->
+        <path d="M51 36 L46 22 L57 30 L59 18 L66 30 L72 17 L77 30 L85 21 L84 36 Z" fill="#23232E"/>
+        <!-- 眼窝 -->
+        <ellipse cx="61" cy="43" rx="6.4" ry="7" fill="#26301F"/>
+        <ellipse cx="73" cy="45" rx="5.4" ry="6" fill="#26301F"/>
+        <circle cx="59.6" cy="43" r="2.5" fill="#F7E77F"/>
+        <circle cx="71.8" cy="45" r="2.1" fill="#F7E77F"/>
+        <!-- 鼻子 -->
+        <path d="M67 51 q3 3 0 5" stroke="#6E9257" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- 嘴 -->
+        <path d="M58 58 Q69 70 81 57 Q69 64 58 58 Z" fill="#2A1E22"/>
+        <path d="M62 58 l3 4 2-4 M70 59 l3 4 2-4" fill="#E8E3D2"/>
+        <!-- 缝合线 -->
+        <path d="M84 50 l7 -3 M84 55 l7 -1" stroke="#5F7F4C" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- 前手臂 -->
+        <g class="zarm" style="animation-delay:-1.2s">
+          <path d="M60 88 C40 94 24 96 13 97" stroke="#3B3557" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="97" rx="8.5" ry="7.5" fill="#9BC284"/>
+          <path d="M4 92 L-2 89 M3 97 L-3 97 M4 102 L-1 106" stroke="#9BC284" stroke-width="3.2" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="zombie" style="left:82%; top:52%; width:6.5vw; min-width:52px; animation-delay:-2.2s; opacity:.92;">
+      <svg viewBox="0 0 150 210">
+        <path d="M56 124 C50 144 48 158 52 174" stroke="#2A2A3E" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M78 124 C86 142 88 156 82 170" stroke="#232334" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M38 176 L58 176 L55 187 L36 185 Z" fill="#15151F"/>
+        <path d="M70 172 L90 172 L87 183 L68 181 Z" fill="#111119"/>
+        <g class="zarm">
+          <path d="M56 78 C36 70 22 66 12 64" stroke="#332E4C" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="63" rx="8" ry="7" fill="#84A96D"/>
+        </g>
+        <path d="M50 70 C42 90 44 112 48 130 L92 130 C96 112 98 90 90 70 Z" fill="#3B3557"/>
+        <path d="M48 130 L56 141 L62 130 L70 143 L78 130 L84 140 L92 130 Z" fill="#3B3557"/>
+        <rect x="61" y="60" width="18" height="14" rx="6" fill="#7FA469"/>
+        <circle cx="70" cy="46" r="20" fill="#93BE7C"/>
+        <path d="M51 36 L46 22 L57 30 L59 18 L66 30 L72 17 L77 30 L85 21 L84 36 Z" fill="#23232E"/>
+        <ellipse cx="61" cy="43" rx="6.4" ry="7" fill="#26301F"/>
+        <ellipse cx="73" cy="45" rx="5.4" ry="6" fill="#26301F"/>
+        <circle cx="59.6" cy="43" r="2.5" fill="#F7E77F"/>
+        <circle cx="71.8" cy="45" r="2.1" fill="#F7E77F"/>
+        <path d="M58 58 Q69 70 81 57 Q69 64 58 58 Z" fill="#2A1E22"/>
+        <g class="zarm" style="animation-delay:-1.2s">
+          <path d="M60 88 C40 94 24 96 13 97" stroke="#3B3557" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="97" rx="8.5" ry="7.5" fill="#9BC284"/>
+        </g>
+        <!-- 派对帽（这只比较有仪式感） -->
+        <path d="M56 22 L70 -4 L84 20 Z" fill="#F2835B"/>
+        <circle cx="70" cy="-5" r="4" fill="#FFD86B"/>
+      </svg>
+    </div>
+
+    <div class="zombie" style="left:100%; top:14%; width:6vw; min-width:48px; animation-delay:-3.4s; opacity:.85;">
+      <svg viewBox="0 0 150 210">
+        <path d="M56 124 C50 144 48 158 52 174" stroke="#2A2A3E" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M78 124 C86 142 88 156 82 170" stroke="#232334" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M38 176 L58 176 L55 187 L36 185 Z" fill="#15151F"/>
+        <g class="zarm">
+          <path d="M56 78 C36 70 22 66 12 64" stroke="#332E4C" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="63" rx="8" ry="7" fill="#84A96D"/>
+        </g>
+        <path d="M50 70 C42 90 44 112 48 130 L92 130 C96 112 98 90 90 70 Z" fill="#3B3557"/>
+        <path d="M48 130 L56 141 L62 130 L70 143 L78 130 L84 140 L92 130 Z" fill="#3B3557"/>
+        <rect x="61" y="60" width="18" height="14" rx="6" fill="#7FA469"/>
+        <circle cx="70" cy="46" r="20" fill="#93BE7C"/>
+        <path d="M51 36 L46 22 L57 30 L59 18 L66 30 L72 17 L77 30 L85 21 L84 36 Z" fill="#23232E"/>
+        <ellipse cx="61" cy="43" rx="6.4" ry="7" fill="#26301F"/>
+        <ellipse cx="73" cy="45" rx="5.4" ry="6" fill="#26301F"/>
+        <circle cx="59.6" cy="43" r="2.5" fill="#F7E77F"/>
+        <circle cx="71.8" cy="45" r="2.1" fill="#F7E77F"/>
+        <path d="M58 58 Q69 70 81 57 Q69 64 58 58 Z" fill="#2A1E22"/>
+        <g class="zarm" style="animation-delay:-1.2s">
+          <path d="M60 88 C40 94 24 96 13 97" stroke="#3B3557" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="97" rx="8.5" ry="7.5" fill="#9BC284"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================= 远处的小编队 ================= -->
+  <div class="flight f2">
+    <div class="crow" style="left:12%; top:36%; width:5vw; min-width:40px;">
+      <svg viewBox="0 0 120 80">
+        <g fill="#0D111C">
+          <path d="M84 42 L116 26 L111 42 L118 58 L86 50 Z"/>
+          <ellipse cx="62" cy="44" rx="28" ry="14" transform="rotate(-8 62 44)"/>
+          <circle cx="36" cy="36" r="12.5"/>
+          <path d="M26 31 L4 38 L26 45 Z"/>
+        </g>
+        <path d="M56 38 C47 16 55 -2 78 -4 C69 12 65 28 72 40 Z" fill="#151A29"/>
+        <circle cx="33" cy="33" r="2.4" fill="#FFD86B"/>
+      </svg>
+    </div>
+    <div class="crow" style="left:30%; top:54%; width:4.4vw; min-width:34px; animation-delay:-1.4s;">
+      <svg viewBox="0 0 120 80">
+        <g fill="#0D111C">
+          <path d="M84 42 L116 26 L111 42 L118 58 L86 50 Z"/>
+          <ellipse cx="62" cy="44" rx="28" ry="14" transform="rotate(-8 62 44)"/>
+          <circle cx="36" cy="36" r="12.5"/>
+          <path d="M26 31 L4 38 L26 45 Z"/>
+        </g>
+        <path d="M56 38 C47 16 55 -2 78 -4 C69 12 65 28 72 40 Z" fill="#151A29"/>
+        <circle cx="33" cy="33" r="2.4" fill="#FFD86B"/>
+      </svg>
+    </div>
+    <div class="zombie" style="left:66%; top:38%; width:6vw; min-width:48px;">
+      <svg viewBox="0 0 150 210">
+        <path d="M56 124 C50 144 48 158 52 174" stroke="#2A2A3E" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M78 124 C86 142 88 156 82 170" stroke="#232334" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M38 176 L58 176 L55 187 L36 185 Z" fill="#15151F"/>
+        <g class="zarm">
+          <path d="M56 78 C36 70 22 66 12 64" stroke="#332E4C" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="63" rx="8" ry="7" fill="#84A96D"/>
+        </g>
+        <path d="M50 70 C42 90 44 112 48 130 L92 130 C96 112 98 90 90 70 Z" fill="#3B3557"/>
+        <path d="M48 130 L56 141 L62 130 L70 143 L78 130 L84 140 L92 130 Z" fill="#3B3557"/>
+        <rect x="61" y="60" width="18" height="14" rx="6" fill="#7FA469"/>
+        <circle cx="70" cy="46" r="20" fill="#93BE7C"/>
+        <path d="M51 36 L46 22 L57 30 L59 18 L66 30 L72 17 L77 30 L85 21 L84 36 Z" fill="#23232E"/>
+        <ellipse cx="61" cy="43" rx="6.4" ry="7" fill="#26301F"/>
+        <ellipse cx="73" cy="45" rx="5.4" ry="6" fill="#26301F"/>
+        <circle cx="59.6" cy="43" r="2.5" fill="#F7E77F"/>
+        <circle cx="71.8" cy="45" r="2.1" fill="#F7E77F"/>
+        <path d="M58 58 Q69 70 81 57 Q69 64 58 58 Z" fill="#2A1E22"/>
+        <g class="zarm" style="animation-delay:-1.2s">
+          <path d="M60 88 C40 94 24 96 13 97" stroke="#3B3557" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <ellipse cx="11" cy="97" rx="8.5" ry="7.5" fill="#9BC284"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="caw" id="caw">呱——！</div>
+
+  <div class="hud">
+    <h1>僵尸追乌鸦</h1>
+    <p>午夜三点 · 谁也追不上谁</p>
+    <span class="tag">点击画面 · 惊起一群</span>
+  </div>
+
+  <div class="vignette"></div>
+</div>
+
+<script>
+  /* 星空 */
+  (function () {
+    var box = document.getElementById('stars');
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < 90; i++) {
+      var s = document.createElement('span');
+      s.className = 'star';
+      var size = Math.random() * 2.2 + 0.8;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.left = (Math.random() * 100) + '%';
+      s.style.top = (Math.random() * 72) + '%';
+      s.style.animationDelay = (-Math.random() * 4) + 's';
+      s.style.animationDuration = (2.4 + Math.random() * 3.6) + 's';
+      if (Math.random() > 0.85) {
+        s.style.boxShadow = '0 0 6px 1px rgba(255,248,226,.8)';
+      }
+      frag.appendChild(s);
+    }
+    box.appendChild(frag);
+  })();
+
+  /* 云层复制，实现无缝循环 */
+  document.querySelectorAll('.lane').forEach(function (lane) {
+    Array.prototype.slice.call(lane.children).forEach(function (child) {
+      var dup = child.cloneNode(true);
+      dup.classList.add('dup');
+      dup.setAttribute('aria-hidden', 'true');
+      lane.appendChild(dup);
+    });
+  });
+
+  /* 点击：全体加速 + 乌鸦叫 */
+  var scene = document.getElementById('scene');
+  var caw = document.getElementById('caw');
+  var root = document.documentElement;
+  var t1 = null, t2 = null;
+
+  function scare() {
+    root.style.setProperty('--k', '0.45');
+    caw.classList.add('show');
+    clearTimeout(t1);
+    clearTimeout(t2);
+    t1 = setTimeout(function () { root.style.setProperty('--k', '1'); }, 1500);
+    t2 = setTimeout(function () { caw.classList.remove('show'); }, 1200);
+  }
+
+  scene.addEventListener('click', scare);
+  window.addEventListener('keydown', function (e) {
+    if (e.code === 'Space') { e.preventDefault(); scare(); }
+  });
+</script>
+</body>
+</html>
