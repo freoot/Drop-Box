@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鹈鹕的海边骑行</title>
+<style>
+  :root{
+    --k: 1;                /* 速度系数，点击后变小 = 加速 */
+    --sand: #F3D9A4;
+    --sand-deep: #E4BE83;
+    --sea-1: #1F6B85;
+    --sea-2: #2E8AA5;
+    --sea-3: #6EC3D2;
+    --ink: #26343C;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html,body{ height:100%; }
+
+  body{
+    overflow:hidden;
+    background:#0d1b22;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .scene{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+  }
+
+  /* ---------- 天空 ---------- */
+  .sky{
+    position:absolute; inset:0 0 47vh 0;
+    background:linear-gradient(180deg,
+      #4E8FC6 0%,
+      #7FB7DC 28%,
+      #B7DCEB 52%,
+      #FBE3B4 82%,
+      #FFD79A 100%);
+  }
+
+  /* 太阳 */
+  .sun{
+    position:absolute;
+    left:20%;
+    bottom:44vh;
+    width:clamp(70px,9vw,120px);
+    aspect-ratio:1;
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 50%, #FFFBE8 0%, #FFEFB8 42%, #FFC96E 72%, rgba(255,201,110,0) 74%);
+    box-shadow:0 0 70px 30px rgba(255,203,120,.45);
+    z-index:2;
+  }
+  .sun::after{
+    content:"";
+    position:absolute; inset:-60%;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,210,130,.35) 0%, rgba(255,210,130,0) 62%);
+    animation:breathe 7s ease-in-out infinite;
+  }
+  @keyframes breathe{ 0%,100%{transform:scale(1);opacity:.9} 50%{transform:scale(1.12);opacity:.55} }
+
+  /* 云 */
+  .cloud{
+    position:absolute;
+    border-radius:999px;
+    background:linear-gradient(180deg,#FFFDF6,#FFE9CE);
+    opacity:.85;
+    filter:blur(.4px);
+    box-shadow:0 12px 26px rgba(255,190,140,.18);
+  }
+  .cloud::before,.cloud::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:inherit;
+  }
+  .cloud.c1{ width:170px;height:44px; }
+  .cloud.c1::before{ width:74px;height:74px; left:22px; top:-34px; }
+  .cloud.c1::after{ width:54px;height:54px; right:26px; top:-22px; }
+  .cloud.c2{ width:120px;height:32px; }
+  .cloud.c2::before{ width:52px;height:52px; left:18px; top:-24px; }
+  .cloud.c2::after{ width:40px;height:40px; right:16px; top:-16px; }
+
+  /* 海鸥 */
+  .gull{
+    position:absolute;
+    width:38px;height:18px;
+    opacity:.9;
+    animation:fly 9s ease-in-out infinite;
+  }
+  .gull svg{ width:100%;height:100%; }
+  .gull .wing{ animation:flap .9s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .gull:nth-child(2n) .wing{ animation-delay:-.45s; }
+  @keyframes flap{ 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(.35)} }
+  @keyframes fly{
+    0%,100%{ transform:translate(0,0) }
+    33%{ transform:translate(26px,-14px) }
+    66%{ transform:translate(-10px,10px) }
+  }
+
+  /* ---------- 海 ---------- */
+  .sea{
+    position:absolute;
+    left:0; right:0;
+    bottom:27vh;
+    height:20vh;
+    background:linear-gradient(180deg,
+      #17586F 0%,
+      var(--sea-1) 18%,
+      var(--sea-2) 58%,
+      var(--sea-3) 100%);
+    overflow:hidden;
+  }
+  /* 水面碎光 */
+  .glitter{
+    position:absolute;
+    left:14%; bottom:0;
+    width:16%; height:100%;
+    background:linear-gradient(180deg,
+      rgba(255,240,190,0) 0%,
+      rgba(255,232,170,.55) 40%,
+      rgba(255,245,210,.85) 100%);
+    filter:blur(6px);
+    mix-blend-mode:screen;
+    animation:shimmer 3.6s ease-in-out infinite;
+    transform:skewX(-8deg);
+  }
+  @keyframes shimmer{
+    0%,100%{ opacity:.55; transform:skewX(-8deg) scaleX(1) }
+    50%{ opacity:.95; transform:skewX(-8deg) scaleX(1.18) }
+  }
+  /* 远海细纹 */
+  .ripple{
+    position:absolute; left:0; right:0;
+    height:2px;
+    background:repeating-linear-gradient(90deg,
+      rgba(255,255,255,.35) 0 22px,
+      rgba(255,255,255,0) 22px 46px);
+    opacity:.35;
+  }
+  .ripple.r1{ top:26%; }
+  .ripple.r2{ top:48%; opacity:.25; }
+  .ripple.r3{ top:70%; opacity:.2; }
+
+  /* ---------- 浪花 ---------- */
+  .shore{
+    position:absolute;
+    left:0; right:0;
+    bottom:25.4vh;
+    height:7vh;
+    z-index:4;
+    pointer-events:none;
+  }
+  .shore svg{ width:100%; height:100%; display:block; }
+  .wave-move{ animation:waveScroll calc(14s * var(--k)) linear infinite; }
+  .wave-move.slow{ animation-duration:calc(22s * var(--k)); }
+  @keyframes waveScroll{ to{ transform:translateX(-1440px); } }
+
+  /* 沙滩湿边 */
+  .wet-sand{
+    position:absolute;
+    left:0; right:0;
+    bottom:24.2vh;
+    height:2.6vh;
+    background:linear-gradient(180deg, rgba(206,167,110,.55), rgba(206,167,110,0));
+    z-index:3;
+  }
+
+  /* ---------- 沙滩 ---------- */
+  .beach{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:27vh;
+    background:
+      radial-gradient(ellipse at 50% 0%, #FBE6BC 0%, var(--sand) 45%, var(--sand-deep) 100%);
+    z-index:2;
+    overflow:hidden;
+  }
+  .beach::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(rgba(190,150,95,.35) 1px, transparent 1.4px),
+      radial-gradient(rgba(255,255,255,.5) 1px, transparent 1.4px);
+    background-size:26px 22px, 41px 33px;
+    background-position:0 0, 12px 9px;
+    opacity:.5;
+  }
+
+  /* ---------- 滚动视差层 ---------- */
+  .lane{
+    position:absolute;
+    left:0; top:0;
+    width:200vw; height:100%;
+    pointer-events:none;
+    animation:scroll calc(var(--dur) * var(--k)) linear infinite;
+    will-change:transform;
+  }
+  @keyframes scroll{ to{ transform:translateX(-50%); } }
+
+  .lane > *{
+    position:absolute;
+    left:var(--x, 0vw);
+    bottom:var(--y, 0);
+  }
+  .lane > .dup{ left:calc(var(--x, 0vw) + 100vw); }
+
+  /* 椰子树 */
+  .palm{ width:clamp(90px,9vw,150px); transform-origin:50% 100%; animation:sway 6s ease-in-out infinite; }
+  .palm:nth-child(2n){ animation-delay:-2s; }
+  @keyframes sway{ 0%,100%{ transform:rotate(-1.4deg) } 50%{ transform:rotate(1.6deg) } }
+
+  /* 遮阳伞 */
+  .umbrella{ width:clamp(78px,7.5vw,118px); }
+
+  /* 礁石 */
+  .rock{ width:clamp(40px,4vw,70px); opacity:.95; }
+
+  /* 海星 */
+  .starfish{ width:26px; opacity:.9; }
+
+  /* ---------- 鹈鹕 ---------- */
+  .pelican{
+    position:absolute;
+    left:50%;
+    bottom:6vh;
+    width:clamp(260px,32vw,470px);
+    transform:translateX(-50%);
+    z-index:12;
+    filter:drop-shadow(0 18px 18px rgba(120,80,40,.18));
+  }
+  .pelican svg{ width:100%; height:auto; display:block; overflow:visible; }
+
+  /* SVG 动画 */
+  .rig{ animation:bob calc(1.5s * var(--k)) ease-in-out infinite; transform-box:view-box; transform-origin:170px 210px; }
+  @keyframes bob{
+    0%,100%{ transform:translateY(0) rotate(-.5deg) }
+    50%{ transform:translateY(-5px) rotate(.6deg) }
+  }
+
+  .spin{ animation:spin calc(1.1s * var(--k)) linear infinite; transform-box:view-box; }
+  .spin.rear{ transform-origin:92px 186px; }
+  .spin.front{ transform-origin:238px 186px; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  .crank{ animation:crank calc(2.2s * var(--k)) linear infinite; transform-box:view-box; transform-origin:162px 180px; }
+  @keyframes crank{ to{ transform:rotate(360deg); } }
+
+  .leg-a{ animation:legA calc(1.1s * var(--k)) linear infinite; transform-box:view-box; transform-origin:146px 120px; }
+  .leg-b{ animation:legB calc(1.1s * var(--k)) linear infinite; transform-box:view-box; transform-origin:146px 120px; }
+  @keyframes legA{ 0%,100%{ transform:rotate(9deg) } 50%{ transform:rotate(-9deg) } }
+  @keyframes legB{ 0%,100%{ transform:rotate(-9deg) } 50%{ transform:rotate(9deg) } }
+
+  .scarf-1{ animation:flutter .55s ease-in-out infinite alternate; transform-box:view-box; transform-origin:198px 68px; }
+  .scarf-2{ animation:flutter .7s ease-in-out infinite alternate-reverse; transform-box:view-box; transform-origin:198px 68px; }
+  @keyframes flutter{
+    from{ transform:rotate(-3deg) skewY(-3deg) }
+    to{ transform:rotate(4deg) skewY(4deg) }
+  }
+
+  .wing-arm{ animation:wingArm calc(1.5s * var(--k)) ease-in-out infinite; transform-box:view-box; transform-origin:160px 100px; }
+  @keyframes wingArm{ 0%,100%{ transform:rotate(-1.5deg) } 50%{ transform:rotate(1.5deg) } }
+
+  /* 沙尘粒子 */
+  .dust{
+    position:absolute;
+    bottom:8.5vh;
+    left:50%;
+    width:6px;height:6px;
+    border-radius:50%;
+    background:rgba(226,190,131,.9);
+    opacity:0;
+    animation:dust 1.6s linear infinite;
+    z-index:11;
+  }
+  @keyframes dust{
+    0%{ transform:translate(0,0) scale(1); opacity:.8 }
+    100%{ transform:translate(-120px,-26px) scale(.2); opacity:0 }
+  }
+
+  /* ---------- 文案 ---------- */
+  .hud{
+    position:absolute;
+    top:clamp(22px,4vh,46px);
+    left:clamp(22px,4vw,64px);
+    z-index:20;
+    color:#1E3A46;
+    pointer-events:none;
+  }
+  .hud h1{
+    font-size:clamp(1.7rem,3.4vw,3rem);
+    font-weight:800;
+    letter-spacing:.14em;
+    color:#17323E;
+    text-shadow:0 2px 0 rgba(255,255,255,.55), 0 12px 24px rgba(255,240,210,.6);
+  }
+  .hud p{
+    margin-top:.7em;
+    font-size:clamp(.78rem,1.05vw,.98rem);
+    letter-spacing:.28em;
+    color:#3A5A66;
+    opacity:.85;
+  }
+  .hud .tag{
+    display:inline-block;
+    margin-top:1.1em;
+    padding:.42em .95em;
+    border-radius:999px;
+    font-size:clamp(.68rem,.85vw,.8rem);
+    letter-spacing:.12em;
+    color:#2B4A55;
+    background:rgba(255,255,255,.5);
+    border:1px solid rgba(255,255,255,.85);
+    backdrop-filter:blur(6px);
+    box-shadow:0 8px 20px rgba(80,110,120,.12);
+  }
+
+  /* 铃铛气泡 */
+  .bell-pop{
+    position:absolute;
+    left:50%;
+    bottom:34vh;
+    transform:translateX(-50%) scale(.4);
+    z-index:30;
+    padding:.4em .85em;
+    border-radius:999px;
+    background:#FFFDF6;
+    color:#B4762A;
+    font-size:clamp(.75rem,1vw,.95rem);
+    font-weight:700;
+    letter-spacing:.06em;
+    box-shadow:0 10px 24px rgba(120,80,30,.22);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .18s ease, transform .35s cubic-bezier(.2,1.6,.4,1);
+  }
+  .bell-pop.show{ opacity:1; transform:translateX(-50%) scale(1) translateY(-14px); }
+
+  /* 暗角 */
+  .vignette{
+    position:absolute; inset:0;
+    pointer-events:none;
+    z-index:18;
+    background:radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 55%, rgba(30,40,45,.28) 100%);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001s !important; animation-iteration-count:1 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="scene" id="scene">
+
+  <div class="sky"></div>
+  <div class="sun"></div>
+
+  <!-- 云 -->
+  <div class="lane" style="--dur:120s">
+    <div class="cloud c1" style="--x:6vw;  --y:64vh;"></div>
+    <div class="cloud c2" style="--x:38vw; --y:72vh;"></div>
+    <div class="cloud c1" style="--x:68vw; --y:58vh; transform:scale(.8);"></div>
+  </div>
+
+  <!-- 海鸥 -->
+  <div class="lane" style="--dur:70s">
+    <div class="gull" style="--x:22vw; --y:70vh;">
+      <svg viewBox="0 0 60 24"><path class="wing" d="M2 16 C12 4 22 4 30 13 C38 4 48 4 58 16" fill="none" stroke="#4A6A78" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gull" style="--x:58vw; --y:76vh; transform:scale(.8);">
+      <svg viewBox="0 0 60 24"><path class="wing" d="M2 16 C12 4 22 4 30 13 C38 4 48 4 58 16" fill="none" stroke="#4A6A78" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gull" style="--x:84vw; --y:66vh; transform:scale(.65);">
+      <svg viewBox="0 0 60 24"><path class="wing" d="M2 16 C12 4 22 4 30 13 C38 4 48 4 58 16" fill="none" stroke="#4A6A78" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <div class="sea">
+    <div class="glitter"></div>
+    <div class="ripple r1"></div>
+    <div class="ripple r2"></div>
+    <div class="ripple r3"></div>
+  </div>
+
+  <!-- 远处帆船与灯塔小岛 -->
+  <div class="lane" style="--dur:95s">
+    <svg style="--x:30vw; --y:29vh; width:74px;" viewBox="0 0 80 70">
+      <path d="M8 58 L72 58 L64 68 L16 68 Z" fill="#3A4B54"/>
+      <path d="M40 8 L40 56 L14 56 Z" fill="#FFF8EA"/>
+      <path d="M44 16 L44 56 L66 56 Z" fill="#FFD9A8"/>
+    </svg>
+    <svg style="--x:74vw; --y:30vh; width:60px;" viewBox="0 0 80 70">
+      <path d="M8 58 L72 58 L64 68 L16 68 Z" fill="#43555E"/>
+      <path d="M40 10 L40 56 L16 56 Z" fill="#FFF6E6"/>
+      <path d="M44 20 L44 56 L64 56 Z" fill="#FFC98F"/>
+    </svg>
+    <!-- 灯塔小岛 -->
+    <svg style="--x:52vw; --y:27.5vh; width:96px;" viewBox="0 0 120 90">
+      <ellipse cx="60" cy="82" rx="52" ry="12" fill="#4C6A72" opacity=".85"/>
+      <path d="M46 80 L50 34 L70 34 L74 80 Z" fill="#FFF8EC"/>
+      <path d="M48.6 66 L71.4 66 L72.2 58 L47.8 58 Z" fill="#E8604C"/>
+      <path d="M49.6 48 L70.4 48 L71.2 40 L48.8 40 Z" fill="#E8604C"/>
+      <rect x="50" y="24" width="20" height="10" rx="2" fill="#F5D98B"/>
+      <path d="M46 24 L74 24 L60 12 Z" fill="#E8604C"/>
+      <circle cx="60" cy="29" r="3" fill="#FFF6D6"/>
+    </svg>
+  </div>
+
+  <!-- 浪花 -->
+  <div class="shore">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+      <g class="wave-move slow">
+        <path d="M0,50 Q90,18 180,50 T360,50 T540,50 T720,50 T900,50 T1080,50 T1260,50 T1440,50 L1440,90 L0,90 Z" fill="#8FD3DE" opacity=".55"/>
+        <path transform="translate(1440,0)" d="M0,50 Q90,18 180,50 T360,50 T540,50 T720,50 T900,50 T1080,50 T1260,50 T1440,50 L1440,90 L0,90 Z" fill="#8FD3DE" opacity=".55"/>
+      </g>
+      <g class="wave-move">
+        <path d="M0,62 Q90,34 180,62 T360,62 T540,62 T720,62 T900,62 T1080,62 T1260,62 T1440,62 L1440,90 L0,90 Z" fill="#EAF9FC" opacity=".9"/>
+        <path transform="translate(1440,0)" d="M0,62 Q90,34 180,62 T360,62 T540,62 T720,62 T900,62 T1080,62 T1260,62 T1440,62 L1440,90 L0,90 Z" fill="#EAF9FC" opacity=".9"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wet-sand"></div>
+  <div class="beach"></div>
+
+  <!-- 沙滩上的椰子树 -->
+  <div class="lane" style="--dur:38s">
+    <svg class="palm" style="--x:10vw; --y:22vh;" viewBox="0 0 120 200">
+      <path d="M60 200 C54 156 52 116 60 74" stroke="#9A6E45" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M60 200 C55 156 53 116 60 74" stroke="#B48555" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+      <g fill="#2E8A5F">
+        <path d="M60 72 C42 52 20 48 4 58 C22 60 44 66 60 76 Z"/>
+        <path d="M60 72 C48 44 34 26 16 20 C30 34 46 50 58 74 Z"/>
+        <path d="M60 72 C62 44 60 22 54 4 C60 24 65 48 65 72 Z"/>
+        <path d="M60 72 C72 44 86 26 104 20 C90 34 74 50 62 74 Z"/>
+        <path d="M60 72 C78 52 100 48 116 58 C98 60 76 66 60 76 Z"/>
+        <path d="M60 72 C44 84 30 98 24 114 C38 102 52 88 62 76 Z"/>
+        <path d="M60 72 C76 84 90 98 96 114 C82 102 68 88 58 76 Z"/>
+      </g>
+      <g fill="#3AA06E">
+        <path d="M60 72 C42 52 20 48 4 58 C22 60 44 66 60 76 Z" opacity=".55"/>
+        <path d="M60 72 C78 52 100 48 116 58 C98 60 76 66 60 76 Z" opacity=".55"/>
+      </g>
+      <circle cx="56" cy="76" r="5" fill="#7A5232"/>
+      <circle cx="65" cy="74" r="4.6" fill="#8A5F3A"/>
+    </svg>
+
+    <svg class="palm" style="--x:56vw; --y:21.4vh; transform:scale(.82);" viewBox="0 0 120 200">
+      <path d="M60 200 C54 156 52 116 60 74" stroke="#9A6E45" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <g fill="#2E8A5F">
+        <path d="M60 72 C42 52 20 48 4 58 C22 60 44 66 60 76 Z"/>
+        <path d="M60 72 C48 44 34 26 16 20 C30 34 46 50 58 74 Z"/>
+        <path d="M60 72 C62 44 60 22 54 4 C60 24 65 48 65 72 Z"/>
+        <path d="M60 72 C72 44 86 26 104 20 C90 34 74 50 62 74 Z"/>
+        <path d="M60 72 C78 52 100 48 116 58 C98 60 76 66 60 76 Z"/>
+        <path d="M60 72 C44 84 30 98 24 114 C38 102 52 88 62 76 Z"/>
+        <path d="M60 72 C76 84 90 98 96 114 C82 102 68 88 58 76 Z"/>
+      </g>
+      <circle cx="56" cy="76" r="5" fill="#7A5232"/>
+    </svg>
+
+    <svg class="palm" style="--x:86vw; --y:22.4vh; transform:scale(.9);" viewBox="0 0 120 200">
+      <path d="M60 200 C54 156 52 116 60 74" stroke="#9A6E45" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <g fill="#2E8A5F">
+        <path d="M60 72 C42 52 20 48 4 58 C22 60 44 66 60 76 Z"/>
+        <path d="M60 72 C48 44 34 26 16 20 C30 34 46 50 58 74 Z"/>
+        <path d="M60 72 C62 44 60 22 54 4 C60 24 65 48 65 72 Z"/>
+        <path d="M60 72 C72 44 86 26 104 20 C90 34 74 50 62 74 Z"/>
+        <path d="M60 72 C78 52 100 48 116 58 C98 60 76 66 60 76 Z"/>
+        <path d="M60 72 C76 84 90 98 96 114 C82 102 68 88 58 76 Z"/>
+      </g>
+      <circle cx="56" cy="76" r="5" fill="#7A5232"/>
+    </svg>
+  </div>
+
+  <!-- 近景遮阳伞 / 礁石 / 海星 -->
+  <div class="lane" style="--dur:16s">
+    <svg class="umbrella" style="--x:16vw; --y:1.4vh;" viewBox="0 0 120 120">
+      <line x1="60" y1="58" x2="60" y2="112" stroke="#B98B57" stroke-width="4" stroke-linecap="round"/>
+      <path d="M8 58 A52 52 0 0 1 112 58 Z" fill="#FF7A6B"/>
+      <path d="M8 58 A52 52 0 0 1 112 58 Z" fill="none" stroke="#FFF3E2" stroke-width="2"/>
+      <path d="M60 6 A52 52 0 0 1 112 58 L88 58 A28 52 0 0 0 60 6 Z" fill="#FFF3E2" opacity=".85"/>
+      <path d="M60 6 A52 52 0 0 0 8 58 L32 58 A28 52 0 0 1 60 6 Z" fill="#FFF3E2" opacity=".85"/>
+    </svg>
+
+    <svg class="umbrella" style="--x:70vw; --y:2vh; transform:scale(.86);" viewBox="0 0 120 120">
+      <line x1="60" y1="58" x2="60" y2="112" stroke="#B98B57" stroke-width="4" stroke-linecap="round"/>
+      <path d="M8 58 A52 52 0 0 1 112 58 Z" fill="#57B7C6"/>
+      <path d="M60 6 A52 52 0 0 1 112 58 L88 58 A28 52 0 0 0 60 6 Z" fill="#FFF3E2" opacity=".85"/>
+      <path d="M60 6 A52 52 0 0 0 8 58 L32 58 A28 52 0 0 1 60 6 Z" fill="#FFF3E2" opacity=".85"/>
+    </svg>
+
+    <svg class="rock" style="--x:38vw; --y:0;" viewBox="0 0 100 60">
+      <path d="M4 56 C10 34 24 20 44 20 C60 20 66 30 78 32 C90 34 96 44 98 56 Z" fill="#8C9AA0"/>
+      <path d="M4 56 C12 42 22 30 40 26 C34 38 30 48 30 56 Z" fill="#A9B6BB"/>
+    </svg>
+
+    <svg class="starfish" style="--x:58vw; --y:1vh; transform:rotate(12deg);" viewBox="0 0 40 40">
+      <path d="M20 2 L25 15 L39 16 L28 25 L32 38 L20 30 L8 38 L12 25 L1 16 L15 15 Z" fill="#F08A5D"/>
+    </svg>
+  </div>
+
+  <!-- 沙尘 -->
+  <div class="dust" style="animation-delay:0s"></div>
+  <div class="dust" style="animation-delay:.4s; bottom:7.6vh"></div>
+  <div class="dust" style="animation-delay:.8s; bottom:9vh"></div>
+  <div class="dust" style="animation-delay:1.2s; bottom:6.8vh"></div>
+
+  <!-- ---------- 鹈鹕骑车 ---------- -->
+  <div class="pelican">
+    <svg viewBox="0 0 340 250" aria-label="一只戴围巾的鹈鹕在海边骑自行车">
+      <defs>
+        <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="70%" stop-color="#FBFBF6"/>
+          <stop offset="100%" stop-color="#E9E9E0"/>
+        </linearGradient>
+        <linearGradient id="beakG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFC15A"/>
+          <stop offset="100%" stop-color="#EF9A2A"/>
+        </linearGradient>
+        <linearGradient id="pouchG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFD08A"/>
+          <stop offset="100%" stop-color="#F7B45E"/>
+        </linearGradient>
+      </defs>
+
+      <!-- 地面阴影 -->
+      <ellipse cx="166" cy="233" rx="118" ry="10" fill="rgba(140,95,45,.20)"/>
+
+      <g class="rig">
+        <!-- ===== 自行车 ===== -->
+        <!-- 车轮 -->
+        <g>
+          <circle cx="92" cy="186" r="36" fill="none" stroke="#2B3A42" stroke-width="6"/>
+          <circle cx="92" cy="186" r="30" fill="none" stroke="#9FB4BC" stroke-width="1.4"/>
+          <g class="spin rear">
+            <line x1="62" y1="186" x2="122" y2="186" stroke="#7C949D" stroke-width="1.6"/>
+            <line x1="77" y1="160" x2="107" y2="212" stroke="#7C949D" stroke-width="1.6"/>
+            <line x1="77" y1="212" x2="107" y2="160" stroke="#7C949D" stroke-width="1.6"/>
+          </g>
+          <circle cx="92" cy="186" r="4.4" fill="#2B3A42"/>
+        </g>
+        <g>
+          <circle cx="238" cy="186" r="36" fill="none" stroke="#2B3A42" stroke-width="6"/>
+          <circle cx="238" cy="186" r="30" fill="none" stroke="#9FB4BC" stroke-width="1.4"/>
+          <g class="spin front">
+            <line x1="208" y1="186" x2="268" y2="186" stroke="#7C949D" stroke-width="1.6"/>
+            <line x1="223" y1="160" x2="253" y2="212" stroke="#7C949D" stroke-width="1.6"/>
+            <line x1="223" y1="212" x2="253" y2="160" stroke="#7C949D" stroke-width="1.6"/>
+          </g>
+          <circle cx="238" cy="186" r="4.4" fill="#2B3A42"/>
+        </g>
+
+        <!-- 车架 -->
+        <g stroke="#3A4B54" stroke-width="5" stroke-linecap="round" fill="none">
+          <path d="M126 128 L162 180"/>
+          <path d="M126 128 L222 132"/>
+          <path d="M162 180 L222 132"/>
+          <path d="M92 186 L162 180"/>
+          <path d="M92 186 L126 128"/>
+          <path d="M222 132 L238 186"/>
+          <path d="M222 132 L228 114"/>
+        </g>
+        <!-- 车把 -->
+        <path d="M228 114 C236 108 242 108 246 112" stroke="#2B3A42" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- 车铃 -->
+        <circle cx="240" cy="107" r="4.6" fill="#FFD25E" stroke="#D9A23B" stroke-width="1.2"/>
+
+        <!-- 车座 -->
+        <path d="M112 126 Q126 117 141 125 L139 131 Q126 125 114 131 Z" fill="#2B3A42"/>
+
+        <!-- 链条 -->
+        <path d="M92 186 L162 180" stroke="#8FA6AE" stroke-width="2" stroke-dasharray="3 3"/>
+
+        <!-- 曲柄 + 脚踏（转动） -->
+        <g class="crank">
+          <circle cx="162" cy="180" r="9.5" fill="none" stroke="#8FA6AE" stroke-width="3"/>
+          <line x1="162" y1="180" x2="162" y2="196" stroke="#3A4B54" stroke-width="4" stroke-linecap="round"/>
+          <line x1="162" y1="180" x2="162" y2="164" stroke="#3A4B54" stroke-width="4" stroke-linecap="round"/>
+          <rect x="154" y="193" width="16" height="5" rx="2" fill="#2B3A42"/>
+          <rect x="154" y="162" width="16" height="5" rx="2" fill="#2B3A42"/>
+        </g>
+
+        <!-- ===== 鹈鹕腿 ===== -->
+        <g class="leg-b" stroke="#EF9A3E" stroke-width="7" stroke-linecap="round" fill="none">
+          <path d="M146 120 L172 146 L176 168"/>
+        </g>
+        <g class="leg-a" stroke="#F2A94F" stroke-width="7" stroke-linecap="round" fill="none">
+          <path d="M146 120 L156 152 L152 190"/>
+        </g>
+        <!-- 脚掌 -->
+        <path d="M144 190 L162 190 L154 198 Z" fill="#EF9A3E"/>
+        <path d="M168 168 L184 170 L176 176 Z" fill="#EF9A3E"/>
+
+        <!-- ===== 鹈鹕身体 ===== -->
+        <!-- 尾羽 -->
+        <path d="M112 100 C92 100 78 108 72 118 C86 116 102 116 118 112 Z" fill="#F1F1EA"/>
+        <!-- 身体 -->
+        <ellipse cx="140" cy="104" rx="37" ry="27" transform="rotate(-6 140 104)" fill="url(#bodyG)"/>
+        <!-- 身体阴影 -->
+        <path d="M118 118 C132 128 156 126 172 112 C166 126 142 132 122 124 Z" fill="#E3E3D9" opacity=".8"/>
+        <!-- 翅膀 -->
+        <path d="M118 92 C140 78 166 88 170 108 C152 120 126 116 118 92 Z" fill="#F6F6F0" stroke="#E1E1D6" stroke-width="1.4"/>
+        <path d="M128 100 C140 94 154 98 162 108" stroke="#DCDCD0" stroke-width="1.6" fill="none"/>
+        <path d="M124 108 C136 102 150 106 158 114" stroke="#DCDCD0" stroke-width="1.6" fill="none"/>
+
+        <!-- 脖子 -->
+        <path d="M158 94 C172 82 188 70 200 62" stroke="#FFFFFF" stroke-width="22" fill="none" stroke-linecap="round"/>
+        <path d="M158 94 C172 82 188 70 200 62" stroke="#F2F2EA" stroke-width="22" fill="none" stroke-linecap="round" opacity=".35"/>
+
+        <!-- 围巾 -->
+        <path class="scarf-2" d="M196 64 C176 68 160 78 142 74 C156 86 178 84 197 76 Z" fill="#3AAFA9"/>
+        <path class="scarf-1" d="M197 70 C180 78 166 88 150 88 C164 96 184 90 198 82 Z" fill="#2C9C97"/>
+        <ellipse cx="198" cy="69" rx="9" ry="13" transform="rotate(24 198 69)" fill="#35A8A2"/>
+
+        <!-- 头 -->
+        <circle cx="208" cy="55" r="17.5" fill="#FFFFFF"/>
+        <!-- 头顶小冠 -->
+        <path d="M196 42 C200 34 208 32 214 36 C208 38 202 42 200 48 Z" fill="#F8E39B"/>
+
+        <!-- 喙 -->
+        <path d="M220 47 L288 61 L284 68 L220 57 Z" fill="url(#beakG)" stroke="#E08E22" stroke-width="1"/>
+        <path d="M220 57 Q240 88 284 68 L288 61 Q250 82 220 53 Z" fill="url(#pouchG)" opacity=".95"/>
+        <path d="M222 55 L284 66" stroke="#E08E22" stroke-width="1.2" opacity=".5"/>
+
+        <!-- 眼睛 -->
+        <circle cx="212" cy="50" r="3.8" fill="#2B2B2B"/>
+        <circle cx="213.2" cy="48.8" r="1.3" fill="#FFFFFF"/>
+
+        <!-- 扶车把的翅膀 -->
+        <path class="wing-arm" d="M160 100 C182 100 204 108 226 114" stroke="#FFFFFF" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <path class="wing-arm" d="M160 100 C182 100 204 108 226 114" stroke="#E8E8DE" stroke-width="11" fill="none" stroke-linecap="round" opacity=".3"/>
+
+        <!-- 车篮 + 小鱼 -->
+        <g>
+          <rect x="236" y="104" width="36" height="21" rx="4" fill="#DCA65C" stroke="#B5833F" stroke-width="1.6"/>
+          <path d="M240 110 L268 110 M240 117 L268 117" stroke="#B5833F" stroke-width="1.4" opacity=".7"/>
+          <path d="M244 104 L246 96 L252 102 L258 95 L262 103" fill="#7CC5D8" stroke="#4E9DB3" stroke-width="1.2"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="bell-pop" id="bell">叮铃～ 🚲</div>
+
+  <div class="hud">
+    <h1>海边骑行</h1>
+    <p>鹈鹕先生的日落巡游</p>
+    <span class="tag">点击画面 · 加速骑行</span>
+  </div>
+
+  <div class="vignette"></div>
+</div>
+
+<script>
+  // 视差层复制一份，实现无缝循环
+  document.querySelectorAll('.lane').forEach(function (lane) {
+    Array.prototype.slice.call(lane.children).forEach(function (child) {
+      var dup = child.cloneNode(true);
+      dup.classList.add('dup');
+      dup.setAttribute('aria-hidden', 'true');
+      lane.appendChild(dup);
+    });
+  });
+
+  // 点击加速 + 铃铛气泡
+  var scene = document.getElementById('scene');
+  var bell = document.getElementById('bell');
+  var root = document.documentElement;
+  var timer = null, bellTimer = null;
+
+  function boost() {
+    root.style.setProperty('--k', '0.42');
+    bell.classList.add('show');
+    clearTimeout(timer);
+    clearTimeout(bellTimer);
+    timer = setTimeout(function () { root.style.setProperty('--k', '1'); }, 1700);
+    bellTimer = setTimeout(function () { bell.classList.remove('show'); }, 1100);
+  }
+
+  scene.addEventListener('click', boost);
+  window.addEventListener('keydown', function (e) {
+    if (e.code === 'Space') { e.preventDefault(); boost(); }
+  });
+</script>
+</body>
+</html>
