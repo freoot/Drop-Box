@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鹈鹕骑单车环游</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+        }
+
+        /* 背景 - 天空 */
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: radial-gradient(circle at 30% 30%, #87CEEB, #4682B4);
+            z-index: 1;
+        }
+
+        /* 云朵 */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .cloud1 {
+            width: 120px;
+            height: 80px;
+            top: 10%;
+            left: -150px;
+            animation-delay: 0s;
+        }
+
+        .cloud1::before {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: 20px;
+        }
+
+        .cloud1::after {
+            width: 80px;
+            height: 80px;
+            top: 10px;
+            left: 60px;
+        }
+
+        /* 太阳 */
+        .sun {
+            position: absolute;
+            top: 5%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            border-radius: 50%;
+            box-shadow: 0 0 50px #FFD700;
+            animation: rotateSun 8s linear infinite;
+            z-index: 2;
+        }
+
+        .sun-rays {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow:
+                0 0 20px #FFD700,
+                0 0 30px #FFD700,
+                0 0 40px #FFD700;
+        }
+
+        /* 地面 */
+        .ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(180deg, #2d5a27, #1a3a1a);
+            z-index: 3;
+            overflow: hidden;
+        }
+
+        .grass {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(34, 139, 34, 0.3) 0px,
+                rgba(34, 139, 34, 0.3) 10px,
+                rgba(34, 139, 34, 0.5) 10px,
+                rgba(34, 139, 34, 0.5) 20px
+            );
+        }
+
+        /* 鹈鹕骑车 */
+        .capybara-bike {
+            position: absolute;
+            bottom: 35%;
+            left: -200px;
+            width: 180px;
+            height: 120px;
+            animation: bikeTour 30s linear infinite;
+            z-index: 10;
+        }
+
+        /* 鹈鹕身体 */
+        .capybara {
+            position: absolute;
+            width: 120px;
+            height: 80px;
+            background: #8B4513;
+            border-radius: 50% 50% 0 0;
+            top: -40px;
+            left: 30px;
+            box-shadow: inset -5px -10px 0 rgba(0,0,0,0.3);
+            animation: blink 4s infinite;
+        }
+
+        .capybara::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #8B4513;
+            border-radius: 50%;
+            top: 15px;
+            left: 15px;
+            border: 2px solid #654321;
+        }
+
+        .capybara::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 15px;
+            background: #8B4513;
+            bottom: -5px;
+            left: 50px;
+            border-radius: 0 0 50% 50%;
+            border: 2px solid #654321;
+        }
+
+        /* 鹈鹕嘴巴 */
+        .beak {
+            position: absolute;
+            width: 20px;
+            height: 15px;
+            background: #CD853F;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            top: 25px;
+            left: -15px;
+            border: 1px solid #8B4513;
+        }
+
+        .beak::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 5px;
+            background: #CD853F;
+            top: 5px;
+            left: 5px;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+        }
+
+        /* 鹈鹕眼睛 */
+        .eye {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #FFF;
+            border-radius: 50%;
+            top: 28px;
+            left: 45px;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .eye::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+            top: 2px;
+            left: 3px;
+        }
+
+        /* 自行车 */
+        .bike-frame {
+            position: absolute;
+            bottom: 10px;
+            left: 80px;
+            width: 80px;
+            height: 30px;
+            border: 4px solid #333;
+            border-radius: 5px;
+            background: #555;
+            transform: rotate(-20deg);
+            transform-origin: bottom left;
+            animation: bikeBounce 2s infinite ease-in-out;
+        }
+
+        .bike-frame::before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 6px;
+            background: #333;
+            top: 12px;
+            left: -10px;
+            border-radius: 3px;
+        }
+
+        .bike-frame::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 8px;
+            background: #333;
+            bottom: -5px;
+            left: 10px;
+            border-radius: 4px;
+        }
+
+        .bike-seat {
+            position: absolute;
+            width: 25px;
+            height: 10px;
+            background: #333;
+            top: -8px;
+            left: 10px;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .bike-handle {
+            position: absolute;
+            width: 15px;
+            height: 30px;
+            border: 4px solid #333;
+            border-left: none;
+            border-radius: 0 30px 30px 0;
+            top: -18px;
+            left: 65px;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+        }
+
+        .bike-pedal {
+            position: absolute;
+            width: 12px;
+            height: 40px;
+            border: 3px solid #333;
+            border-radius: 50% 50% 0 0;
+            top: -25px;
+            left: 85px;
+            transform: rotate(90deg);
+            transform-origin: center 20px;
+            animation: pedalSpin 1s linear infinite;
+        }
+
+        .bike-wheel {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 4px solid #222;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 2s linear infinite;
+        }
+
+        .bike-wheel-front {
+            top: 25px;
+            left: 30px;
+        }
+
+        .bike-wheel-back {
+            top: 25px;
+            left: 85px;
+        }
+
+        /* 前轮轴线 */
+        .wheel-line {
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #444;
+            top: 43px;
+            left: 33px;
+        }
+
+        /* 文字展示 */
+        .title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            z-index: 20;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        .subtitle {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: #FFF;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 20;
+            animation: fadeSlide 4s infinite;
+        }
+
+        /* 环游指示 */
+        .route-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #FFD700;
+            animation: pulse 2s infinite;
+        }
+
+        .route-dot:nth-child(1) {
+            top: 20%;
+            left: 10%;
+        }
+
+        .route-dot:nth-child(2) {
+            top: 35%;
+            left: 30%;
+        }
+
+        .route-dot:nth-child(3) {
+            top: 25%;
+            left: 55%;
+        }
+
+        .route-dot:nth-child(4) {
+            top: 15%;
+            left: 75%;
+        }
+
+        .route-dot:nth-child(5) {
+            top: 10%;
+            left: 90%;
+        }
+
+        /* 动画关键帧 */
+        @keyframes bikeTour {
+            0% { transform: translateX(-200px) rotate(0deg); }
+            15% { transform: translateX(40px) rotate(2deg); }
+            30% { transform: translateX(200px) rotate(-1deg); }
+            45% { transform: translateX(350px) rotate(0deg); }
+            60% { transform: translateX(500px) rotate(2deg); }
+            75% { transform: translateX(650px) rotate(-2deg); }
+            100% { transform: translateX(120vw) rotate(0deg); }
+        }
+
+        @keyframes bikeBounce {
+            0%, 100% { transform: translateY(0) rotate(-20deg); }
+            50% { transform: translateY(-5px) rotate(-20deg); }
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pedalSpin {
+            0% { transform: rotate(90deg) rotate(0deg); }
+            100% { transform: rotate(90deg) rotate(180deg); }
+        }
+
+        @keyframes blink {
+            0%, 90% { opacity: 1; }
+            95% { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotateSun {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.5); }
+            to { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.6); }
+        }
+
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        /* 速度梯度效果 */
+        .speed-line {
+            position: absolute;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            animation: speedLine 30s linear infinite;
+            z-index: 2;
+        }
+
+        .speed-line:nth-child(1) {
+            top: 40%;
+            animation-delay: 0s;
+        }
+
+        .speed-line:nth-child(2) {
+            top: 50%;
+            animation-delay: -5s;
+        }
+
+        .speed-line:nth-child(3) {
+            top: 60%;
+            animation-delay: -10s;
+        }
+
+        @keyframes speedLine {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(150vw); }
+        }
+
+        /* 粒子效果 */
+        .sparkle {
+            position: absolute;
+            color: #FFD700;
+            font-size: 20px;
+            animation: sparkle 3s infinite;
+            opacity: 0;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0; transform: translateY(0) scale(0); }
+            25% { opacity: 1; }
+            50% { opacity: 1; transform: translateY(-10px) scale(1); }
+            100% { opacity: 0; transform: translateY(-20px) scale(0); }
+        }
+
+        /* 尾随效果 */
+        .trail {
+            position: absolute;
+            width: 180px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, rgba(255,215,0,0) 70%);
+            filter: blur(20px);
+            animation: bikeTour 30s linear infinite;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .trail::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, rgba(255,215,0,0.5) 0%, rgba(255,215,0,0) 70%);
+            border-radius: 50%;
+            top: 20px;
+            left: 40px;
+            animation: bikeTour 30s linear infinite;
+            z-index: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <!-- 天空背景 -->
+        <div class="sky">
+            <div class="sun">
+                <div class="sun-rays"></div>
+            </div>
+            <div class="cloud cloud1"></div>
+            <div class="cloud" style="width: 150px; height: 100px; top: 20%; left: 40%; animation-delay: 2s;"></div>
+            <div class="cloud" style="width: 120px; height: 80px; top: 30%; left: 60%; animation-delay: -3s;"></div>
+        </div>
+
+        <!-- 地面 -->
+        <div class="ground">
+            <div class="grass"></div>
+        </div>
+
+        <!-- 尾随光效 -->
+        <div class="trail"></div>
+
+        <!-- 速度线 -->
+        <div class="speed-line"></div>
+        <div class="speed-line"></div>
+        <div class="speed-line"></div>
+
+        <!-- 环游路线指示 -->
+        <div class="route-dot"></div>
+        <div class="route-dot"></div>
+        <div class="route-dot"></div>
+        <div class="route-dot"></div>
+        <div class="route-dot"></div>
+
+        <!-- 鹈鹕骑车 -->
+        <div class="capybara-bike">
+            <div class="beak"></div>
+            <div class="capybara">
+                <div class="eye"></div>
+                <div class="eye" style="left: 65px;"></div>
+            </div>
+            <div class="bike-frame">
+                <div class="bike-seat"></div>
+                <div class="bike-handle"></div>
+                <div class="bike-pedal"></div>
+                <div class="bike-wheel bike-wheel-front"></div>
+                <div class="bike-wheel bike-wheel-back"></div>
+                <div class="wheel-line"></div>
+            </div>
+        </div>
+
+        <!-- 标题 -->
+        <div class="title">鹈鹕骑单车环游 🌍</div>
+        <div class="subtitle">让世界成为你的滑板！</div>
+    </div>
+
+    <script>
+        // 创建尾随粒子效果
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.textContent = '✨';
+            document.querySelector('.scene').appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // 当鹈鹕到达不同地点时创建粒子
+        const bike = document.querySelector('.capybara-bike');
+        let lastSparkle = 0;
+
+        setInterval(() => {
+            const now = Date.now();
+            if (now - lastSparkle > 5000) {
+                const x = Math.random() * window.innerWidth;
+                const y = 400 + Math.random() * 200;
+                createSparkle(x, y);
+                lastSparkle = now;
+            }
+        }, 3000);
+
+        // 响应式调整
+        window.addEventListener('resize', () => {
+            // 动画自动适应屏幕尺寸
+        });
+    </script>
+</body>
+</html>
