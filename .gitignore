@@ -1,3 +1,30 @@
 # macOS
 .localized
 .DS_Store
+
+# Credentials and local account settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+**/.npmrc
+**/.local/
+**/.gstack/
+
+# Dependencies, caches and generated output
+node_modules/
+.venv/
+venv/
+.godot/
+.cache/
+.uv-cache/
+.hf-cache/
+.uv-bootstrap/
+dist/
+build/
+
+# Staging area used during safe imports
+.staging/
