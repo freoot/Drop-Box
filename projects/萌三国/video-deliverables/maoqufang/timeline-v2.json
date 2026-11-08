@@ -1,0 +1,1947 @@
+{
+  "projectId": "d85e2874-2604-467d-ac2e-163822cd867c",
+  "timelineId": "41a6e286-0a86-4604-acb0-c1d3f138e457",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationFrames": 1950,
+  "items": [
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 75,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 3031.04,
+        "id": "0d1253bce5",
+        "left": -2736.8,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 0,
+        "top": 0,
+        "width": 6553.6,
+        "cropBottom": 0.36655405405405406,
+        "cropLeft": 0.4176025390625,
+        "cropRight": 0.4176025390625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 46500000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2643.3488372093025,
+        "id": "2081878c78",
+        "left": -2451.6279069767443,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 75,
+        "top": 0,
+        "width": 5715.3488372093025,
+        "cropBottom": 0.2736486486486487,
+        "cropLeft": 0.428955078125,
+        "cropRight": 0.382080078125,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 26000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2772.292682926829,
+        "id": "236d275121",
+        "left": -2503.90243902439,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 135,
+        "top": 0,
+        "width": 5994.1463414634145,
+        "cropBottom": 0.30743243243243246,
+        "cropLeft": 0.417724609375,
+        "cropRight": 0.402099609375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 12000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2643.3488372093025,
+        "id": "7739ad6ada",
+        "left": -2719.5348837209303,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 195,
+        "top": 0,
+        "width": 5715.3488372093025,
+        "cropBottom": 0.2736486486486487,
+        "cropLeft": 0.475830078125,
+        "cropRight": 0.335205078125,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 46000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2772.292682926829,
+        "id": "b2129dfe40",
+        "left": -2784.8780487804875,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 255,
+        "top": 0,
+        "width": 5994.1463414634145,
+        "cropBottom": 0.30743243243243246,
+        "cropLeft": 0.464599609375,
+        "cropRight": 0.355224609375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 74000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2706.285714285714,
+        "id": "139def2dd3",
+        "left": -2865.7142857142853,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 315,
+        "top": 0,
+        "width": 5851.428571428571,
+        "cropBottom": 0.29054054054054057,
+        "cropLeft": 0.48974609375,
+        "cropRight": 0.32568359375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 56000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 75,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2772.292682926829,
+        "id": "2c14a5b422",
+        "left": -2503.90243902439,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 375,
+        "top": 0,
+        "width": 5994.1463414634145,
+        "cropBottom": 0.30743243243243246,
+        "cropLeft": 0.417724609375,
+        "cropRight": 0.402099609375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 20000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 75,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2706.285714285714,
+        "id": "8abace97d1",
+        "left": -1197.142857142857,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 450,
+        "top": 0,
+        "width": 5851.428571428571,
+        "cropBottom": 0.29054054054054057,
+        "cropLeft": 0.20458984375,
+        "cropRight": 0.61083984375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 68000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 75,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 3031.04,
+        "id": "3a589eecce",
+        "left": -4119.2,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 525,
+        "top": 0,
+        "width": 6553.6,
+        "cropBottom": 0.36655405405405406,
+        "cropLeft": 0.6285400390625,
+        "cropRight": 0.2066650390625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 50000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 84,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2418.382978723404,
+        "id": "be04c56222",
+        "left": -2115.31914893617,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 600,
+        "top": 0,
+        "width": 5228.936170212765,
+        "cropBottom": 0.20608108108108103,
+        "cropLeft": 0.404541015625,
+        "cropRight": 0.388916015625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 62000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 90,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2806.5185185185182,
+        "id": "50d29dc35c",
+        "left": -2636.296296296296,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 684,
+        "top": 0,
+        "width": 6068.148148148148,
+        "cropBottom": 0.3158783783783784,
+        "cropLeft": 0.4344482421875,
+        "cropRight": 0.3875732421875,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 12000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 45,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 1994.1052631578946,
+        "id": "ca5eaf83ae",
+        "left": -1649.4736842105262,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 774,
+        "top": 0,
+        "width": 4311.578947368421,
+        "cropBottom": 0.03716216216216217,
+        "cropLeft": 0.382568359375,
+        "cropRight": 0.366943359375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 31800000,
+        "type": "video",
+        "speed": {
+          "mode": "constant",
+          "rate": 0.25
+        }
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 3031.04,
+        "id": "0c2b1e21cf",
+        "left": -3812,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 819,
+        "top": 0,
+        "width": 6553.6,
+        "cropBottom": 0.36655405405405406,
+        "cropLeft": 0.5816650390625,
+        "cropRight": 0.2535400390625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 47200000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 81,
+        "fadeInDurationFrames": 5,
+        "fadeOutDurationFrames": 5,
+        "height": 989.090909090909,
+        "id": "fa12f1b967",
+        "left": 633.6363636363636,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 879,
+        "top": 1080.6060606060605,
+        "width": 461.57575757575756,
+        "cropBottom": 0,
+        "cropLeft": 0,
+        "cropRight": 0,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "6a387357fe",
+        "borderRadius": 0,
+        "sourceIn": 110000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "9d10cebb7f",
+        "name": "人物圆形小窗",
+        "type": "video"
+      },
+      "asset": {
+        "id": "6a387357fe",
+        "name": "c180195a174213ce2d1c66a26872d510",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 84,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2706.285714285714,
+        "id": "83fd2cddf7",
+        "left": -2202.8571428571427,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 960,
+        "top": 0,
+        "width": 5851.428571428571,
+        "cropBottom": 0.29054054054054057,
+        "cropLeft": 0.37646484375,
+        "cropRight": 0.43896484375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 66000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 84,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2772.292682926829,
+        "id": "5960ed4644",
+        "left": -2738.048780487805,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1044,
+        "top": 0,
+        "width": 5994.1463414634145,
+        "cropBottom": 0.30743243243243246,
+        "cropLeft": 0.456787109375,
+        "cropRight": 0.363037109375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 60000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 78,
+        "fadeInDurationFrames": 5,
+        "fadeOutDurationFrames": 5,
+        "height": 989.090909090909,
+        "id": "26d8ac5c29",
+        "left": 633.6363636363636,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1128,
+        "top": 1080.6060606060605,
+        "width": 461.57575757575756,
+        "cropBottom": 0,
+        "cropLeft": 0,
+        "cropRight": 0,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "6a387357fe",
+        "borderRadius": 0,
+        "sourceIn": 150000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "9d10cebb7f",
+        "name": "人物圆形小窗",
+        "type": "video"
+      },
+      "asset": {
+        "id": "6a387357fe",
+        "name": "c180195a174213ce2d1c66a26872d510",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 66,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 3031.04,
+        "id": "c339fb5ea9",
+        "left": -2378.4,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1206,
+        "top": 0,
+        "width": 6553.6,
+        "cropBottom": 0.36655405405405406,
+        "cropLeft": 0.3629150390625,
+        "cropRight": 0.4722900390625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 52500000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 69,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2706.285714285714,
+        "id": "d7e166a685",
+        "left": -1402.8571428571427,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1272,
+        "top": 0,
+        "width": 5851.428571428571,
+        "cropBottom": 0.29054054054054057,
+        "cropLeft": 0.23974609375,
+        "cropRight": 0.57568359375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 70000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 99,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 3031.04,
+        "id": "f90f2b7c5b",
+        "left": -2634.4,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1341,
+        "top": 0,
+        "width": 6553.6,
+        "cropBottom": 0.36655405405405406,
+        "cropLeft": 0.4019775390625,
+        "cropRight": 0.4332275390625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 48500000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 66,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2706.285714285714,
+        "id": "b741704420",
+        "left": -3528.5714285714284,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1440,
+        "top": 0,
+        "width": 5851.428571428571,
+        "cropBottom": 0.29054054054054057,
+        "cropLeft": 0.60302734375,
+        "cropRight": 0.21240234375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 72000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 69,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2772.292682926829,
+        "id": "a2d049219a",
+        "left": -2738.048780487805,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1506,
+        "top": 0,
+        "width": 5994.1463414634145,
+        "cropBottom": 0.30743243243243246,
+        "cropLeft": 0.456787109375,
+        "cropRight": 0.363037109375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 24000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 81,
+        "fadeInDurationFrames": 5,
+        "fadeOutDurationFrames": 5,
+        "height": 989.090909090909,
+        "id": "d9ef8101c9",
+        "left": 633.6363636363636,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1575,
+        "top": 1080.6060606060605,
+        "width": 461.57575757575756,
+        "cropBottom": 0,
+        "cropLeft": 0,
+        "cropRight": 0,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "6a387357fe",
+        "borderRadius": 0,
+        "sourceIn": 205000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "9d10cebb7f",
+        "name": "人物圆形小窗",
+        "type": "video"
+      },
+      "asset": {
+        "id": "6a387357fe",
+        "name": "c180195a174213ce2d1c66a26872d510",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 54,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2706.285714285714,
+        "id": "041c60f196",
+        "left": -3300,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1656,
+        "top": 0,
+        "width": 5851.428571428571,
+        "cropBottom": 0.29054054054054057,
+        "cropLeft": 0.56396484375,
+        "cropRight": 0.25146484375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 57500000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 120,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2772.292682926829,
+        "id": "b0739539cb",
+        "left": -2550.731707317073,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1710,
+        "top": 0,
+        "width": 5994.1463414634145,
+        "cropBottom": 0.30743243243243246,
+        "cropLeft": 0.425537109375,
+        "cropRight": 0.394287109375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 71000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2418.382978723404,
+        "id": "c487a82dbe",
+        "left": -2442.127659574468,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1830,
+        "top": 0,
+        "width": 5228.936170212765,
+        "cropBottom": 0.20608108108108103,
+        "cropLeft": 0.467041015625,
+        "cropRight": 0.326416015625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 75000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 60,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2914.4615384615386,
+        "id": "ba0261d463",
+        "left": -2660,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1890,
+        "top": 0,
+        "width": 6301.538461538462,
+        "cropBottom": 0.34121621621621623,
+        "cropLeft": 0.422119140625,
+        "cropRight": 0.406494140625,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "sourceIn": 9500000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 81,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 1994.1052631578946,
+        "id": "3177207dc4",
+        "left": -1649.4736842105262,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 879,
+        "top": 0,
+        "width": 4311.578947368421,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "cropBottom": 0.03716216216216217,
+        "cropLeft": 0.382568359375,
+        "cropRight": 0.366943359375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "sourceIn": 31800000,
+        "type": "video",
+        "speed": {
+          "mode": "constant",
+          "rate": 0.25
+        }
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 78,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 2706.285714285714,
+        "id": "4b08169f86",
+        "left": -2751.428571428571,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1128,
+        "top": 0,
+        "width": 5851.428571428571,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "cropBottom": 0.29054054054054057,
+        "cropLeft": 0.47021484375,
+        "cropRight": 0.34521484375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "sourceIn": 25000000,
+        "type": "video"
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 81,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 1994.1052631578946,
+        "id": "c394379539",
+        "left": -1649.4736842105262,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1575,
+        "top": 0,
+        "width": 4311.578947368421,
+        "assetId": "d7514f52ec",
+        "borderRadius": 0,
+        "cropBottom": 0.03716216216216217,
+        "cropLeft": 0.382568359375,
+        "cropRight": 0.366943359375,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "sourceIn": 31800000,
+        "type": "video",
+        "speed": {
+          "mode": "constant",
+          "rate": 0.25
+        }
+      },
+      "track": {
+        "id": "0f20758455",
+        "name": null,
+        "type": "video"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    },
+    {
+      "item": {
+        "assetId": "builtin:effect-mask",
+        "durationFrames": 81,
+        "enabled": true,
+        "id": "5b0720664b",
+        "propertyOverrides": {
+          "outlineStyle": "solid",
+          "outlineColor": "#F7EEDC",
+          "outlinePlacement": 0,
+          "maskMode": "set",
+          "mask": [
+            {
+              "id": "speaker_circle",
+              "kind": "ellipse",
+              "properties": {
+                "enabled": true,
+                "invert": false,
+                "startFrame": 0,
+                "durationFrames": 81,
+                "operation": "intersect",
+                "center_x": 0.46875,
+                "center_y": 0.3229166666666667,
+                "radius_x": 0.36830357142857145,
+                "radius_y": 0.171875,
+                "feather": 1
+              }
+            }
+          ],
+          "mask.speaker_circle.radius_x": 0.7366071428571429,
+          "mask.speaker_circle.radius_y": 0.7366071428571429
+        },
+        "sortOrder": 0,
+        "startFrame": 0,
+        "trackId": "9d10cebb-7fd0-4a7f-bdcf-63a47b22615e",
+        "target": {
+          "itemId": "fa12f1b9-67fe-4114-9bf0-8bbfbcf8c43d",
+          "kind": "item"
+        },
+        "type": "pixel-effect",
+        "mask": {
+          "mode": "set",
+          "nodes": [
+            {
+              "id": "speaker_circle",
+              "enabled": true,
+              "invert": false,
+              "startFrame": 0,
+              "durationFrames": 81,
+              "operation": "intersect",
+              "kind": "ellipse",
+              "parameters": {
+                "center_x": 0.46875,
+                "center_y": 0.3229166666666667,
+                "radius_x": 0.36830357142857145,
+                "radius_y": 0.171875,
+                "feather": 1
+              }
+            }
+          ],
+          "corrections": []
+        }
+      },
+      "track": {
+        "id": "9d10cebb7f",
+        "name": "人物圆形小窗",
+        "type": "video"
+      },
+      "asset": {
+        "id": "builtin:effect-mask",
+        "name": "Mask",
+        "type": "pixel-effect"
+      }
+    },
+    {
+      "item": {
+        "assetId": "builtin:effect-mask",
+        "durationFrames": 78,
+        "enabled": true,
+        "id": "ebb3e5d91f",
+        "propertyOverrides": {
+          "outlineStyle": "solid",
+          "outlineColor": "#F7EEDC",
+          "outlinePlacement": 0,
+          "maskMode": "set",
+          "mask": [
+            {
+              "id": "speaker_circle",
+              "kind": "ellipse",
+              "properties": {
+                "enabled": true,
+                "invert": false,
+                "startFrame": 0,
+                "durationFrames": 78,
+                "operation": "intersect",
+                "center_x": 0.46875,
+                "center_y": 0.3229166666666667,
+                "radius_x": 0.36830357142857145,
+                "radius_y": 0.171875,
+                "feather": 1
+              }
+            }
+          ],
+          "mask.speaker_circle.radius_x": 0.7366071428571429,
+          "mask.speaker_circle.radius_y": 0.7366071428571429
+        },
+        "sortOrder": 1,
+        "startFrame": 0,
+        "trackId": "9d10cebb-7fd0-4a7f-bdcf-63a47b22615e",
+        "target": {
+          "itemId": "26d8ac5c-299f-4f1d-9dd4-b284615c0434",
+          "kind": "item"
+        },
+        "type": "pixel-effect",
+        "mask": {
+          "mode": "set",
+          "nodes": [
+            {
+              "id": "speaker_circle",
+              "enabled": true,
+              "invert": false,
+              "startFrame": 0,
+              "durationFrames": 78,
+              "operation": "intersect",
+              "kind": "ellipse",
+              "parameters": {
+                "center_x": 0.46875,
+                "center_y": 0.3229166666666667,
+                "radius_x": 0.36830357142857145,
+                "radius_y": 0.171875,
+                "feather": 1
+              }
+            }
+          ],
+          "corrections": []
+        }
+      },
+      "track": {
+        "id": "9d10cebb7f",
+        "name": "人物圆形小窗",
+        "type": "video"
+      },
+      "asset": {
+        "id": "builtin:effect-mask",
+        "name": "Mask",
+        "type": "pixel-effect"
+      }
+    },
+    {
+      "item": {
+        "assetId": "builtin:effect-mask",
+        "durationFrames": 81,
+        "enabled": true,
+        "id": "b058212845",
+        "propertyOverrides": {
+          "outlineStyle": "solid",
+          "outlineColor": "#F7EEDC",
+          "outlinePlacement": 0,
+          "maskMode": "set",
+          "mask": [
+            {
+              "id": "speaker_circle",
+              "kind": "ellipse",
+              "properties": {
+                "enabled": true,
+                "invert": false,
+                "startFrame": 0,
+                "durationFrames": 81,
+                "operation": "intersect",
+                "center_x": 0.46875,
+                "center_y": 0.3229166666666667,
+                "radius_x": 0.36830357142857145,
+                "radius_y": 0.171875,
+                "feather": 1
+              }
+            }
+          ],
+          "mask.speaker_circle.radius_x": 0.7366071428571429,
+          "mask.speaker_circle.radius_y": 0.7366071428571429
+        },
+        "sortOrder": 2,
+        "startFrame": 0,
+        "trackId": "9d10cebb-7fd0-4a7f-bdcf-63a47b22615e",
+        "target": {
+          "itemId": "d9ef8101-c99d-41bd-8f59-a395c0747300",
+          "kind": "item"
+        },
+        "type": "pixel-effect",
+        "mask": {
+          "mode": "set",
+          "nodes": [
+            {
+              "id": "speaker_circle",
+              "enabled": true,
+              "invert": false,
+              "startFrame": 0,
+              "durationFrames": 81,
+              "operation": "intersect",
+              "kind": "ellipse",
+              "parameters": {
+                "center_x": 0.46875,
+                "center_y": 0.3229166666666667,
+                "radius_x": 0.36830357142857145,
+                "radius_y": 0.171875,
+                "feather": 1
+              }
+            }
+          ],
+          "corrections": []
+        }
+      },
+      "track": {
+        "id": "9d10cebb7f",
+        "name": "人物圆形小窗",
+        "type": "video"
+      },
+      "asset": {
+        "id": "builtin:effect-mask",
+        "name": "Mask",
+        "type": "pixel-effect"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 1845,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "height": 1920,
+        "id": "138eba0070",
+        "left": 0,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 0,
+        "top": 0,
+        "width": 1080,
+        "assetId": "cc0cbefde5",
+        "borderRadius": 0,
+        "cropBottom": 0,
+        "cropLeft": 0,
+        "cropRight": 0,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "type": "image"
+      },
+      "track": {
+        "id": "50966b7ac2",
+        "name": "标题与品牌包装",
+        "type": "video"
+      },
+      "asset": {
+        "id": "cc0cbefde5",
+        "name": "brand",
+        "type": "image"
+      }
+    },
+    {
+      "item": {
+        "blendingMode": "normal",
+        "durationFrames": 105,
+        "fadeInDurationFrames": 8,
+        "fadeOutDurationFrames": 0,
+        "height": 1920,
+        "id": "dd944e1e98",
+        "left": 0,
+        "opacity": 1,
+        "rotation": 0,
+        "startFrame": 1845,
+        "top": 0,
+        "width": 1080,
+        "assetId": "8d96218a77",
+        "borderRadius": 0,
+        "cropBottom": 0,
+        "cropLeft": 0,
+        "cropRight": 0,
+        "cropTop": 0,
+        "keepAspectRatio": true,
+        "type": "image"
+      },
+      "track": {
+        "id": "50966b7ac2",
+        "name": "标题与品牌包装",
+        "type": "video"
+      },
+      "asset": {
+        "id": "8d96218a77",
+        "name": "ending",
+        "type": "image"
+      }
+    },
+    {
+      "item": {
+        "assetId": "7f044605a5",
+        "audioPitchMode": "preservePitch",
+        "decibelAdjustment": 0,
+        "durationFrames": 1843,
+        "fadeInDurationFrames": 0,
+        "fadeOutDurationFrames": 0,
+        "id": "fd0fc64118",
+        "sourceIn": 0,
+        "startFrame": 0,
+        "type": "audio"
+      },
+      "track": {
+        "id": "69712d0f8d",
+        "name": "旁白",
+        "type": "audio"
+      },
+      "asset": {
+        "id": "7f044605a5",
+        "name": "茅曲坊旁白慢速",
+        "type": "audio"
+      }
+    },
+    {
+      "item": {
+        "id": "1dd2f8db9e",
+        "type": "audio",
+        "assetId": "d7514f52ec",
+        "audioPitchMode": "preservePitch",
+        "decibelAdjustment": -21,
+        "durationFrames": 1950,
+        "fadeInDurationFrames": 45,
+        "fadeOutDurationFrames": 90,
+        "sourceIn": 0,
+        "startFrame": 0,
+        "processing": {
+          "music-separation": {
+            "enabled": true,
+            "propertyOverrides": {
+              "output": "instrumental"
+            }
+          }
+        }
+      },
+      "track": {
+        "id": "2e3799a181",
+        "name": "原片配乐（去人声）",
+        "type": "audio"
+      },
+      "asset": {
+        "id": "d7514f52ec",
+        "name": "d3125d68dd81fb3f89a9bb65b06102ef",
+        "type": "video"
+      }
+    }
+  ],
+  "captionCards": [
+    {
+      "end": 3360000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085e5bab918-b1ef-4932-885a-c733e668adaf",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 0,
+      "style": {
+        "verticalAlign": "flex-end",
+        "fontSize": 0.077
+      },
+      "text": "酱香酒为什么\n光酿造就要一年？",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 5890000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0851e04051f-f8dc-409e-877a-2facf38489d9",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 3920000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "贵的只是瓶子和名字？",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 8800000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085ebb08221-30c6-400a-b43a-9cc51d499286",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 6360000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "真正耗功夫的是时间，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 11520000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085375be7b5-0486-4419-b7f6-853f1839c47a",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 9190000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "是每一铲粮食背后的工艺。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 13620000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085e08df502-859e-48d5-9f27-d2646587a0a3",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 12050000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "传统大曲酱香，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 14860000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0853d5af355-34f3-49aa-9721-6dbcd9946daa",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 13860000,
+      "style": {
+        "verticalAlign": "flex-end",
+        "fontSize": 0.105,
+        "color": "#FFE0A1"
+      },
+      "text": "两次投料、",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 16340000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085f2c05807-c167-42cc-acc6-b8226781f111",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 15220000,
+      "style": {
+        "verticalAlign": "flex-end",
+        "fontSize": 0.105,
+        "color": "#FFE0A1"
+      },
+      "text": "九次蒸煮、",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 17540000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0859cc7939a-dedf-4630-ad48-7696611ec2e9",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 16580000,
+      "style": {
+        "verticalAlign": "flex-end",
+        "fontSize": 0.105,
+        "color": "#FFE0A1"
+      },
+      "text": "八次发酵、",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 18940000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd08599413934-b8d2-47ea-ad3f-e799c5cdd893",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 17860000,
+      "style": {
+        "verticalAlign": "flex-end",
+        "fontSize": 0.105,
+        "color": "#FFE0A1"
+      },
+      "text": "七次取酒，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 21110000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085c74b74ec-6f8c-4928-8afe-d1594d78e835",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 19300000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "从投料到取酒，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 22780000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0851493b056-d111-4948-9bb1-a3b1e626f3d9",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 21270000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "走过春夏秋冬。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 25340000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd08548a08e4c-8df4-4b07-8e53-2e719fc72cae",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 22950000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "才完成一个基酒生产周期。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 28320000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd08524d1efe3-45c6-4354-9038-a1949f70ad14",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 25760000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "后面还有贮存与勾调，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 30760000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0858efa758c-457f-4139-b727-5f7701d59f60",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 28840000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "急不得，也省不得。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 33730000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0851dc5b6ab-47a6-47d1-a3da-e5df2fbb59b7",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 31430000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "茅，是对风土的敬重。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 37030000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd08530363075-f04c-4c3b-973f-3e72eaff4a7b",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 34220000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "曲，是以曲定香的功夫。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 39600000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0852c2ae737-4717-40bf-aa0c-8f11b63724c1",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 37600000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "坊，是作坊匠心。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 41540000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085b8165d54-5ea8-4c6e-9461-92e101951d9a",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 40060000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "设备可以更新，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 43960000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd08545780bbc-6d2f-4d40-9d2c-96c13ed12914",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 41950000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "敬畏传统的心不能丢。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 47750000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0852a128cc7-ffc9-4c15-ac0a-8083517cd3e5",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 44720000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "茅曲坊，把时间酿进味道里。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 49550000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085632f3429-ae2a-4709-8627-f776be20713a",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 48110000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "想喝懂酱香，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 51970000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0852f8f3e13-286b-4a48-8599-22b11afbe7ba",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 49870000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "先看懂这九次蒸煮。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 56070000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd0854743d183-8e4b-4e00-baf1-6388ac31f01e",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 52510000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "关注我，\n下一条拆开讲七次取酒。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 59810000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd08519f22322-a18c-47ce-9873-2544ab7e3055",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 56760000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "喝好酒，少喝酒，喝老酒，",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    },
+    {
+      "end": 61140000,
+      "id": "36:6f31ca72-647b-49aa-9784-0035ebd8574b36:fd0fc641-1800-4326-bfdd-e77abc0bd085dd6f6dbb-9645-4015-bee3-0e5cad12e96d",
+      "layout": {
+        "height": 185,
+        "left": 90,
+        "top": 1590,
+        "width": 900
+      },
+      "start": 60350000,
+      "style": {
+        "verticalAlign": "flex-end"
+      },
+      "text": "茅曲坊。",
+      "trackId": "69712d0f-8de5-4768-8756-d4f71d431345"
+    }
+  ],
+  "captionStyle": {
+    "preset": "plain",
+    "align": "center",
+    "color": "#FFFFFF",
+    "decorationSlot": null,
+    "direction": "ltr",
+    "displayMode": "single",
+    "fontFallbacks": [
+      "Noto Sans SC"
+    ],
+    "fontFamily": "Hiragino Sans GB",
+    "fontSize": 0.062,
+    "fontStyle": {
+      "weight": "700",
+      "variant": "normal"
+    },
+    "activeToken": {
+      "color": "#ffffff",
+      "background": null
+    },
+    "stackedActiveStyle": {
+      "color": "#ffffff",
+      "background": null
+    },
+    "highlightColors": null,
+    "highlightUnit": "off",
+    "letterSpacing": 0,
+    "lineHeight": 1.15,
+    "maxCharactersPerLine": 13,
+    "maxLines": 2,
+    "normalBackground": null,
+    "opacity": 1,
+    "punctuationMode": "default",
+    "strokeColor": "#13100B",
+    "strokeWidth": 3,
+    "textShadow": "none",
+    "textTransform": "none",
+    "wordGlow": null,
+    "wordsPerPage": null
+  },
+  "tracks": [
+    {
+      "solo": false,
+      "autoSelect": true,
+      "hidden": false,
+      "id": "005898eeef",
+      "locked": false,
+      "muted": false,
+      "name": null,
+      "type": "video"
+    },
+    {
+      "solo": false,
+      "autoSelect": true,
+      "hidden": false,
+      "id": "0f20758455",
+      "locked": false,
+      "muted": false,
+      "name": null,
+      "type": "video"
+    },
+    {
+      "solo": false,
+      "autoSelect": true,
+      "audioDucking": null,
+      "hidden": false,
+      "id": "9d10cebb7f",
+      "locked": false,
+      "muted": false,
+      "name": "人物圆形小窗",
+      "type": "video"
+    },
+    {
+      "solo": false,
+      "autoSelect": true,
+      "hidden": false,
+      "id": "50966b7ac2",
+      "locked": false,
+      "muted": false,
+      "name": "标题与品牌包装",
+      "type": "video"
+    },
+    {
+      "solo": false,
+      "autoSelect": true,
+      "hidden": false,
+      "id": "69712d0f8d",
+      "locked": false,
+      "muted": false,
+      "name": "旁白",
+      "type": "audio"
+    },
+    {
+      "solo": false,
+      "autoSelect": true,
+      "hidden": false,
+      "id": "757c8db3da",
+      "locked": false,
+      "muted": true,
+      "name": "素材原声(静音)",
+      "type": "audio"
+    },
+    {
+      "solo": false,
+      "autoSelect": true,
+      "audioDucking": null,
+      "hidden": false,
+      "id": "2e3799a181",
+      "locked": false,
+      "muted": false,
+      "name": "原片配乐（去人声）",
+      "type": "audio"
+    }
+  ],
+  "overlays": {
+    "cc0cbefde5": "fullscreen-assets/brand.png",
+    "8d96218a77": "fullscreen-assets/ending.png"
+  }
+}

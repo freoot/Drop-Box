@@ -1,0 +1,20 @@
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v3.py:328: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v3.py:82: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v3.py:40: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+00:02.329  render           | Saved: '/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v3_zhanlong_sword.png'
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v3.py:199: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+00:05.538  render           | Saved: '/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v3_kongming_lantern.png'
+=== v3 Zhanlong Sword ===
+RENDERED: /Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v3_zhanlong_sword.png
+=== v3 Kongming Lantern ===
+RENDERED: /Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v3_kongming_lantern.png
+DONE
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v3_zhanlong_sword.png
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v3_kongming_lantern.png
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

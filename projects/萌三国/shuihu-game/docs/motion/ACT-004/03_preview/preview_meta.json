@@ -1,0 +1,75 @@
+{
+  "hero": "hero005.glb",
+  "fps": 12,
+  "frame_ms": 83.333,
+  "cell_w": 200,
+  "cell_h": 260,
+  "order": [
+    "idle",
+    "move",
+    "attack",
+    "hit",
+    "death"
+  ],
+  "actions": {
+    "idle": {
+      "clip": "idle",
+      "native": true,
+      "loop": true,
+      "frames": 25,
+      "total_ms": 2000.0,
+      "windup_ms": 0,
+      "impact_ms": null,
+      "recovery_ms": null,
+      "rendered_rows_ok": true
+    },
+    "move": {
+      "clip": "walk",
+      "native": true,
+      "loop": true,
+      "frames": 13,
+      "total_ms": 1000.0,
+      "windup_ms": 0,
+      "impact_ms": null,
+      "recovery_ms": null,
+      "rendered_rows_ok": true
+    },
+    "attack": {
+      "clip": "attack",
+      "native": true,
+      "loop": false,
+      "frames": 15,
+      "total_ms": 1110.0,
+      "windup_ms": 458.0,
+      "impact_ms": 458.0,
+      "recovery_ms": 652.0,
+      "rendered_rows_ok": true
+    },
+    "hit": {
+      "clip": "hit",
+      "native": true,
+      "loop": false,
+      "frames": 10,
+      "total_ms": 750.0,
+      "windup_ms": 0,
+      "impact_ms": 0.0,
+      "recovery_ms": 750.0,
+      "rendered_rows_ok": true
+    },
+    "death": {
+      "clip": null,
+      "native": false,
+      "loop": false,
+      "frames": 21,
+      "total_ms": 1600.0,
+      "windup_ms": 0,
+      "impact_ms": null,
+      "recovery_ms": 1600.0,
+      "rendered_rows_ok": true
+    }
+  },
+  "sheet_png_bytes": 802826,
+  "death_is_synthetic": true,
+  "engine": "EEVEE",
+  "blender": "5.2.2 LTS"
+}

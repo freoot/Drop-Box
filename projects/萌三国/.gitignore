@@ -1,0 +1,11 @@
+.firecrawl/
+.godot/
+.mono/
+*.import
+bin/
+obj/
+export/
+*.apk
+*.aab
+*.ipa
+*.pck

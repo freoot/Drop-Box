@@ -1,0 +1,259 @@
+{
+ "schema": "act008-weapon-attach/1",
+ "generator": "tools/motion/attach_weapon.py",
+ "blender": "5.2.2 LTS",
+ "source_blend": "assets/releases/ART-002/r8/source/hero005.blend",
+ "output_blend": "assets/releases/ART-002/r9/source/hero005.blend",
+ "output_glb": "assets/releases/ART-002/r9/models/hero005.glb",
+ "body_vertices_before": 14409,
+ "body_vertices_after": 13653,
+ "weapon_vertices": 756,
+ "weapon_islands": [
+  {
+   "verts": 225,
+   "dist_to_hand_min": 1.1263
+  },
+  {
+   "verts": 225,
+   "dist_to_hand_min": 0.9299
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 0.2607
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 0.6903
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 0.7452
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 1.0202
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 1.0752
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 0.5799
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 0.3389
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 0.5094
+  },
+  {
+   "verts": 12,
+   "dist_to_hand_min": 1.0904
+  },
+  {
+   "verts": 6,
+   "dist_to_hand_min": 1.0402
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6938
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.692
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6907
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6903
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6903
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6907
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.692
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6938
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6956
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6969
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6969
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.6956
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0226
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0214
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0205
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0202
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0202
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0205
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0214
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0226
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0238
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0247
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0247
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 1.0238
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3393
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3391
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.339
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3389
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3389
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.339
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3391
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3393
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3396
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3397
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3397
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.3396
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.51
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5097
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5094
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5094
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5094
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5094
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5097
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.51
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5103
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5105
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5105
+  },
+  {
+   "verts": 4,
+   "dist_to_hand_min": 0.5103
+  }
+ ],
+ "weapon_vertex_group": "weapon.R",
+ "weapon_weight": 1.0,
+ "max_deviation": 0.0,
+ "new_geometry_added": 0,
+ "blend_bytes": 659708,
+ "glb_bytes": 949104
+}

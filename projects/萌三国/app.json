@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "桃花将军",
+    "navigationBarBackgroundColor": "#f7edcf",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7edcf",
+    "enablePullDownRefresh": false
+  }
+}

@@ -1,0 +1,6028 @@
+{
+  "hero": "hero005.glb",
+  "hero_hit_ms": 456.0,
+  "all_heroes_combined_peak_ms": [
+    420.0,
+    420.0,
+    420.0,
+    420.0,
+    420.0,
+    420.0,
+    420.0,
+    456.0,
+    456.0,
+    456.0,
+    456.0,
+    456.0,
+    456.0,
+    456.0,
+    456.0,
+    461.667,
+    461.667,
+    497.667
+  ],
+  "all_heroes_median_peak_ms": 456.0,
+  "hit_frame_ruling": {
+    "candidates_ms": [
+      294.0,
+      458.0
+    ],
+    "measured_peak_ms": 456.0,
+    "per_curve_peaks": {
+      "hand.R_linear_speed": 456.0,
+      "hand.R_angular_speed": 456.0,
+      "arm.R_angular_speed": 450.0,
+      "arm.R_linear_speed": 456.0,
+      "combined_impact": 456.0
+    },
+    "chosen_ms": 458.0,
+    "delta_ms": 2.0,
+    "within_one_frame_24fps": true,
+    "frame_ms": 41.667
+  },
+  "hit_duration_ruling": {
+    "candidates_s": [
+      0.75,
+      1.0
+    ],
+    "measured_histogram_ms": {
+      "750.0": 15,
+      "1000.0": 3
+    },
+    "dominant_ms": 750.0,
+    "chosen_s": 0.75
+  },
+  "death_synth_ms": 1600.0,
+  "death_synth_hit_tail_ms": 250.0,
+  "death_sink_units": 0.9,
+  "death_tilt_deg": 78.0,
+  "recovery_ruling": {
+    "requirement_ms": 1110.0,
+    "native_clip_ms": 1000.0,
+    "shortfall_ms": 110.0,
+    "measured_return_in_clip_ms": 940.0,
+    "extrapolated_total_ms": null,
+    "idle_tolerance_rot_rad": 0.01080762912478435,
+    "end_residual_rot_rad": 0.0,
+    "closing_rate_rad_per_s": 0.664333
+  },
+  "unified": {
+    "idle": {
+      "clip": "idle",
+      "windup_ms": 0,
+      "impact_ms": null,
+      "recovery_ms": null,
+      "total_ms": 2000.0,
+      "loop": true,
+      "note": "循环待机，无命中与收招；总时长取实测 clip 时长"
+    },
+    "move": {
+      "clip": "walk",
+      "windup_ms": 0,
+      "impact_ms": null,
+      "recovery_ms": null,
+      "total_ms": 1000.0,
+      "loop": true,
+      "note": "循环行走，无命中；总时长取实测 clip 时长（一个完整步态周期）"
+    },
+    "attack": {
+      "clip": "attack",
+      "windup_ms": 458.0,
+      "impact_ms": 458.0,
+      "recovery_ms": 652.0,
+      "total_ms": 1110.0,
+      "native_clip_ms": 1000.0,
+      "extension_ms": 110.0,
+      "recovery_measured_in_clip_ms": 484.0,
+      "note": "起手/命中取裁决值 458.0ms（实测合成峰值 456.0ms）；收招 = 总时长 - 命中 = 652.0ms；原生片段 1000.0ms，运行时补尾 110.0ms"
+    },
+    "hit": {
+      "clip": "hit",
+      "windup_ms": 0,
+      "impact_ms": 0.0,
+      "recovery_ms": 750.0,
+      "total_ms": 750.0,
+      "settle_to_20pct_ms": 126.0,
+      "native_clip_ms": 750.0,
+      "note": "受击瞬间取实测角速度峰值（hand.R，0.0ms）；总时长取实测时长众数 750.0ms"
+    },
+    "death": {
+      "clip": null,
+      "native": false,
+      "windup_ms": 0,
+      "impact_ms": null,
+      "recovery_ms": 1600.0,
+      "total_ms": 1600.0,
+      "synth_from": "hit",
+      "synth_hit_tail_ms": 250.0,
+      "synth_sink_ms": 1350.0,
+      "sink_units": 0.9,
+      "tilt_deg": 78.0,
+      "note": "资产内无 death 片段（18/18 文件均无）；合成 = hit 末段 250.0ms + 1350.0ms 下沉（下沉 0.9 单位、前倾 78.0°），总时长 1600.0ms，非资产原生"
+    }
+  },
+  "schema": "act-004-timing/1",
+  "generated_at": "2026-10-29T04:17:38",
+  "generator": "tools/motion/timing_analysis.py",
+  "dt_ms": 2.0,
+  "hero_count": 18,
+  "clip_name_union": [
+    "attack",
+    "hit",
+    "idle",
+    "walk"
+  ],
+  "per_hero": [
+    {
+      "file": "hero002.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 2.9283345001854766
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 10.85435221824373
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 10.85434120294274
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 0.7581581757674369
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.9978236272361904
+          }
+        },
+        "peak_ms_all": [
+          420.0,
+          456.0
+        ],
+        "combined_peak_ms": 420.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 38.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 126.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 420.0,
+            "combined": 3.9978,
+            "handR_speed": 2.9283,
+            "handR_angvel": 10.8528
+          },
+          {
+            "ms": 422.0,
+            "combined": 3.9935,
+            "handR_speed": 2.9155,
+            "handR_angvel": 10.8528
+          },
+          {
+            "ms": 424.0,
+            "combined": 3.9892,
+            "handR_speed": 2.9028,
+            "handR_angvel": 10.8529
+          },
+          {
+            "ms": 426.0,
+            "combined": 3.985,
+            "handR_speed": 2.8903,
+            "handR_angvel": 10.8529
+          },
+          {
+            "ms": 428.0,
+            "combined": 3.9808,
+            "handR_speed": 2.8779,
+            "handR_angvel": 10.853
+          },
+          {
+            "ms": 430.0,
+            "combined": 3.9768,
+            "handR_speed": 2.8657,
+            "handR_angvel": 10.853
+          },
+          {
+            "ms": 432.0,
+            "combined": 3.9727,
+            "handR_speed": 2.8536,
+            "handR_angvel": 10.8531
+          },
+          {
+            "ms": 434.0,
+            "combined": 3.9688,
+            "handR_speed": 2.8417,
+            "handR_angvel": 10.8532
+          },
+          {
+            "ms": 436.0,
+            "combined": 3.9649,
+            "handR_speed": 2.83,
+            "handR_angvel": 10.8533
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9611,
+            "handR_speed": 2.8186,
+            "handR_angvel": 10.8533
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 3.765018456321747e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.12220192501865063,
+          "pos_units": 0.025733510893549073
+        },
+        "return_in_clip_ms": 924.0,
+        "closing_rate_rad_per_s": 0.432885,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 420.0,
+        "recovery_duration_ms": 504.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.019406,
+            "dpos": 0.004157
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.037231,
+            "dpos": 0.007986
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.052188,
+            "dpos": 0.011206
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.063194,
+            "dpos": 0.013578
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.069443,
+            "dpos": 0.014926
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.063823,
+            "dpos": 0.013712
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.01852,
+            "dpos": 0.003967
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.07425,
+            "dpos": 0.015744
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.214442,
+            "dpos": 0.04442
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.320007,
+            "dpos": 0.064739
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.316106,
+            "dpos": 0.064011
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.27767,
+            "dpos": 0.056742
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.212797,
+            "dpos": 0.044094
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.156309,
+            "dpos": 0.032732
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.108221,
+            "dpos": 0.022838
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.069744,
+            "dpos": 0.014799
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.039682,
+            "dpos": 0.008452
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.018035,
+            "dpos": 0.003848
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.004809,
+            "dpos": 0.001028
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero005.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 5.081113512271329
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.641180393671325
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 225,
+            "peak_ms": 450.0,
+            "peak_value": 11.641180450707925
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 2.067622218923567
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.999999995339483
+          }
+        },
+        "peak_ms_all": [
+          450.0,
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 5.0811,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9973,
+            "handR_speed": 5.0675,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9945,
+            "handR_speed": 5.0532,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9916,
+            "handR_speed": 5.0383,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9885,
+            "handR_speed": 5.0228,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9853,
+            "handR_speed": 5.0066,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.982,
+            "handR_speed": 4.9899,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9786,
+            "handR_speed": 4.9724,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.9751,
+            "handR_speed": 4.9544,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9714,
+            "handR_speed": 4.9357,
+            "handR_angvel": 11.6412
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 1.0345938361563405e-33,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.35576967178414204,
+          "pos_units": 0.09440716393910033
+        },
+        "return_in_clip_ms": 940.0,
+        "closing_rate_rad_per_s": 0.664333,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 484.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.029803,
+            "dpos": 0.00789
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.057181,
+            "dpos": 0.015118
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.080138,
+            "dpos": 0.021174
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.097023,
+            "dpos": 0.025622
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.106605,
+            "dpos": 0.028143
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.097977,
+            "dpos": 0.025874
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.02845,
+            "dpos": 0.00753
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.11396,
+            "dpos": 0.03027
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.327707,
+            "dpos": 0.087055
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.486374,
+            "dpos": 0.128628
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.480579,
+            "dpos": 0.127112
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.423098,
+            "dpos": 0.11213
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.32537,
+            "dpos": 0.086365
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.239545,
+            "dpos": 0.063617
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.166083,
+            "dpos": 0.044097
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.107098,
+            "dpos": 0.028422
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.060952,
+            "dpos": 0.016165
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.027703,
+            "dpos": 0.007343
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.007387,
+            "dpos": 0.001957
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero006.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 1958.333,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 1000.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 3.4155548482507956
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 12.999412244652762
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 12.999411648200162
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 497.667,
+            "peak_value": 0.9736703858226061
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 3.9999997278137287
+          }
+        },
+        "peak_ms_all": [
+          461.7,
+          497.7
+        ],
+        "combined_peak_ms": 461.667,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 3.667
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 167.667
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 461.7,
+            "combined": 4.0,
+            "handR_speed": 3.4156,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 463.7,
+            "combined": 3.9945,
+            "handR_speed": 3.3966,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 465.7,
+            "combined": 3.989,
+            "handR_speed": 3.378,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 467.7,
+            "combined": 3.9837,
+            "handR_speed": 3.3598,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 469.7,
+            "combined": 3.9784,
+            "handR_speed": 3.3418,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 471.7,
+            "combined": 3.9733,
+            "handR_speed": 3.3243,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 473.7,
+            "combined": 3.9682,
+            "handR_speed": 3.3071,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 475.7,
+            "combined": 3.9633,
+            "handR_speed": 3.2903,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 477.7,
+            "combined": 3.9585,
+            "handR_speed": 3.2739,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 479.7,
+            "combined": 3.9539,
+            "handR_speed": 3.258,
+            "handR_angvel": 12.9994
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 1000.0,
+        "duration_s": 0.9999999999999999,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 1.5429095403618236
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 2.3144811801669687
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.9257452760038669
+            },
+            "linear_peak_value": 0.9257452760038669
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 1.5429095216711042
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.324010856607611
+            },
+            "linear_peak_value": 0.324010856607611
+          }
+        },
+        "first_impact": {
+          "peak_ms": 79.667,
+          "node": "body"
+        },
+        "peak_plateau": {
+          "node": "body",
+          "start_ms": 41.667,
+          "end_ms": 81.667
+        },
+        "settle_to_20pct_ms": 209.667
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.009326516274816466,
+          "pos_units": 0.0025512648402257975
+        },
+        "attack_end_residual": {
+          "rot_rad": 2.7093020352450285e-09,
+          "pos_units": 2.711820989330278e-09,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.13647270220377228,
+          "pos_units": 0.029901023965533544
+        },
+        "return_in_clip_ms": 975.667,
+        "closing_rate_rad_per_s": 0.483434,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 461.667,
+        "recovery_duration_ms": 514.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 41.7,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 91.7,
+            "drot": 0.021673,
+            "dpos": 0.004878
+          },
+          {
+            "ms": 141.7,
+            "drot": 0.041581,
+            "dpos": 0.009378
+          },
+          {
+            "ms": 191.7,
+            "drot": 0.058285,
+            "dpos": 0.013168
+          },
+          {
+            "ms": 241.7,
+            "drot": 0.070576,
+            "dpos": 0.015963
+          },
+          {
+            "ms": 291.7,
+            "drot": 0.077554,
+            "dpos": 0.017553
+          },
+          {
+            "ms": 341.7,
+            "drot": 0.071276,
+            "dpos": 0.016121
+          },
+          {
+            "ms": 391.7,
+            "drot": 0.020682,
+            "dpos": 0.004653
+          },
+          {
+            "ms": 441.7,
+            "drot": 0.082922,
+            "dpos": 0.018361
+          },
+          {
+            "ms": 491.7,
+            "drot": 0.239461,
+            "dpos": 0.051187
+          },
+          {
+            "ms": 541.7,
+            "drot": 0.357268,
+            "dpos": 0.073777
+          },
+          {
+            "ms": 591.7,
+            "drot": 0.352914,
+            "dpos": 0.07298
+          },
+          {
+            "ms": 641.7,
+            "drot": 0.310027,
+            "dpos": 0.064963
+          },
+          {
+            "ms": 691.7,
+            "drot": 0.237619,
+            "dpos": 0.050818
+          },
+          {
+            "ms": 741.7,
+            "drot": 0.174554,
+            "dpos": 0.037921
+          },
+          {
+            "ms": 791.7,
+            "drot": 0.120859,
+            "dpos": 0.026566
+          },
+          {
+            "ms": 841.7,
+            "drot": 0.07789,
+            "dpos": 0.017265
+          },
+          {
+            "ms": 891.7,
+            "drot": 0.044317,
+            "dpos": 0.00988
+          },
+          {
+            "ms": 941.7,
+            "drot": 0.020141,
+            "dpos": 0.004504
+          },
+          {
+            "ms": 991.7,
+            "drot": 0.005371,
+            "dpos": 0.001204
+          },
+          {
+            "ms": 1041.7,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero007.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.8517861961279807
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 216,
+            "peak_ms": 432.0,
+            "peak_value": 13.49366511462362
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 218,
+            "peak_ms": 436.0,
+            "peak_value": 13.493665327653197
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 1.1837793488916983
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.999999847419236
+          }
+        },
+        "peak_ms_all": [
+          420.0,
+          432.0,
+          436.0,
+          456.0
+        ],
+        "combined_peak_ms": 420.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 38.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 126.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 420.0,
+            "combined": 4.0,
+            "handR_speed": 3.8518,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 422.0,
+            "combined": 3.9933,
+            "handR_speed": 3.8262,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 424.0,
+            "combined": 3.9867,
+            "handR_speed": 3.8006,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 426.0,
+            "combined": 3.9801,
+            "handR_speed": 3.7752,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 428.0,
+            "combined": 3.9735,
+            "handR_speed": 3.7499,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 430.0,
+            "combined": 3.967,
+            "handR_speed": 3.7248,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 432.0,
+            "combined": 3.9605,
+            "handR_speed": 3.6998,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 434.0,
+            "combined": 3.9541,
+            "handR_speed": 3.675,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 436.0,
+            "combined": 3.9477,
+            "handR_speed": 3.6505,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9414,
+            "handR_speed": 3.6262,
+            "handR_angvel": 13.4937
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 6.013454676968167e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.1652172748343936,
+          "pos_units": 0.03856417464360657
+        },
+        "return_in_clip_ms": 936.0,
+        "closing_rate_rad_per_s": 0.58529,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 420.0,
+        "recovery_duration_ms": 516.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.026242,
+            "dpos": 0.00624
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.050358,
+            "dpos": 0.01199
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.070587,
+            "dpos": 0.016818
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.085471,
+            "dpos": 0.020372
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.093922,
+            "dpos": 0.02239
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.086316,
+            "dpos": 0.020574
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.025049,
+            "dpos": 0.005957
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.100398,
+            "dpos": 0.023631
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.289819,
+            "dpos": 0.066206
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.432232,
+            "dpos": 0.095522
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.426981,
+            "dpos": 0.094491
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.375145,
+            "dpos": 0.0841
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.287596,
+            "dpos": 0.065727
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.211304,
+            "dpos": 0.048971
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.146323,
+            "dpos": 0.034244
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.09431,
+            "dpos": 0.022213
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.053662,
+            "dpos": 0.012693
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.024392,
+            "dpos": 0.005784
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.006503,
+            "dpos": 0.001543
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero008.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.299130392854909
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 9.898665825543318
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 9.898664897180241
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 0.9736679370463592
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 4.0
+          }
+        },
+        "peak_ms_all": [
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 3.2991,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9972,
+            "handR_speed": 3.2898,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9943,
+            "handR_speed": 3.2803,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9914,
+            "handR_speed": 3.2706,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9884,
+            "handR_speed": 3.2608,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9853,
+            "handR_speed": 3.2507,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.9822,
+            "handR_speed": 3.2405,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9791,
+            "handR_speed": 3.2301,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.9759,
+            "handR_speed": 3.2195,
+            "handR_angvel": 9.8987
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9726,
+            "handR_speed": 3.2087,
+            "handR_angvel": 9.8987
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 4.840737757654367e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.30493958321683007,
+          "pos_units": 0.057981012632027824
+        },
+        "return_in_clip_ms": 936.0,
+        "closing_rate_rad_per_s": 0.568684,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 480.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.025496,
+            "dpos": 0.004909
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.048905,
+            "dpos": 0.009419
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.068537,
+            "dpos": 0.013203
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.082974,
+            "dpos": 0.015987
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.091168,
+            "dpos": 0.017568
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.08379,
+            "dpos": 0.016146
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.024331,
+            "dpos": 0.004687
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.097526,
+            "dpos": 0.018727
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.280797,
+            "dpos": 0.053503
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.417474,
+            "dpos": 0.078789
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.412457,
+            "dpos": 0.077872
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.362879,
+            "dpos": 0.068759
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.278817,
+            "dpos": 0.053088
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.205143,
+            "dpos": 0.039199
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.142171,
+            "dpos": 0.027235
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.091653,
+            "dpos": 0.01759
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.052153,
+            "dpos": 0.010021
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.0237,
+            "dpos": 0.004557
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.006319,
+            "dpos": 0.001216
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero010.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.789757714984973
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 213,
+            "peak_ms": 426.0,
+            "peak_value": 10.582925543148068
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 211,
+            "peak_ms": 422.0,
+            "peak_value": 10.582925489151023
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 1.6227769149896962
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.9999998274748734
+          }
+        },
+        "peak_ms_all": [
+          422.0,
+          426.0,
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 3.7898,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9961,
+            "handR_speed": 3.7751,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9922,
+            "handR_speed": 3.7601,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9882,
+            "handR_speed": 3.7449,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9841,
+            "handR_speed": 3.7294,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9799,
+            "handR_speed": 3.7137,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.9757,
+            "handR_speed": 3.6977,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9714,
+            "handR_speed": 3.6814,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.967,
+            "handR_speed": 3.6648,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9626,
+            "handR_speed": 3.648,
+            "handR_angvel": 10.5829
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 8.067896930651797e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.315760900015794,
+          "pos_units": 0.07174600563430936
+        },
+        "return_in_clip_ms": 936.0,
+        "closing_rate_rad_per_s": 0.587849,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 480.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.026285,
+            "dpos": 0.005966
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.050398,
+            "dpos": 0.011443
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.070605,
+            "dpos": 0.016036
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.085457,
+            "dpos": 0.019414
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.093881,
+            "dpos": 0.021331
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.086292,
+            "dpos": 0.019606
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.025059,
+            "dpos": 0.005697
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.100813,
+            "dpos": 0.02287
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.290746,
+            "dpos": 0.066084
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.432548,
+            "dpos": 0.098491
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.42735,
+            "dpos": 0.097291
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.375884,
+            "dpos": 0.085503
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.28864,
+            "dpos": 0.06555
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.212219,
+            "dpos": 0.048147
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.146962,
+            "dpos": 0.033327
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.094679,
+            "dpos": 0.021471
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.053842,
+            "dpos": 0.012204
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.024459,
+            "dpos": 0.005549
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.00652,
+            "dpos": 0.001479
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero011.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.3268857671145624
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.229266819137369
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.229265372129047
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 0.5895911550238351
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.9987587992053557
+          }
+        },
+        "peak_ms_all": [
+          420.0,
+          456.0
+        ],
+        "combined_peak_ms": 420.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 38.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 126.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 420.0,
+            "combined": 3.9988,
+            "handR_speed": 3.3269,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 422.0,
+            "combined": 3.9955,
+            "handR_speed": 3.316,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 424.0,
+            "combined": 3.9923,
+            "handR_speed": 3.3051,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 426.0,
+            "combined": 3.989,
+            "handR_speed": 3.2942,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 428.0,
+            "combined": 3.9858,
+            "handR_speed": 3.2834,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 430.0,
+            "combined": 3.9826,
+            "handR_speed": 3.2726,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 432.0,
+            "combined": 3.9795,
+            "handR_speed": 3.2619,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 434.0,
+            "combined": 3.9763,
+            "handR_speed": 3.2512,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 436.0,
+            "combined": 3.9732,
+            "handR_speed": 3.2406,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9701,
+            "handR_speed": 3.23,
+            "handR_angvel": 11.2291
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 3.0067273384840837e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.10855924895152516,
+          "pos_units": 0.023195778232504547
+        },
+        "return_in_clip_ms": 918.0,
+        "closing_rate_rad_per_s": 0.384612,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 420.0,
+        "recovery_duration_ms": 498.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.017252,
+            "dpos": 0.003755
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.033101,
+            "dpos": 0.007213
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.046402,
+            "dpos": 0.010121
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.056189,
+            "dpos": 0.012264
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.061746,
+            "dpos": 0.013481
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.056746,
+            "dpos": 0.012385
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.016467,
+            "dpos": 0.003582
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.065971,
+            "dpos": 0.014206
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.19042,
+            "dpos": 0.039932
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.284034,
+            "dpos": 0.057921
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.280575,
+            "dpos": 0.057282
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.246503,
+            "dpos": 0.050875
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.188973,
+            "dpos": 0.039643
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.138846,
+            "dpos": 0.02948
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.096153,
+            "dpos": 0.020592
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.061977,
+            "dpos": 0.013352
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.035268,
+            "dpos": 0.007628
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.016029,
+            "dpos": 0.003474
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.004275,
+            "dpos": 0.000928
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero012.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 5.081113512271329
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.641180393671325
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 225,
+            "peak_ms": 450.0,
+            "peak_value": 11.641180450707925
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 2.067622218923567
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.999999995339483
+          }
+        },
+        "peak_ms_all": [
+          450.0,
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 5.0811,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9973,
+            "handR_speed": 5.0675,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9945,
+            "handR_speed": 5.0532,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9916,
+            "handR_speed": 5.0383,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9885,
+            "handR_speed": 5.0228,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9853,
+            "handR_speed": 5.0066,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.982,
+            "handR_speed": 4.9899,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9786,
+            "handR_speed": 4.9724,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.9751,
+            "handR_speed": 4.9544,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9714,
+            "handR_speed": 4.9357,
+            "handR_angvel": 11.6412
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 1.0345938361563405e-33,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.35576967178414204,
+          "pos_units": 0.09440716393910033
+        },
+        "return_in_clip_ms": 940.0,
+        "closing_rate_rad_per_s": 0.664333,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 484.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.029803,
+            "dpos": 0.00789
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.057181,
+            "dpos": 0.015118
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.080138,
+            "dpos": 0.021174
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.097023,
+            "dpos": 0.025622
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.106605,
+            "dpos": 0.028143
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.097977,
+            "dpos": 0.025874
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.02845,
+            "dpos": 0.00753
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.11396,
+            "dpos": 0.03027
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.327707,
+            "dpos": 0.087055
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.486374,
+            "dpos": 0.128628
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.480579,
+            "dpos": 0.127112
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.423098,
+            "dpos": 0.11213
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.32537,
+            "dpos": 0.086365
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.239545,
+            "dpos": 0.063617
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.166083,
+            "dpos": 0.044097
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.107098,
+            "dpos": 0.028422
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.060952,
+            "dpos": 0.016165
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.027703,
+            "dpos": 0.007343
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.007387,
+            "dpos": 0.001957
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero013.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 1958.333,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 1000.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 497.667,
+            "peak_value": 3.7897637517579663
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 212,
+            "peak_ms": 465.667,
+            "peak_value": 10.58293290886223
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 212,
+            "peak_ms": 465.667,
+            "peak_value": 10.582933078538256
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 497.667,
+            "peak_value": 1.6227777633959046
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 497.667,
+            "peak_value": 3.999999826744052
+          }
+        },
+        "peak_ms_all": [
+          465.7,
+          497.7
+        ],
+        "combined_peak_ms": 497.667,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 39.667
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 203.667
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 497.7,
+            "combined": 4.0,
+            "handR_speed": 3.7898,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 495.7,
+            "combined": 3.9961,
+            "handR_speed": 3.7751,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 493.7,
+            "combined": 3.9922,
+            "handR_speed": 3.7601,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 491.7,
+            "combined": 3.9882,
+            "handR_speed": 3.7449,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 489.7,
+            "combined": 3.9841,
+            "handR_speed": 3.7294,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 487.7,
+            "combined": 3.9799,
+            "handR_speed": 3.7137,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 485.7,
+            "combined": 3.9757,
+            "handR_speed": 3.6977,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 483.7,
+            "combined": 3.9714,
+            "handR_speed": 3.6814,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 481.7,
+            "combined": 3.967,
+            "handR_speed": 3.6648,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 479.7,
+            "combined": 3.9626,
+            "handR_speed": 3.648,
+            "handR_angvel": 10.5829
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 1000.0,
+        "duration_s": 0.9999999999999999,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 1.5429095403618236
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 2.3144811801669687
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.9257452760038669
+            },
+            "linear_peak_value": 0.9257452760038669
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 1.5429095216711042
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.324010856607611
+            },
+            "linear_peak_value": 0.324010856607611
+          }
+        },
+        "first_impact": {
+          "peak_ms": 79.667,
+          "node": "body"
+        },
+        "peak_plateau": {
+          "node": "body",
+          "start_ms": 41.667,
+          "end_ms": 81.667
+        },
+        "settle_to_20pct_ms": 209.667
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.009326516274816466,
+          "pos_units": 0.0025512648402257975
+        },
+        "attack_end_residual": {
+          "rot_rad": 2.7093020352450285e-09,
+          "pos_units": 2.711820989330278e-09,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.31576231529398724,
+          "pos_units": 0.07174634457503608
+        },
+        "return_in_clip_ms": 983.667,
+        "closing_rate_rad_per_s": 0.587847,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 497.667,
+        "recovery_duration_ms": 486.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 41.7,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 91.7,
+            "drot": 0.026285,
+            "dpos": 0.005966
+          },
+          {
+            "ms": 141.7,
+            "drot": 0.050398,
+            "dpos": 0.011443
+          },
+          {
+            "ms": 191.7,
+            "drot": 0.070605,
+            "dpos": 0.016036
+          },
+          {
+            "ms": 241.7,
+            "drot": 0.085457,
+            "dpos": 0.019414
+          },
+          {
+            "ms": 291.7,
+            "drot": 0.093881,
+            "dpos": 0.021331
+          },
+          {
+            "ms": 341.7,
+            "drot": 0.086292,
+            "dpos": 0.019606
+          },
+          {
+            "ms": 391.7,
+            "drot": 0.025058,
+            "dpos": 0.005696
+          },
+          {
+            "ms": 441.7,
+            "drot": 0.100814,
+            "dpos": 0.02287
+          },
+          {
+            "ms": 491.7,
+            "drot": 0.290747,
+            "dpos": 0.066084
+          },
+          {
+            "ms": 541.7,
+            "drot": 0.432548,
+            "dpos": 0.098491
+          },
+          {
+            "ms": 591.7,
+            "drot": 0.42735,
+            "dpos": 0.097291
+          },
+          {
+            "ms": 641.7,
+            "drot": 0.375884,
+            "dpos": 0.085503
+          },
+          {
+            "ms": 691.7,
+            "drot": 0.288639,
+            "dpos": 0.06555
+          },
+          {
+            "ms": 741.7,
+            "drot": 0.212219,
+            "dpos": 0.048147
+          },
+          {
+            "ms": 791.7,
+            "drot": 0.146962,
+            "dpos": 0.033327
+          },
+          {
+            "ms": 841.7,
+            "drot": 0.094679,
+            "dpos": 0.021471
+          },
+          {
+            "ms": 891.7,
+            "drot": 0.053842,
+            "dpos": 0.012204
+          },
+          {
+            "ms": 941.7,
+            "drot": 0.024459,
+            "dpos": 0.005549
+          },
+          {
+            "ms": 991.7,
+            "drot": 0.00652,
+            "dpos": 0.001479
+          },
+          {
+            "ms": 1041.7,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero014.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 1958.333,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 1000.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 3.4155548482507956
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 12.999412244652762
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 12.999411648200162
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 497.667,
+            "peak_value": 0.9736703858226061
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 461.667,
+            "peak_value": 3.9999997278137287
+          }
+        },
+        "peak_ms_all": [
+          461.7,
+          497.7
+        ],
+        "combined_peak_ms": 461.667,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 3.667
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 167.667
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 461.7,
+            "combined": 4.0,
+            "handR_speed": 3.4156,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 463.7,
+            "combined": 3.9945,
+            "handR_speed": 3.3966,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 465.7,
+            "combined": 3.989,
+            "handR_speed": 3.378,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 467.7,
+            "combined": 3.9837,
+            "handR_speed": 3.3598,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 469.7,
+            "combined": 3.9784,
+            "handR_speed": 3.3418,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 471.7,
+            "combined": 3.9733,
+            "handR_speed": 3.3243,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 473.7,
+            "combined": 3.9682,
+            "handR_speed": 3.3071,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 475.7,
+            "combined": 3.9633,
+            "handR_speed": 3.2903,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 477.7,
+            "combined": 3.9585,
+            "handR_speed": 3.2739,
+            "handR_angvel": 12.9994
+          },
+          {
+            "ms": 479.7,
+            "combined": 3.9539,
+            "handR_speed": 3.258,
+            "handR_angvel": 12.9994
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 1000.0,
+        "duration_s": 0.9999999999999999,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 1.5429095403618236
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 2.3144811801669687
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.9257452760038669
+            },
+            "linear_peak_value": 0.9257452760038669
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 79.667,
+              "peak_value": 1.5429095216711042
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 41.667,
+              "peak_value": 0.324010856607611
+            },
+            "linear_peak_value": 0.324010856607611
+          }
+        },
+        "first_impact": {
+          "peak_ms": 79.667,
+          "node": "body"
+        },
+        "peak_plateau": {
+          "node": "body",
+          "start_ms": 41.667,
+          "end_ms": 81.667
+        },
+        "settle_to_20pct_ms": 209.667
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.009326516274816466,
+          "pos_units": 0.0025512648402257975
+        },
+        "attack_end_residual": {
+          "rot_rad": 2.7093020352450285e-09,
+          "pos_units": 2.711820989330278e-09,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.13647270220377228,
+          "pos_units": 0.029901023965533544
+        },
+        "return_in_clip_ms": 975.667,
+        "closing_rate_rad_per_s": 0.483434,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 461.667,
+        "recovery_duration_ms": 514.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 41.7,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 91.7,
+            "drot": 0.021673,
+            "dpos": 0.004878
+          },
+          {
+            "ms": 141.7,
+            "drot": 0.041581,
+            "dpos": 0.009378
+          },
+          {
+            "ms": 191.7,
+            "drot": 0.058285,
+            "dpos": 0.013168
+          },
+          {
+            "ms": 241.7,
+            "drot": 0.070576,
+            "dpos": 0.015963
+          },
+          {
+            "ms": 291.7,
+            "drot": 0.077554,
+            "dpos": 0.017553
+          },
+          {
+            "ms": 341.7,
+            "drot": 0.071276,
+            "dpos": 0.016121
+          },
+          {
+            "ms": 391.7,
+            "drot": 0.020682,
+            "dpos": 0.004653
+          },
+          {
+            "ms": 441.7,
+            "drot": 0.082922,
+            "dpos": 0.018361
+          },
+          {
+            "ms": 491.7,
+            "drot": 0.239461,
+            "dpos": 0.051187
+          },
+          {
+            "ms": 541.7,
+            "drot": 0.357268,
+            "dpos": 0.073777
+          },
+          {
+            "ms": 591.7,
+            "drot": 0.352914,
+            "dpos": 0.07298
+          },
+          {
+            "ms": 641.7,
+            "drot": 0.310027,
+            "dpos": 0.064963
+          },
+          {
+            "ms": 691.7,
+            "drot": 0.237619,
+            "dpos": 0.050818
+          },
+          {
+            "ms": 741.7,
+            "drot": 0.174554,
+            "dpos": 0.037921
+          },
+          {
+            "ms": 791.7,
+            "drot": 0.120859,
+            "dpos": 0.026566
+          },
+          {
+            "ms": 841.7,
+            "drot": 0.07789,
+            "dpos": 0.017265
+          },
+          {
+            "ms": 891.7,
+            "drot": 0.044317,
+            "dpos": 0.00988
+          },
+          {
+            "ms": 941.7,
+            "drot": 0.020141,
+            "dpos": 0.004504
+          },
+          {
+            "ms": 991.7,
+            "drot": 0.005371,
+            "dpos": 0.001204
+          },
+          {
+            "ms": 1041.7,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero015.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.3268857671145624
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.229266819137369
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.229265372129047
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 0.5895911550238351
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.9987587992053557
+          }
+        },
+        "peak_ms_all": [
+          420.0,
+          456.0
+        ],
+        "combined_peak_ms": 420.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 38.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 126.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 420.0,
+            "combined": 3.9988,
+            "handR_speed": 3.3269,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 422.0,
+            "combined": 3.9955,
+            "handR_speed": 3.316,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 424.0,
+            "combined": 3.9923,
+            "handR_speed": 3.3051,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 426.0,
+            "combined": 3.989,
+            "handR_speed": 3.2942,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 428.0,
+            "combined": 3.9858,
+            "handR_speed": 3.2834,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 430.0,
+            "combined": 3.9826,
+            "handR_speed": 3.2726,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 432.0,
+            "combined": 3.9795,
+            "handR_speed": 3.2619,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 434.0,
+            "combined": 3.9763,
+            "handR_speed": 3.2512,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 436.0,
+            "combined": 3.9732,
+            "handR_speed": 3.2406,
+            "handR_angvel": 11.2291
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9701,
+            "handR_speed": 3.23,
+            "handR_angvel": 11.2291
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 3.0067273384840837e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.10855924895152516,
+          "pos_units": 0.023195778232504547
+        },
+        "return_in_clip_ms": 918.0,
+        "closing_rate_rad_per_s": 0.384612,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 420.0,
+        "recovery_duration_ms": 498.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.017252,
+            "dpos": 0.003755
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.033101,
+            "dpos": 0.007213
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.046402,
+            "dpos": 0.010121
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.056189,
+            "dpos": 0.012264
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.061746,
+            "dpos": 0.013481
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.056746,
+            "dpos": 0.012385
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.016467,
+            "dpos": 0.003582
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.065971,
+            "dpos": 0.014206
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.19042,
+            "dpos": 0.039932
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.284034,
+            "dpos": 0.057921
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.280575,
+            "dpos": 0.057282
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.246503,
+            "dpos": 0.050875
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.188973,
+            "dpos": 0.039643
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.138846,
+            "dpos": 0.02948
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.096153,
+            "dpos": 0.020592
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.061977,
+            "dpos": 0.013352
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.035268,
+            "dpos": 0.007628
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.016029,
+            "dpos": 0.003474
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.004275,
+            "dpos": 0.000928
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero017.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.789757714984973
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 213,
+            "peak_ms": 426.0,
+            "peak_value": 10.582925543148068
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 211,
+            "peak_ms": 422.0,
+            "peak_value": 10.582925489151023
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 1.6227769149896962
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.9999998274748734
+          }
+        },
+        "peak_ms_all": [
+          422.0,
+          426.0,
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 3.7898,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9961,
+            "handR_speed": 3.7751,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9922,
+            "handR_speed": 3.7601,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9882,
+            "handR_speed": 3.7449,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9841,
+            "handR_speed": 3.7294,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9799,
+            "handR_speed": 3.7137,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.9757,
+            "handR_speed": 3.6977,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9714,
+            "handR_speed": 3.6814,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.967,
+            "handR_speed": 3.6648,
+            "handR_angvel": 10.5829
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9626,
+            "handR_speed": 3.648,
+            "handR_angvel": 10.5829
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 8.067896930651797e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.315760900015794,
+          "pos_units": 0.07174600563430936
+        },
+        "return_in_clip_ms": 936.0,
+        "closing_rate_rad_per_s": 0.587849,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 480.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.026285,
+            "dpos": 0.005966
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.050398,
+            "dpos": 0.011443
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.070605,
+            "dpos": 0.016036
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.085457,
+            "dpos": 0.019414
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.093881,
+            "dpos": 0.021331
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.086292,
+            "dpos": 0.019606
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.025059,
+            "dpos": 0.005697
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.100813,
+            "dpos": 0.02287
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.290746,
+            "dpos": 0.066084
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.432548,
+            "dpos": 0.098491
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.42735,
+            "dpos": 0.097291
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.375884,
+            "dpos": 0.085503
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.28864,
+            "dpos": 0.06555
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.212219,
+            "dpos": 0.048147
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.146962,
+            "dpos": 0.033327
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.094679,
+            "dpos": 0.021471
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.053842,
+            "dpos": 0.012204
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.024459,
+            "dpos": 0.005549
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.00652,
+            "dpos": 0.001479
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero019.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.8517861961279807
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 216,
+            "peak_ms": 432.0,
+            "peak_value": 13.49366511462362
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 218,
+            "peak_ms": 436.0,
+            "peak_value": 13.493665327653197
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 1.1837793488916983
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.999999847419236
+          }
+        },
+        "peak_ms_all": [
+          420.0,
+          432.0,
+          436.0,
+          456.0
+        ],
+        "combined_peak_ms": 420.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 38.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 126.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 420.0,
+            "combined": 4.0,
+            "handR_speed": 3.8518,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 422.0,
+            "combined": 3.9933,
+            "handR_speed": 3.8262,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 424.0,
+            "combined": 3.9867,
+            "handR_speed": 3.8006,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 426.0,
+            "combined": 3.9801,
+            "handR_speed": 3.7752,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 428.0,
+            "combined": 3.9735,
+            "handR_speed": 3.7499,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 430.0,
+            "combined": 3.967,
+            "handR_speed": 3.7248,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 432.0,
+            "combined": 3.9605,
+            "handR_speed": 3.6998,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 434.0,
+            "combined": 3.9541,
+            "handR_speed": 3.675,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 436.0,
+            "combined": 3.9477,
+            "handR_speed": 3.6505,
+            "handR_angvel": 13.4937
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9414,
+            "handR_speed": 3.6262,
+            "handR_angvel": 13.4937
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 6.013454676968167e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.1652172748343936,
+          "pos_units": 0.03856417464360657
+        },
+        "return_in_clip_ms": 936.0,
+        "closing_rate_rad_per_s": 0.58529,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 420.0,
+        "recovery_duration_ms": 516.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.026242,
+            "dpos": 0.00624
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.050358,
+            "dpos": 0.01199
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.070587,
+            "dpos": 0.016818
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.085471,
+            "dpos": 0.020372
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.093922,
+            "dpos": 0.02239
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.086316,
+            "dpos": 0.020574
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.025049,
+            "dpos": 0.005957
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.100398,
+            "dpos": 0.023631
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.289819,
+            "dpos": 0.066206
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.432232,
+            "dpos": 0.095522
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.426981,
+            "dpos": 0.094491
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.375145,
+            "dpos": 0.0841
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.287596,
+            "dpos": 0.065727
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.211304,
+            "dpos": 0.048971
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.146323,
+            "dpos": 0.034244
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.09431,
+            "dpos": 0.022213
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.053662,
+            "dpos": 0.012693
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.024392,
+            "dpos": 0.005784
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.006503,
+            "dpos": 0.001543
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero021.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 5.081113512271329
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.641180393671325
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 225,
+            "peak_ms": 450.0,
+            "peak_value": 11.641180450707925
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 2.067622218923567
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.999999995339483
+          }
+        },
+        "peak_ms_all": [
+          450.0,
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 5.0811,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9973,
+            "handR_speed": 5.0675,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9945,
+            "handR_speed": 5.0532,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9916,
+            "handR_speed": 5.0383,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9885,
+            "handR_speed": 5.0228,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9853,
+            "handR_speed": 5.0066,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.982,
+            "handR_speed": 4.9899,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9786,
+            "handR_speed": 4.9724,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.9751,
+            "handR_speed": 4.9544,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9714,
+            "handR_speed": 4.9357,
+            "handR_angvel": 11.6412
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 1.0345938361563405e-33,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.35576967178414204,
+          "pos_units": 0.09440716393910033
+        },
+        "return_in_clip_ms": 940.0,
+        "closing_rate_rad_per_s": 0.664333,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 484.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.029803,
+            "dpos": 0.00789
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.057181,
+            "dpos": 0.015118
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.080138,
+            "dpos": 0.021174
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.097023,
+            "dpos": 0.025622
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.106605,
+            "dpos": 0.028143
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.097977,
+            "dpos": 0.025874
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.02845,
+            "dpos": 0.00753
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.11396,
+            "dpos": 0.03027
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.327707,
+            "dpos": 0.087055
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.486374,
+            "dpos": 0.128628
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.480579,
+            "dpos": 0.127112
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.423098,
+            "dpos": 0.11213
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.32537,
+            "dpos": 0.086365
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.239545,
+            "dpos": 0.063617
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.166083,
+            "dpos": 0.044097
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.107098,
+            "dpos": 0.028422
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.060952,
+            "dpos": 0.016165
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.027703,
+            "dpos": 0.007343
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.007387,
+            "dpos": 0.001957
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero022.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.3151480718784536
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 12.34657009468073
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 12.346555754633322
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 0.8124453406905272
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.9975236002696537
+          }
+        },
+        "peak_ms_all": [
+          420.0,
+          456.0
+        ],
+        "combined_peak_ms": 420.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 38.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 126.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 420.0,
+            "combined": 3.9975,
+            "handR_speed": 3.3151,
+            "handR_angvel": 12.3447
+          },
+          {
+            "ms": 422.0,
+            "combined": 3.993,
+            "handR_speed": 3.3001,
+            "handR_angvel": 12.3447
+          },
+          {
+            "ms": 424.0,
+            "combined": 3.9886,
+            "handR_speed": 3.2853,
+            "handR_angvel": 12.3448
+          },
+          {
+            "ms": 426.0,
+            "combined": 3.9843,
+            "handR_speed": 3.2707,
+            "handR_angvel": 12.3448
+          },
+          {
+            "ms": 428.0,
+            "combined": 3.9801,
+            "handR_speed": 3.2563,
+            "handR_angvel": 12.3449
+          },
+          {
+            "ms": 430.0,
+            "combined": 3.9759,
+            "handR_speed": 3.2423,
+            "handR_angvel": 12.345
+          },
+          {
+            "ms": 432.0,
+            "combined": 3.9719,
+            "handR_speed": 3.2285,
+            "handR_angvel": 12.345
+          },
+          {
+            "ms": 434.0,
+            "combined": 3.9679,
+            "handR_speed": 3.215,
+            "handR_angvel": 12.3451
+          },
+          {
+            "ms": 436.0,
+            "combined": 3.9641,
+            "handR_speed": 3.2018,
+            "handR_angvel": 12.3452
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9603,
+            "handR_speed": 3.1889,
+            "handR_angvel": 12.3453
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 4.0339484653258985e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.17829735326664317,
+          "pos_units": 0.034653842627153895
+        },
+        "return_in_clip_ms": 938.0,
+        "closing_rate_rad_per_s": 0.631597,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 420.0,
+        "recovery_duration_ms": 518.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.028317,
+            "dpos": 0.005553
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.054326,
+            "dpos": 0.010651
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.076149,
+            "dpos": 0.014923
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.092205,
+            "dpos": 0.018062
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.101321,
+            "dpos": 0.019842
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.093116,
+            "dpos": 0.01824
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.027021,
+            "dpos": 0.005299
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.108335,
+            "dpos": 0.021164
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.312869,
+            "dpos": 0.059848
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.466857,
+            "dpos": 0.086849
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.461164,
+            "dpos": 0.085894
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.405105,
+            "dpos": 0.076303
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.310468,
+            "dpos": 0.059411
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.228058,
+            "dpos": 0.044107
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.157899,
+            "dpos": 0.030743
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.101762,
+            "dpos": 0.019888
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.0579,
+            "dpos": 0.011338
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.026312,
+            "dpos": 0.005156
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.007016,
+            "dpos": 0.001375
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero023.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 2.9283345001854766
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 10.85435221824373
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 10.85434120294274
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 0.7581581757674369
+          },
+          "combined_impact": {
+            "peak_index": 210,
+            "peak_ms": 420.0,
+            "peak_value": 3.9978236272361904
+          }
+        },
+        "peak_ms_all": [
+          420.0,
+          456.0
+        ],
+        "combined_peak_ms": 420.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 38.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 126.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 420.0,
+            "combined": 3.9978,
+            "handR_speed": 2.9283,
+            "handR_angvel": 10.8528
+          },
+          {
+            "ms": 422.0,
+            "combined": 3.9935,
+            "handR_speed": 2.9155,
+            "handR_angvel": 10.8528
+          },
+          {
+            "ms": 424.0,
+            "combined": 3.9892,
+            "handR_speed": 2.9028,
+            "handR_angvel": 10.8529
+          },
+          {
+            "ms": 426.0,
+            "combined": 3.985,
+            "handR_speed": 2.8903,
+            "handR_angvel": 10.8529
+          },
+          {
+            "ms": 428.0,
+            "combined": 3.9808,
+            "handR_speed": 2.8779,
+            "handR_angvel": 10.853
+          },
+          {
+            "ms": 430.0,
+            "combined": 3.9768,
+            "handR_speed": 2.8657,
+            "handR_angvel": 10.853
+          },
+          {
+            "ms": 432.0,
+            "combined": 3.9727,
+            "handR_speed": 2.8536,
+            "handR_angvel": 10.8531
+          },
+          {
+            "ms": 434.0,
+            "combined": 3.9688,
+            "handR_speed": 2.8417,
+            "handR_angvel": 10.8532
+          },
+          {
+            "ms": 436.0,
+            "combined": 3.9649,
+            "handR_speed": 2.83,
+            "handR_angvel": 10.8533
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9611,
+            "handR_speed": 2.8186,
+            "handR_angvel": 10.8533
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 3.765018456321747e-34,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.12220192501865063,
+          "pos_units": 0.025733510893549073
+        },
+        "return_in_clip_ms": 924.0,
+        "closing_rate_rad_per_s": 0.432885,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 420.0,
+        "recovery_duration_ms": 504.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.019406,
+            "dpos": 0.004157
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.037231,
+            "dpos": 0.007986
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.052188,
+            "dpos": 0.011206
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.063194,
+            "dpos": 0.013578
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.069443,
+            "dpos": 0.014926
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.063823,
+            "dpos": 0.013712
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.01852,
+            "dpos": 0.003967
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.07425,
+            "dpos": 0.015744
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.214442,
+            "dpos": 0.04442
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.320007,
+            "dpos": 0.064739
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.316106,
+            "dpos": 0.064011
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.27767,
+            "dpos": 0.056742
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.212797,
+            "dpos": 0.044094
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.156309,
+            "dpos": 0.032732
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.108221,
+            "dpos": 0.022838
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.069744,
+            "dpos": 0.014799
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.039682,
+            "dpos": 0.008452
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.018035,
+            "dpos": 0.003848
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.004809,
+            "dpos": 0.001028
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero024.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 5.081113512271329
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.641180393671325
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 225,
+            "peak_ms": 450.0,
+            "peak_value": 11.641180450707925
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 2.067622218923567
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.999999995339483
+          }
+        },
+        "peak_ms_all": [
+          450.0,
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 5.0811,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9973,
+            "handR_speed": 5.0675,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9945,
+            "handR_speed": 5.0532,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9916,
+            "handR_speed": 5.0383,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9885,
+            "handR_speed": 5.0228,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9853,
+            "handR_speed": 5.0066,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.982,
+            "handR_speed": 4.9899,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9786,
+            "handR_speed": 4.9724,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.9751,
+            "handR_speed": 4.9544,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9714,
+            "handR_speed": 4.9357,
+            "handR_angvel": 11.6412
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 1.0345938361563405e-33,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.35576967178414204,
+          "pos_units": 0.09440716393910033
+        },
+        "return_in_clip_ms": 940.0,
+        "closing_rate_rad_per_s": 0.664333,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 484.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.029803,
+            "dpos": 0.00789
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.057181,
+            "dpos": 0.015118
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.080138,
+            "dpos": 0.021174
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.097023,
+            "dpos": 0.025622
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.106605,
+            "dpos": 0.028143
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.097977,
+            "dpos": 0.025874
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.02845,
+            "dpos": 0.00753
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.11396,
+            "dpos": 0.03027
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.327707,
+            "dpos": 0.087055
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.486374,
+            "dpos": 0.128628
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.480579,
+            "dpos": 0.127112
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.423098,
+            "dpos": 0.11213
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.32537,
+            "dpos": 0.086365
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.239545,
+            "dpos": 0.063617
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.166083,
+            "dpos": 0.044097
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.107098,
+            "dpos": 0.028422
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.060952,
+            "dpos": 0.016165
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.027703,
+            "dpos": 0.007343
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.007387,
+            "dpos": 0.001957
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "file": "hero025.glb",
+      "clips": [
+        "idle",
+        "walk",
+        "attack",
+        "hit"
+      ],
+      "durations_ms": {
+        "idle": 2000.0,
+        "walk": 1000.0,
+        "attack": 1000.0,
+        "hit": 750.0
+      },
+      "attack": {
+        "clip": "attack",
+        "duration_ms": 1000.0,
+        "sample_count": 501,
+        "dt_ms": 2.0,
+        "curves": {
+          "hand.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 5.081113512271329
+          },
+          "hand.R_angular_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 11.641180393671325
+          },
+          "arm.R_angular_speed": {
+            "peak_index": 225,
+            "peak_ms": 450.0,
+            "peak_value": 11.641180450707925
+          },
+          "arm.R_linear_speed": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 2.067622218923567
+          },
+          "combined_impact": {
+            "peak_index": 228,
+            "peak_ms": 456.0,
+            "peak_value": 3.999999995339483
+          }
+        },
+        "peak_ms_all": [
+          450.0,
+          456.0
+        ],
+        "combined_peak_ms": 456.0,
+        "candidate_ranking": [
+          {
+            "candidate_ms": 458.0,
+            "abs_delta_ms": 2.0
+          },
+          {
+            "candidate_ms": 294.0,
+            "abs_delta_ms": 162.0
+          }
+        ],
+        "curve_top10": [
+          {
+            "ms": 456.0,
+            "combined": 4.0,
+            "handR_speed": 5.0811,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 454.0,
+            "combined": 3.9973,
+            "handR_speed": 5.0675,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 452.0,
+            "combined": 3.9945,
+            "handR_speed": 5.0532,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 450.0,
+            "combined": 3.9916,
+            "handR_speed": 5.0383,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 448.0,
+            "combined": 3.9885,
+            "handR_speed": 5.0228,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 446.0,
+            "combined": 3.9853,
+            "handR_speed": 5.0066,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 444.0,
+            "combined": 3.982,
+            "handR_speed": 4.9899,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 442.0,
+            "combined": 3.9786,
+            "handR_speed": 4.9724,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 440.0,
+            "combined": 3.9751,
+            "handR_speed": 4.9544,
+            "handR_angvel": 11.6412
+          },
+          {
+            "ms": 438.0,
+            "combined": 3.9714,
+            "handR_speed": 4.9357,
+            "handR_angvel": 11.6412
+          }
+        ]
+      },
+      "hit": {
+        "clip": "hit",
+        "duration_ms": 750.0,
+        "duration_s": 0.75,
+        "metric": "angular_speed（rad/s）；body/root 平移通道实测为常量，线速度恒 0",
+        "per_node": {
+          "body": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 2.1847444824194255
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "root": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "angular_peak_value_nonzero": false,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 0.0
+            },
+            "linear_peak_value": 0.0
+          },
+          "head": {
+            "angular_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 3.1493158796904104
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 1.310683794510421
+            },
+            "linear_peak_value": 1.310683794510421
+          },
+          "hand.R": {
+            "angular_peak": {
+              "peak_index": 0,
+              "peak_ms": 0.0,
+              "peak_value": 2.056763481229787
+            },
+            "angular_peak_value_nonzero": true,
+            "linear_peak": {
+              "peak_index": 19,
+              "peak_ms": 38.0,
+              "peak_value": 1.0463421919543114
+            },
+            "linear_peak_value": 1.0463421919543114
+          }
+        },
+        "first_impact": {
+          "peak_ms": 0.0,
+          "node": "hand.R"
+        },
+        "peak_plateau": {
+          "node": "hand.R",
+          "start_ms": 0.0,
+          "end_ms": 38.0
+        },
+        "settle_to_20pct_ms": 126.0
+      },
+      "recovery": {
+        "idle_self_tolerance": {
+          "rot_rad": 0.01080762912478435,
+          "pos_units": 0.002989102777248466
+        },
+        "attack_end_residual": {
+          "rot_rad": 0.0,
+          "pos_units": 1.0345938361563405e-33,
+          "end_ms": 1000.0
+        },
+        "attack_peak_residual": {
+          "rot_rad": 0.35576967178414204,
+          "pos_units": 0.09440716393910033
+        },
+        "return_in_clip_ms": 940.0,
+        "closing_rate_rad_per_s": 0.664333,
+        "extrapolated_extra_ms": null,
+        "extrapolated_total_ms": null,
+        "recovery_start_ms": 456.0,
+        "recovery_duration_ms": 484.0,
+        "drot_curve_sampled": [
+          {
+            "ms": 0.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          },
+          {
+            "ms": 50.0,
+            "drot": 0.029803,
+            "dpos": 0.00789
+          },
+          {
+            "ms": 100.0,
+            "drot": 0.057181,
+            "dpos": 0.015118
+          },
+          {
+            "ms": 150.0,
+            "drot": 0.080138,
+            "dpos": 0.021174
+          },
+          {
+            "ms": 200.0,
+            "drot": 0.097023,
+            "dpos": 0.025622
+          },
+          {
+            "ms": 250.0,
+            "drot": 0.106605,
+            "dpos": 0.028143
+          },
+          {
+            "ms": 300.0,
+            "drot": 0.097977,
+            "dpos": 0.025874
+          },
+          {
+            "ms": 350.0,
+            "drot": 0.02845,
+            "dpos": 0.00753
+          },
+          {
+            "ms": 400.0,
+            "drot": 0.11396,
+            "dpos": 0.03027
+          },
+          {
+            "ms": 450.0,
+            "drot": 0.327707,
+            "dpos": 0.087055
+          },
+          {
+            "ms": 500.0,
+            "drot": 0.486374,
+            "dpos": 0.128628
+          },
+          {
+            "ms": 550.0,
+            "drot": 0.480579,
+            "dpos": 0.127112
+          },
+          {
+            "ms": 600.0,
+            "drot": 0.423098,
+            "dpos": 0.11213
+          },
+          {
+            "ms": 650.0,
+            "drot": 0.32537,
+            "dpos": 0.086365
+          },
+          {
+            "ms": 700.0,
+            "drot": 0.239545,
+            "dpos": 0.063617
+          },
+          {
+            "ms": 750.0,
+            "drot": 0.166083,
+            "dpos": 0.044097
+          },
+          {
+            "ms": 800.0,
+            "drot": 0.107098,
+            "dpos": 0.028422
+          },
+          {
+            "ms": 850.0,
+            "drot": 0.060952,
+            "dpos": 0.016165
+          },
+          {
+            "ms": 900.0,
+            "drot": 0.027703,
+            "dpos": 0.007343
+          },
+          {
+            "ms": 950.0,
+            "drot": 0.007387,
+            "dpos": 0.001957
+          },
+          {
+            "ms": 1000.0,
+            "drot": 0.0,
+            "dpos": 0.0
+          }
+        ]
+      }
+    }
+  ]
+}

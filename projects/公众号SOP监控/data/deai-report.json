@@ -1,0 +1,41 @@
+{
+  "schema": "wechat-sop-deai/1",
+  "generated_at": "2026-10-29T11:20:54+08:00",
+  "files": 3,
+  "total_changes": 12,
+  "reports": [
+    {
+      "file": "/Users/user/Documents/Codex/ops/wechat-sop-monitor/data/projects/acc_demo_001-333e19cd.project.json",
+      "changes": 5,
+      "detail": [
+        "长句拆为 2 段",
+        "清理重复标点/空格",
+        "需重写：删词后句子不完整，已保留原文",
+        "长句拆为 2 段",
+        "清理重复标点/空格"
+      ],
+      "patterns_hit": []
+    },
+    {
+      "file": "/Users/user/Documents/Codex/ops/wechat-sop-monitor/data/projects/acc_demo_002-5c449ece.project.json",
+      "changes": 0,
+      "detail": [],
+      "patterns_hit": []
+    },
+    {
+      "file": "/Users/user/Documents/Codex/ops/wechat-sop-monitor/data/sops/SOP-公众号流量主第-3-个月.md",
+      "output": "/Users/user/Documents/Codex/ops/wechat-sop-monitor/data/sops/SOP-公众号流量主第-3-个月.deai.md",
+      "changes": 7,
+      "detail": [
+        "长句拆为 2 段",
+        "清理重复标点/空格",
+        "需重写：删词后句子不完整，已保留原文",
+        "长句拆为 2 段",
+        "清理重复标点/空格",
+        "长句拆为 2 段",
+        "清理重复标点/空格"
+      ],
+      "patterns_hit": []
+    }
+  ]
+}

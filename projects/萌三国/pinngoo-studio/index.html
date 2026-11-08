@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111815" />
+  <title>片场 Studio · AI 影视创作工作台</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 4v16M17 4v16M3 9h4m-4 6h4m10-6h4m-4 6h4"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5v8l-9 5-9-5V8z"/><path d="m3 8 9 5 9-5m-9 5v8m-4-16 9 5"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16m0-10h12"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-gallery" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 8.7c0 5.1-8.8 10.2-8.8 10.2S3.2 13.8 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 9a7 7 0 0 1 12-2l2 2M4 15l2 2a7 7 0 0 0 12-2"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m4 16.5-.8 4.3 4.3-.8L19 8.5 15.5 5z"/><path d="m13.8 6.7 3.5 3.5"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6l-5 4zM17 9a5 5 0 0 1 0 6m2-9a9 9 0 0 1 0 12"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10m4 0h2M4 17h2m4 0h10M14 4v6M8 14v6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22z"/><path d="M4 5v17m4-15h8m-8 4h8"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.4 1.6c-.9 1-2 1.2-2 2.9M12 17h.01"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div><strong>片场 <span>STUDIO</span></strong><small>AI FILMMAKING SPACE</small></div>
+        <button class="icon-button mobile-close" data-action="close-sidebar" aria-label="关闭导航"><svg><use href="#i-close"/></svg></button>
+      </div>
+
+      <button class="workspace-switch" data-action="profile">
+        <span class="workspace-avatar">映</span><span class="workspace-copy"><b>我的创作空间</b><small>个人工作区</small></span><svg><use href="#i-chevron"/></svg>
+      </button>
+
+      <div class="nav-group-label">工作台</div>
+      <nav class="main-nav" aria-label="主导航">
+        <button class="nav-item active" data-view="home"><svg><use href="#i-grid"/></svg><span>创作首页</span><kbd>⌘ 1</kbd></button>
+        <button class="nav-item" data-view="projects"><svg><use href="#i-folder"/></svg><span>我的项目</span><em class="nav-count" id="projectCount">3</em></button>
+        <button class="nav-item" data-view="assets"><svg><use href="#i-box"/></svg><span>素材资产</span></button>
+        <button class="nav-item" data-view="storyboard"><svg><use href="#i-film"/></svg><span>分镜工作室</span></button>
+        <button class="nav-item" data-view="canvas"><svg><use href="#i-layout"/></svg><span>创意画布</span><span class="new-dot"></span></button>
+        <button class="nav-item" data-view="tasks"><svg><use href="#i-clock"/></svg><span>生成任务</span><em class="nav-count soft" id="taskCount">2</em></button>
+      </nav>
+
+      <div class="nav-group-label nav-label-between">灵感社区</div>
+      <nav class="main-nav">
+        <button class="nav-item" data-view="showcase"><svg><use href="#i-gallery"/></svg><span>作品观赏</span></button>
+      </nav>
+
+      <div class="sidebar-projects">
+        <div class="sidebar-section-head"><span>最近项目</span><button class="icon-button tiny" data-action="new-project" aria-label="新建项目"><svg><use href="#i-plus"/></svg></button></div>
+        <button class="mini-project" data-project="p1"><span class="mini-cover cover-one">01</span><span><b>雾中来信</b><small>昨天更新</small></span><i class="status-pip"></i></button>
+        <button class="mini-project" data-project="p2"><span class="mini-cover cover-two">02</span><span><b>山海拾遗</b><small>9 月 25 日</small></span></button>
+        <button class="mini-project" data-project="p3"><span class="mini-cover cover-three">03</span><span><b>最后一班地铁</b><small>9 月 22 日</small></span></button>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="local-note" aria-live="polite"><span class="online-led"></span><span><b id="aiStatusTitle">正在检查 AI 服务</b><small id="aiStatusDescription">正在读取本机服务状态</small></span><svg><use href="#i-help"/></svg></div>
+        <button class="outline-button compact ai-check-button" data-action="check-ai">检查 AI 连接</button>
+        <button class="outline-button compact ai-check-button" data-action="ai-settings">AI 服务设置</button>
+        <button class="profile-button" data-action="profile"><span class="profile-avatar">林</span><span><b>林间造梦</b><small>创作人 · 个人空间</small></span><svg><use href="#i-more"/></svg></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left"><button class="icon-button menu-toggle" data-action="open-sidebar" aria-label="打开导航"><svg><use href="#i-menu"/></svg></button><div class="breadcrumbs"><span>我的创作空间</span><svg><use href="#i-chevron"/></svg><b id="breadcrumbTitle">创作首页</b></div></div>
+        <div class="topbar-actions">
+          <label class="global-search"><svg><use href="#i-search"/></svg><input id="globalSearch" type="search" placeholder="搜索项目、素材…" /><kbd>⌘ K</kbd></label>
+          <div class="save-indicator"><span class="online-led"></span><span>已自动保存</span></div>
+          <button class="icon-button notification-button" data-action="notifications" aria-label="通知"><svg><use href="#i-bell"/></svg><i></i></button>
+          <button class="top-avatar" data-action="profile">林</button>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="view active" id="view-home">
+          <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> MONDAY, SEPTEMBER 28 <span class="eyebrow-weather">✦ 适合创作的一天</span></div><h1>让脑海里的故事，<em>开拍。</em></h1><p class="lead">从一句灵感，到一部完整短片。你的创作旅程从这里开始。</p></div><button class="quiet-action" data-action="new-project"><svg><use href="#i-plus"/></svg>新建项目</button></div>
+
+          <div class="hero-grid">
+            <div class="hero-card">
+              <div class="hero-copy"><span class="pill-label"><span class="pulse-dot"></span> CREATIVE DESK</span><h2>今天，想讲一个<br/><em>什么样的故事？</em></h2><p>选一个起点，接下来的剧本、角色、分镜和视频，我们一起完成。</p></div>
+              <div class="hero-illustration" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="film-frame"><div class="frame-bars"><i></i><i></i><i></i><i></i></div><div class="frame-scene"><span class="moon"></span><span class="hill hill-a"></span><span class="hill hill-b"></span><span class="figure"></span></div><div class="frame-bars"><i></i><i></i><i></i><i></i></div></div><span class="sparkle s1">✦</span><span class="sparkle s2">✧</span><span class="orbit-caption">STORY<br/>IN MOTION</span></div>
+              <div class="hero-footer"><span><b>01</b> 灵感</span><i></i><span><b>02</b> 故事</span><i></i><span><b>03</b> 影像</span><i></i><span><b>04</b> 成片</span></div>
+            </div>
+
+            <div class="continue-card" id="continueCard">
+              <div class="continue-top"><span class="eyebrow-small">继续上次创作</span><button class="icon-button tiny" data-action="project-menu" data-id="p1" aria-label="项目操作"><svg><use href="#i-more"/></svg></button></div>
+              <button class="continue-art cover-one" data-action="open-project" data-id="p1"><span class="art-tag">短篇剧集</span><span class="art-title">雾中<br/>来信</span><span class="art-meta">EP 03 · 雨夜重逢</span><span class="art-grain"></span></button>
+              <div class="continue-bottom"><div><b>雾中来信</b><span>最后编辑 · 昨天 18:42</span></div><button class="round-arrow" data-action="open-project" data-id="p1" aria-label="继续创作"><svg><use href="#i-arrow"/></svg></button></div>
+              <div class="progress-line"><span style="width:64%"></span></div>
+            </div>
+          </div>
+
+          <div class="section-heading creation-heading"><div><div class="eyebrow-small">CHOOSE YOUR STARTING POINT</div><h2>选择创作方式</h2></div><span class="section-note">不同起点，同一条完整创作链路 <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="creation-grid">
+            <button class="creation-card" data-mode="script"><span class="creation-number">01</span><span class="creation-icon icon-coral"><svg><use href="#i-book"/></svg></span><span class="creation-title">从剧本开始</span><span class="creation-desc">已有剧本？导入后继续完成画风、资产、分镜与视频。</span><span class="creation-bottom"><span>TXT · MD · HTML · Fountain</span><span class="creation-arrow"><svg><use href="#i-arrow"/></svg></span></span></button>
+            <button class="creation-card featured" data-mode="idea"><span class="featured-badge">快速开始</span><span class="creation-number">02</span><span class="creation-icon icon-mint"><svg><use href="#i-spark"/></svg></span><span class="creation-title">从一个想法开始</span><span class="creation-desc">一句灵感，让它长成一个有角色、有情节的短篇故事。</span><span class="creation-bottom"><span>适合 1–5 集短篇创作</span><span class="creation-arrow"><svg><use href="#i-arrow"/></svg></span></span></button>
+            <button class="creation-card" data-mode="series"><span class="creation-number">03</span><span class="creation-icon icon-lilac"><svg><use href="#i-film"/></svg></span><span class="creation-title">长篇剧集创作</span><span class="creation-desc">从世界观到分集正文，逐步搭建你的系列故事。</span><span class="creation-bottom"><span>故事规划 · 分集正文</span><span class="creation-arrow"><svg><use href="#i-arrow"/></svg></span></span></button>
+            <button class="creation-card" data-mode="novel"><span class="creation-number">04</span><span class="creation-icon icon-gold"><svg><use href="#i-gallery"/></svg></span><span class="creation-title">小说改编</span><span class="creation-desc">把小说原著拆解成分集剧本，保留故事脉络与人物关系。</span><span class="creation-bottom"><span>TXT · MD · HTML 文本</span><span class="creation-arrow"><svg><use href="#i-arrow"/></svg></span></span></button>
+          </div>
+
+          <div class="starter-panel" id="starterPanel">
+            <div class="starter-heading"><div><span class="starter-mark"><svg><use href="#i-spark"/></svg></span><div><h3 id="starterTitle">把灵感写在这里</h3><p id="starterSubtitle">写下一句话，先让故事有个起点。</p></div></div><button class="text-button" data-action="clear-starter">清空</button></div>
+            <div class="starter-input-wrap"><textarea id="starterInput" rows="3" placeholder="例如：一个总在雨天收到陌生来信的女孩，发现寄信人竟是十年后的自己……"></textarea><div class="starter-controls"><div class="starter-options" id="starterOptions"><label><span>故事长度</span><select id="episodeCount"><option value="2">2 集 · 短篇</option><option value="3">3 集 · 完整故事</option><option value="5">5 集 · 小系列</option></select></label><label><span>单集时长</span><select id="episodeLength"><option value="2">约 2 分钟</option><option value="3">约 3 分钟</option><option value="5">约 5 分钟</option></select></label></div><div class="starter-buttons"><button class="upload-button" data-action="upload"><svg><use href="#i-upload"/></svg><span>导入文本</span></button><input type="file" id="fileInput" accept=".txt,.md,.markdown,.fountain,.html" hidden/><input type="file" id="referenceFileInput" accept="image/png,image/jpeg,image/webp" hidden/><button class="primary-button" id="startCreation">开始创作 <svg><use href="#i-arrow"/></svg></button></div></div></div>
+            <div class="starter-footnote"><svg><use href="#i-sound"/></svg>开始后会调用已配置的 AI 服务。</div>
+          </div>
+
+          <div class="section-heading recent-heading"><div><div class="eyebrow-small">YOUR STORY UNIVERSE</div><h2>最近项目 <span class="muted-count" id="recentCount">03</span></h2></div><button class="link-button" data-view="projects">查看全部 <svg><use href="#i-arrow"/></svg></button></div>
+          <div class="recent-grid" id="recentProjects"></div>
+
+          <div class="inspiration-banner"><span class="inspiration-icon"><svg><use href="#i-spark"/></svg></span><div><span class="eyebrow-small">FROM THE COMMUNITY</span><h3>看看别人的故事，找到自己的灵感</h3><p>浏览创作者的作品与制作过程。</p></div><button class="outline-button" data-view="showcase">逛逛作品 <svg><use href="#i-arrow"/></svg></button><div class="banner-circles" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+        </section>
+
+        <section class="view" id="view-projects">
+          <div class="page-heading"><div><div class="eyebrow-small">YOUR WORKSPACE</div><h1>我的项目 <span class="muted-count" id="allProjectCount">03</span></h1><p>所有故事，都在这里继续生长。</p></div><button class="primary-button" data-action="new-project"><svg><use href="#i-plus"/></svg>新建项目</button></div>
+          <div class="toolbar-row"><div class="segmented-control"><button class="selected" data-project-filter="all">全部项目</button><button data-project-filter="recent">最近编辑</button><button data-project-filter="archived">已归档</button></div><label class="inline-search"><svg><use href="#i-search"/></svg><input id="projectSearch" placeholder="搜索项目名称" /></label><button class="icon-button bordered" data-action="sort-projects" title="排序"><svg><use href="#i-sliders"/></svg></button></div>
+          <div class="project-grid" id="projectGrid"></div>
+        </section>
+
+        <section class="view" id="view-assets">
+          <div class="page-heading asset-heading"><div><div class="eyebrow-small">REUSABLE CREATIVE MATERIALS</div><h1>素材资产</h1><p>管理角色、场景与道具，让每一集都保持一致。</p></div><div class="asset-heading-actions"><button class="outline-button" data-action="upload-asset-image"><svg><use href="#i-upload"/></svg>上传图片</button><button class="outline-button" data-action="add-asset"><svg><use href="#i-plus"/></svg>添加素材</button><button class="primary-button" data-action="generate-asset-image"><svg><use href="#i-spark"/></svg>AI 生成图片</button></div></div>
+          <div class="asset-summary"><div><span class="summary-icon mint"><svg><use href="#i-user"/></svg></span><span><b id="characterTotal">0</b><small>角色资产</small></span></div><div><span class="summary-icon lilac"><svg><use href="#i-gallery"/></svg></span><span><b id="sceneTotal">0</b><small>场景资产</small></span></div><div><span class="summary-icon gold"><svg><use href="#i-box"/></svg></span><span><b id="propTotal">0</b><small>道具资产</small></span></div><div class="asset-tip"><svg><use href="#i-spark"/></svg>素材可在分镜与画布中重复引用</div></div>
+          <div class="toolbar-row"><div class="segmented-control" id="assetFilters"><button class="selected" data-asset-filter="all">全部</button><button data-asset-filter="character">角色</button><button data-asset-filter="scene">场景</button><button data-asset-filter="prop">道具</button></div><label class="inline-search"><svg><use href="#i-search"/></svg><input id="assetSearch" placeholder="搜索素材" /></label></div>
+          <div class="asset-production-controls"><label for="assetProjectFilter">项目素材</label><select id="assetProjectFilter" aria-label="筛选素材项目"><option value="all">全部项目</option></select><button class="primary-button" data-action="batch-asset-images">批量生成缺图</button><button class="outline-button" data-action="redo-asset-images">批量重绘</button><button class="outline-button" data-action="download-asset-images">打包下载</button><span id="assetBatchStatus" role="status"></span></div><div class="asset-grid" id="assetGrid"></div>
+        </section>
+
+        <section class="view" id="view-storyboard">
+          <div class="page-heading"><div><div class="eyebrow-small">SHOT BY SHOT</div><h1>分镜工作室</h1><p>把剧本拆成镜头，让故事拥有节奏与画面。</p></div><button class="primary-button" data-action="generate-storyboard"><svg><use href="#i-spark"/></svg>生成分镜</button></div>
+          <div class="workspace-select-row"><label>当前项目<select id="storyProjectSelect"></select></label><div class="episode-strip" id="episodeStrip"></div><button class="outline-button compact" data-action="add-episode"><svg><use href="#i-plus"/></svg>添加分集</button></div>
+          <div id="productionWorkflow" class="production-workflow"></div>
+          <div class="storyboard-toolbar"><div><span class="status-pill status-ready" id="storyboardStatus"><i></i> 3 个镜头已完成</span><span class="storyboard-meta" id="storyboardEpisodeMeta">EP 01 · 预计时长 02:18</span><span class="tag" id="storyboardPresetLabel">电影感叙事</span></div><div class="toolbar-actions"><button class="outline-button compact" data-action="storyboard-preset"><svg><use href="#i-sliders"/></svg>分镜预设</button><button class="outline-button compact" data-action="upload-reference"><svg><use href="#i-upload"/></svg>参考素材</button></div></div>
+          <div class="service-picker-row" aria-label="AI 模型选择"><button data-action="ai-settings"><span>文本模型</span><b id="textModelPicker">正在检查</b><svg><use href="#i-chevron"/></svg></button><button data-action="ai-settings"><span>视频模型</span><b id="videoModelPicker">正在检查</b><svg><use href="#i-chevron"/></svg></button></div>
+          <div class="production-actions"><button class="outline-button" data-action="batch-storyboards">批量生成分镜</button><button class="primary-button" data-action="batch-shot-images">生成缺少的配图</button><button class="outline-button" data-action="export-storyboard">导出当前分镜</button><button class="outline-button" data-action="batch-shot-videos">逐镜生成本集视频</button><span id="shotImageProgress" role="status"></span></div>
+          <input type="file" id="shotImageFile" accept="image/png,image/jpeg,image/webp" hidden />
+          <div class="shot-list" id="shotList"></div>
+          <div class="storyboard-bottom"><span id="videoAvailability" role="status">正在检查视频服务。</span><button class="primary-button" data-action="queue-video" disabled aria-describedby="videoAvailability">正在检查</button></div>
+        </section>
+
+        <section class="view" id="view-canvas">
+          <div class="page-heading canvas-heading"><div><div class="eyebrow-small">VISUAL THINKING SPACE</div><h1>创意画布</h1><p>自由摆放灵感、素材和镜头，连接你的创作思路。</p></div><div class="canvas-head-actions"><button class="outline-button" data-action="canvas-fit">适应画布</button><button class="primary-button" data-action="add-node"><svg><use href="#i-plus"/></svg>添加节点</button></div></div>
+            <div class="canvas-frame"><div class="canvas-toolbar"><div class="canvas-breadcrumb"><span id="canvasProjectName">雾中来信</span><svg><use href="#i-chevron"/></svg><b>创意画布</b></div><div class="canvas-tool-buttons"><button class="canvas-tool active" data-action="canvas-select" title="选择"><span class="tool-cursor">↖</span></button><button class="canvas-tool" data-action="canvas-connect" title="连接"><span>⌁</span></button><button class="canvas-tool" data-action="add-node" title="便签"><span>▤</span></button><i></i><button class="canvas-tool" data-action="canvas-zoom-out" title="缩小">−</button><span id="zoomLabel">100%</span><button class="canvas-tool" data-action="canvas-zoom-in" title="放大">+</button><button class="canvas-tool" data-action="canvas-fit" title="适应画布"><svg><use href="#i-layout"/></svg></button></div></div>
+            <div class="canvas-board" id="canvasBoard"><div class="canvas-dots"></div><div class="canvas-scene" id="canvasScene"><svg class="connector-layer" viewBox="0 0 1100 560" preserveAspectRatio="none"><path d="M260 190 C340 190 335 145 405 145"/><path d="M260 215 C360 215 350 335 405 335"/><path d="M610 145 C690 145 665 220 745 220"/><path d="M610 335 C680 335 680 265 745 265"/></svg><div class="canvas-nodes" id="canvasNodes"></div></div><button class="canvas-fab" data-action="add-node"><svg><use href="#i-plus"/></svg> 添加创意</button><div class="canvas-minimap"><span class="mini-map-title">画布地图</span><div><i></i><i></i><i></i><i></i></div></div></div>
+            <div class="canvas-footer"><span><span class="online-led"></span>已自动保存</span><span>拖动节点整理你的创作思路</span><button data-action="canvas-help"><svg><use href="#i-help"/></svg> 使用帮助</button></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-tasks">
+          <div class="page-heading"><div><div class="eyebrow-small">GENERATE & KEEP CREATING</div><h1>生成任务</h1><p>跟进剧本、分镜、图片与视频任务的进度。</p></div><button class="outline-button" data-action="refresh-tasks"><svg><use href="#i-refresh"/></svg>刷新状态</button></div>
+          <div class="task-overview"><div><span class="task-overview-label">进行中</span><b id="runningTaskTotal">2</b><span class="task-overview-icon active"><svg><use href="#i-spark"/></svg></span></div><div><span class="task-overview-label">已完成</span><b id="doneTaskTotal">8</b><span class="task-overview-icon complete"><svg><use href="#i-check"/></svg></span></div><div><span class="task-overview-label">待处理</span><b id="queuedTaskTotal">1</b><span class="task-overview-icon queued"><svg><use href="#i-clock"/></svg></span></div><div class="task-note"><span>后台任务</span><b>即梦与仙宫云任务可在这里刷新和预览。</b></div></div>
+          <div class="toolbar-row"><div class="segmented-control" id="taskFilters"><button class="selected" data-task-filter="all">全部任务</button><button data-task-filter="running">进行中</button><button data-task-filter="done">已完成</button><button data-task-filter="failed">需处理</button></div><label class="inline-search"><svg><use href="#i-search"/></svg><input id="taskSearch" placeholder="搜索任务" /></label></div>
+          <div class="task-list" id="taskList"></div>
+        </section>
+
+        <section class="view" id="view-showcase">
+          <div class="showcase-hero"><div><div class="eyebrow-small">A COMMUNITY OF STORYTELLERS</div><h1>作品观赏</h1><p>每一部作品，都是一次新的想象。</p></div><div class="showcase-stat"><b>本地示例</b><span>作品信息演示，不含真实视频</span></div><div class="showcase-spark">✳</div></div>
+          <div class="showcase-toolbar"><div class="showcase-categories" id="showcaseFilters"><button class="selected" data-show-filter="全部">全部</button><button data-show-filter="短片剧集">短片剧集</button><button data-show-filter="动画短片">动画短片</button><button data-show-filter="仿真人">仿真人</button><button data-show-filter="3D">3D</button><button data-show-filter="经典衍生">经典衍生</button></div><label class="inline-search"><svg><use href="#i-search"/></svg><input id="showcaseSearch" placeholder="搜索作品" /></label></div>
+          <div class="showcase-grid" id="showcaseGrid"></div>
+          <div class="load-more-wrap"><button class="outline-button" data-action="load-more">发现更多作品 <svg><use href="#i-arrow"/></svg></button></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></section></div>
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden><aside class="side-drawer" id="sideDrawer"></aside></div>
+  <script src="./workflow.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

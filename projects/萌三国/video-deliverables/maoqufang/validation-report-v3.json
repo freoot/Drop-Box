@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "file": "茅曲坊-动效卡片版-v3.mp4",
+  "sha256": "e8311d100d4649e9bddee506f9febae0cee6b678ee0243909d51996300b567f9",
+  "bytes": 95761260,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_seconds": 65,
+  "full_decode": "pass",
+  "main_shots": 27,
+  "motion_cards": 4,
+  "circular_presenter_segments": 3,
+  "captions": 25,
+  "motion_math_tests": "pass",
+  "sampled_frames": 130,
+  "black_frames": 0,
+  "flat_top_bottom_bars": 0,
+  "audio_peak_db": -3.2,
+  "audio_mean_db": -22.5
+}

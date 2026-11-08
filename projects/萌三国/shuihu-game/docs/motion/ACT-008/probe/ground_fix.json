@@ -1,0 +1,55 @@
+{
+ "schema": "act008-ground-fix/1",
+ "weapon_lift": 0.026,
+ "margin": 0.002,
+ "clips": {
+  "attack": {
+   "min_z_after": -0.0
+  },
+  "death": {
+   "min_z_before": -0.1236,
+   "min_z_after": 0.002,
+   "lifted_frames": 9,
+   "lifts": [
+    {
+     "frame": 0.0,
+     "lift": 0.002
+    },
+    {
+     "frame": 1.0,
+     "lift": 0.0073
+    },
+    {
+     "frame": 2.0,
+     "lift": 0.0246
+    },
+    {
+     "frame": 3.0,
+     "lift": 0.031
+    },
+    {
+     "frame": 4.0,
+     "lift": 0.0387
+    },
+    {
+     "frame": 5.0,
+     "lift": 0.064
+    },
+    {
+     "frame": 6.0,
+     "lift": 0.1256
+    },
+    {
+     "frame": 38.0,
+     "lift": 0.0018
+    },
+    {
+     "frame": 38.4,
+     "lift": 0.002
+    }
+   ]
+  }
+ },
+ "blend_bytes": 660440,
+ "glb_bytes": 949104
+}

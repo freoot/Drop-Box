@@ -1,0 +1,10 @@
+{
+  "skill": "aoci",
+  "repository": "agentskillexchange/skills",
+  "ref": "main",
+  "source_path": "skills/maintain-a-git-versioned-codebase-index-for-coding-agents-with-aoci-code",
+  "installed_file": "/Users/user/.codex/skills/aoci/SKILL.md",
+  "sha256": "9d1d2515cef94a7296902dc009bc01ad80fb1329329f06d673bbc74c0489ebbf",
+  "installed_date": "2026-10-05",
+  "scope": "skill-only; AOCI CLI and MCP are not configured"
+}

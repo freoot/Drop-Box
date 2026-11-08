@@ -1,0 +1,269 @@
+<view class="game-shell">
+  <view class="safe-top"></view>
+
+  <view class="topbar">
+    <view class="player-chip" bindtap="openSettings">
+      <view class="avatar-badge">🌸</view>
+      <view class="player-info">
+        <text class="player-name">桃花主公</text>
+        <text class="level-line">城池 Lv.{{townLevel}}</text>
+      </view>
+      <text class="chevron">⌄</text>
+    </view>
+    <view class="resources">
+      <view class="resource-pill coin-pill"><text class="resource-icon">🪙</text><text>{{gold}}</text><text class="add-dot">＋</text></view>
+      <view class="resource-pill grain-pill"><text class="resource-icon">🌾</text><text>{{grain}}</text><text class="add-dot">＋</text></view>
+      <view class="resource-pill jade-pill"><text class="resource-icon">💎</text><text>{{jade}}</text><text class="add-dot">＋</text></view>
+    </view>
+  </view>
+
+  <view class="exp-wrap">
+    <text class="exp-label">城池繁荣</text>
+    <view class="exp-track"><view class="exp-fill" style="width: {{townExp}}%;"></view></view>
+    <text class="exp-count">{{townExp}}/{{expNeed}}</text>
+    <text class="stamina-pill">⚡ {{stamina}}/5</text>
+  </view>
+
+  <view class="main-view" xhs:if="{{showCity}}">
+    <view class="city-scene">
+      <image class="town-art" src="/assets/cute-walled-town.webp" mode="aspectFill"></image>
+      <view class="scene-wash"></view>
+      <view class="weather-pill"><text>☀</text><text>桃花正盛 · 春日</text></view>
+
+      <view class="building building-left" data-page="tavern" bindtap="openBuilding">
+        <text class="building-icon">🍶</text><text class="building-label">桃花酒馆</text><text class="building-level">Lv.2</text>
+      </view>
+      <view class="building building-right" data-page="heroes" bindtap="openBuilding">
+        <text class="building-icon">🏯</text><text class="building-label">点将台</text><text class="building-level">Lv.1</text>
+      </view>
+      <view class="building building-market" data-action="upgrade" bindtap="openBuilding">
+        <text class="building-icon">🧺</text><text class="building-label">农庄升级</text><text class="building-level">Lv.{{farmLevel}}</text>
+      </view>
+      <view class="building building-garden" data-action="farm" bindtap="openBuilding">
+        <text class="building-icon">🌾</text><text class="building-label">{{farmCollected ? '已收成' : '收取粮草'}}</text>
+      </view>
+
+      <image class="hero-town" src="/assets/hero-taoyao.webp" mode="aspectFit"></image>
+      <view class="hero-greeting">
+        <text class="greeting-name">桃夭</text>
+        <text class="greeting-line">主公，今天也要元气满满！</text>
+      </view>
+
+      <view class="quest-card" bindtap="openMainQuest">
+        <view class="quest-stamp">主线</view>
+        <view class="quest-copy">
+          <text class="quest-title">桃花村的来信</text>
+          <text class="quest-sub">整备三人小队，出发探索山河</text>
+        </view>
+        <view class="quest-arrow">›</view>
+        <view class="quest-glow"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="main-view parchment-view" xhs:if="{{showMap}}">
+    <view class="section-heading">
+      <view><text class="eyebrow">CHAPTER 01 · 黄巾初乱</text><text class="section-title">山河征途</text></view>
+      <view class="chapter-badge">第 一 章</view>
+    </view>
+    <view class="map-summary">
+      <text class="map-medal">🗺️</text>
+      <view class="map-summary-copy"><text class="map-summary-title">从桃花村出发</text><text class="map-summary-sub">三人小队 · 体力 ⚡ {{stamina}}/5</text></view>
+    </view>
+    <view class="route-line"></view>
+    <view class="stage-list">
+      <view class="stage-row stage-done">
+        <view class="stage-node">✓</view>
+        <view class="stage-copy"><text class="stage-name">桃花村外</text><text class="stage-desc">初遇同伴 · 已探索</text></view>
+        <text class="stage-stars">★★★</text>
+      </view>
+      <view class="stage-row stage-current" xhs:if="{{unlockedStage >= 2}}">
+        <view class="stage-node">2</view>
+        <view class="stage-copy"><text class="stage-name">落霞坡</text><text class="stage-desc">黄巾小队 · 职业克制很关键</text></view>
+        <view class="stage-go" data-stage="2" bindtap="startBattle">出征 ›</view>
+      </view>
+      <view class="stage-row stage-locked" xhs:if="{{unlockedStage < 2}}">
+        <view class="stage-node">2</view><view class="stage-copy"><text class="stage-name">落霞坡</text><text class="stage-desc">尚未开启</text></view><text class="lock-mark">🔒</text>
+      </view>
+      <view class="stage-row stage-current" xhs:if="{{unlockedStage >= 3}}">
+        <view class="stage-node">3</view>
+        <view class="stage-copy"><text class="stage-name">汜水小路</text><text class="stage-desc">更强敌人 · 更多战利品</text></view>
+        <view class="stage-go" data-stage="3" bindtap="startBattle">出征 ›</view>
+      </view>
+      <view class="stage-row stage-locked" xhs:if="{{unlockedStage < 3}}">
+        <view class="stage-node">3</view><view class="stage-copy"><text class="stage-name">汜水小路</text><text class="stage-desc">完成落霞坡后开启</text></view><text class="lock-mark">🔒</text>
+      </view>
+    </view>
+    <view class="map-tip">战士克射手 · 射手克谋士 · 谋士克战士</view>
+  </view>
+
+  <view class="main-view parchment-view heroes-view" xhs:if="{{showHeroes}}">
+    <view class="section-heading">
+      <view><text class="eyebrow">YOUR LITTLE GENERALS</text><text class="section-title">我的武将</text></view>
+      <view class="roster-count">{{partyLabel}}</view>
+    </view>
+    <scroll-view class="hero-strip" scroll-x="true" show-scrollbar="false">
+      <view class="hero-strip-inner">
+        <view class="hero-option {{hero.cardClass}}" xhs:for="{{heroes}}" xhs:for-item="hero" xhs:for-index="index" xhs:key="id" data-index="{{index}}" bindtap="selectHero">
+          <view class="hero-option-art">
+            <image xhs:if="{{hero.id === 'taoyao'}}" src="/assets/hero-taoyao.webp" mode="aspectFit"></image>
+            <image xhs:if="{{hero.id === 'tuantuan'}}" src="/assets/hero-tuantuan.webp" mode="aspectFit"></image>
+            <image xhs:if="{{hero.id === 'xiaofeng'}}" src="/assets/hero-xiaofeng.webp" mode="aspectFit"></image>
+            <text xhs:if="{{hero.id !== 'taoyao' && hero.id !== 'tuantuan' && hero.id !== 'xiaofeng'}}">{{hero.icon}}</text>
+          </view>
+          <text class="hero-option-name">{{hero.name}}</text>
+          <text class="hero-option-level">{{hero.inParty ? '出战中' : '预备'}}</text>
+          <view class="party-toggle {{hero.inParty ? 'in-party' : ''}}" data-id="{{hero.id}}" catchtap="toggleParty">{{hero.inParty ? '上阵' : '换入'}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="hero-detail-card">
+      <view class="hero-detail-art">
+        <image xhs:if="{{selectedHero.id === 'taoyao'}}" src="/assets/hero-taoyao.webp" mode="aspectFit"></image>
+        <image xhs:if="{{selectedHero.id === 'tuantuan'}}" src="/assets/hero-tuantuan.webp" mode="aspectFit"></image>
+        <image xhs:if="{{selectedHero.id === 'xiaofeng'}}" src="/assets/hero-xiaofeng.webp" mode="aspectFit"></image>
+        <text xhs:if="{{selectedHero.id !== 'taoyao' && selectedHero.id !== 'tuantuan' && selectedHero.id !== 'xiaofeng'}}" class="hero-emoji-large">{{selectedHero.icon}}</text>
+        <view class="rarity-star">★ ★ ★</view>
+      </view>
+      <view class="hero-detail-copy">
+        <text class="hero-title-small">{{selectedHero.title}}</text>
+        <text class="hero-detail-name">{{selectedHero.name}}</text>
+        <text class="role-pill">{{selectedHero.role}} · Lv.{{selectedHero.level}}</text>
+        <view class="stat-row"><text>攻击</text><view class="stat-track"><view class="stat-attack" style="width: {{selectedHero.attack}}%;"></view></view><text>{{selectedHero.attack}}</text></view>
+        <view class="stat-row"><text>体力</text><view class="stat-track"><view class="stat-hp" style="width: {{selectedHero.hp / 2}}%;"></view></view><text>{{selectedHero.hp}}</text></view>
+      </view>
+    </view>
+    <view class="hero-quote"><text>✦</text> 三种职业互相克制，搭配阵容再出发 <text>✦</text></view>
+    <view class="primary-button train-button" bindtap="trainHero"><text>训练伙伴</text><text class="button-cost">🪙 100 · 🌾 8</text></view>
+  </view>
+
+  <view class="main-view parchment-view tavern-view" xhs:if="{{showTavern}}">
+    <view class="section-heading">
+      <view><text class="eyebrow">A WARM PLACE FOR NEW FRIENDS</text><text class="section-title">桃花酒馆</text></view>
+      <view class="tavern-lantern">🏮</view>
+    </view>
+    <view class="tavern-banner">
+      <view class="tavern-ribbon">相逢有礼</view>
+      <text class="tavern-greeting">听说，新的伙伴正在路上……</text>
+      <image class="tavern-hero" src="/assets/hero-taoyao.webp" mode="aspectFit"></image>
+      <view class="tavern-cup">🍵</view>
+      <text class="tavern-bottom-note">一盏桃花酿，结一段三国缘</text>
+    </view>
+    <view class="recruit-card">
+      <view class="recruit-title-row"><text class="recruit-title">寻访伙伴</text><text class="recruit-caption">每一次相遇，都是缘分</text></view>
+      <view class="recruit-perks"><view><text>🎁</text><text>随机新伙伴</text></view><view><text>✨</text><text>可安排进三人阵容</text></view></view>
+      <view class="primary-button recruit-button" bindtap="recruitHero"><text>请伙伴喝茶</text><text class="button-cost">🪙 {{recruitCost}}</text></view>
+      <text class="recruit-safe">单机原型 · 不含真实支付</text>
+    </view>
+  </view>
+
+  <view class="main-view parchment-view trials-view" xhs:if="{{showTrials}}">
+    <view class="section-heading">
+      <view><text class="eyebrow">SIDE ADVENTURES · EXTRA PLAY</text><text class="section-title">秘境与试炼</text></view>
+      <view class="chapter-badge">轮换玩法</view>
+    </view>
+    <view class="trial-feature peach-trial">
+      <view class="trial-deco">🦋</view>
+      <view class="trial-copy">
+        <text class="trial-title">桃源迷阵</text>
+        <text class="trial-desc">每次入阵获得一种随机祝福</text>
+        <text class="trial-meta">今日剩余 {{trialTickets}} 次 · 可得铜钱与玉璧</text>
+      </view>
+      <view class="trial-button" bindtap="startTrial">探索 ›</view>
+    </view>
+    <view class="trial-feature arena-trial">
+      <view class="trial-deco">🥋</view>
+      <view class="trial-copy">
+        <text class="trial-title">演武校场</text>
+        <text class="trial-desc">挑战木人阵，练习职业搭配与合击</text>
+        <text class="trial-meta">今日剩余 {{arenaTickets}} 次 · 练习赛</text>
+      </view>
+      <view class="trial-button" bindtap="startArena">开练 ›</view>
+    </view>
+    <view class="trial-howto">
+      <text class="howto-title">小队战斗小诀窍</text>
+      <view class="howto-row"><text class="howto-icon">🔺</text><text>战士、射手、谋士互相克制</text></view>
+      <view class="howto-row"><text class="howto-icon">✨</text><text>普通攻击积攒能量，满能量可发动全队合击</text></view>
+      <view class="howto-row"><text class="howto-icon">🤝</text><text>把合适的伙伴换入阵容，再挑战强敌</text></view>
+    </view>
+    <view class="trial-footer">秘境与演武为单机玩法原型，后续可增加周常首领和好友异步挑战。</view>
+  </view>
+
+  <view class="main-view battle-view" xhs:if="{{showBattle}}">
+    <view class="battle-topline">
+      <view class="battle-back" bindtap="returnFromBattle">‹ 返回</view>
+      <view class="battle-round">{{battleTitle}} · 第 {{battleTurn}} 回合</view>
+      <view class="battle-speed">⚡ {{battleEnergy}}%</view>
+    </view>
+    <view class="battle-land">
+      <view class="battle-cloud cloud-one"></view>
+      <view class="battle-cloud cloud-two"></view>
+      <view class="enemy-row">
+        <view class="enemy-unit {{enemy.selected ? 'enemy-target' : ''}} {{enemy.hp <= 0 ? 'unit-defeated' : ''}}" xhs:for="{{battleEnemies}}" xhs:for-item="enemy" xhs:for-index="index" xhs:key="name" data-index="{{index}}" bindtap="selectTarget">
+          <text class="enemy-emoji">{{enemy.icon}}</text>
+          <text class="unit-name">{{enemy.name}}</text>
+          <text class="enemy-role">{{enemy.role}}</text>
+          <view class="hp-track"><view class="hp-fill enemy-hp" style="width: {{enemy.hp / enemy.maxHp * 100}}%;"></view></view>
+        </view>
+      </view>
+      <view class="battle-burst">✦</view>
+      <view class="battle-party-row">
+        <view class="ally-unit {{unit.active ? 'ally-active' : ''}} {{unit.hp <= 0 ? 'unit-defeated' : ''}}" xhs:for="{{battleParty}}" xhs:for-item="unit" xhs:for-index="index" xhs:key="id">
+          <view class="ally-portrait">
+            <image xhs:if="{{unit.id === 'taoyao'}}" src="/assets/hero-taoyao.webp" mode="aspectFit"></image>
+            <image xhs:if="{{unit.id === 'tuantuan'}}" src="/assets/hero-tuantuan.webp" mode="aspectFit"></image>
+            <image xhs:if="{{unit.id === 'xiaofeng'}}" src="/assets/hero-xiaofeng.webp" mode="aspectFit"></image>
+            <text xhs:if="{{unit.id !== 'taoyao' && unit.id !== 'tuantuan' && unit.id !== 'xiaofeng'}}" class="ally-emoji">{{unit.icon}}</text>
+          </view>
+          <text class="ally-name">{{unit.name}}</text>
+          <text class="ally-role">{{unit.role}}</text>
+          <view class="hp-track"><view class="hp-fill ally-hp" style="width: {{unit.hp / unit.maxHp * 100}}%;"></view></view>
+        </view>
+      </view>
+    </view>
+    <view class="battle-log"><text class="log-label">战况</text><text class="log-text">{{battleMessage}}</text></view>
+    <view class="battle-actions" xhs:if="{{!battleWon && !battleLost}}">
+      <view class="skill-card" bindtap="battleAction"><text class="skill-icon">⚔️</text><text>普通攻击</text></view>
+      <view class="skill-card skill-special" data-action="skill" bindtap="battleAction"><text class="skill-icon">🌟</text><text>桃花合击 · 100%</text></view>
+    </view>
+    <view class="primary-button battle-button" xhs:if="{{battleWon || battleLost}}" bindtap="battleAction">{{battleButtonText}}</view>
+    <view class="battle-reward" xhs:if="{{battleWon}}">{{battleRewardText}}</view>
+  </view>
+
+  <view class="bottom-tools" xhs:if="{{!showBattle}}">
+    <view class="tool-card" bindtap="collectTax">
+      <text class="tool-icon">🪙</text>
+      <view class="tool-copy"><text class="tool-title">收获主城</text><text class="tool-sub">{{collected ? '今日已收' : '+城池铜钱'}}</text></view>
+      <text class="tool-arrow">›</text>
+    </view>
+    <view class="tool-card" bindtap="upgradeFarm">
+      <text class="tool-icon">🧺</text>
+      <view class="tool-copy"><text class="tool-title">升级农庄</text><text class="tool-sub">Lv.{{farmLevel}} · 经营</text></view>
+      <text class="tool-arrow">›</text>
+    </view>
+    <view class="tool-card" bindtap="claimTask">
+      <text class="tool-icon">🎐</text>
+      <view class="tool-copy"><text class="tool-title">每日小事</text><text class="tool-sub">{{taskClaimed ? '奖励已领' : '奖励待领'}}</text></view>
+      <text class="tool-arrow">›</text>
+      <view class="red-dot" xhs:if="{{!taskClaimed}}"></view>
+    </view>
+  </view>
+
+  <view class="bottom-nav" xhs:if="{{!showBattle}}">
+    <view class="nav-item {{showCity ? 'active' : ''}}" data-page="city" bindtap="changeTab"><text class="nav-icon">🏡</text><text>城池</text></view>
+    <view class="nav-item {{showMap ? 'active' : ''}}" data-page="map" bindtap="changeTab"><text class="nav-icon">🗺️</text><text>征战</text></view>
+    <view class="nav-item {{showHeroes ? 'active' : ''}}" data-page="heroes" bindtap="changeTab"><text class="nav-icon">🧚</text><text>武将</text></view>
+    <view class="nav-item {{showTavern ? 'active' : ''}}" data-page="tavern" bindtap="changeTab"><text class="nav-icon">🍶</text><text>酒馆</text></view>
+    <view class="nav-item {{showTrials ? 'active' : ''}}" data-page="trials" bindtap="changeTab"><text class="nav-icon">✨</text><text>秘境</text></view>
+  </view>
+
+  <view class="dialog-mask" xhs:if="{{showDialog}}" bindtap="closeDialog">
+    <view class="dialog-card" catchtap="closeDialog">
+      <view class="dialog-emblem">🌸</view>
+      <text class="dialog-title">{{dialogTitle}}</text>
+      <text class="dialog-text">{{dialogText}}</text>
+      <view class="dialog-button" bindtap="closeDialog">知道啦</view>
+    </view>
+  </view>
+  <view class="toast-message" xhs:if="{{toastVisible}}">{{toastText}}</view>
+</view>

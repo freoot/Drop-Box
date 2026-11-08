@@ -1,0 +1,6 @@
+﻿account_id,name,biz_hint,notes,enabled
+acc_demo_001,副业研究所（示例）,MzA5MDAwMDAwMQ==,example：偏公众号流量主/副业变现，用于样例文章 acc_demo_001,true
+acc_demo_002,城市漫游指南（示例）,MzA5MDAwMDAwMg==,example：生活类噪声账号，用来验证「不相关文章会被低分」,true
+acc_demo_003,小店老板笔记（示例）,MzA5MDAwMDAwMw==,example：实体小店私域运营，待补样例,false
+acc_demo_004,工具效率清单（示例）,MzA5MDAwMDAwNA==,example：工具测评号，待补样例,false
+acc_demo_005,职场观察室（示例）,MzA5MDAwMDAwNQ==,example：职场内容，待补样例,false

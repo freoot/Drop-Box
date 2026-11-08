@@ -1,0 +1,31 @@
+# 环境与密钥
+.env
+.env.*
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# 采集产物：raw 下可能包含整篇正文，不入库（仅保留 .gitkeep）
+data/raw/*
+!data/raw/.gitkeep
+
+# 项目卡与 SOP 属于生成物，默认入库以便复核；
+# 若单次批量试跑产生大量文件，可临时用下面的规则（默认注释）
+# data/projects/*.json
+# data/sops/SOP-*.md
+
+# 系统与编辑器
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# 日志
+*.log
+logs/

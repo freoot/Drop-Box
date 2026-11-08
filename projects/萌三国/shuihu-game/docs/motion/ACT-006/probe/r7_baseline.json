@@ -1,0 +1,532 @@
+{
+ "schema": "act006-asset-baseline/1",
+ "generated_at": "2026-10-29T09:45:21",
+ "generator": "tools/motion/snapshot_assets.py",
+ "release": "r7",
+ "model_dir": "assets/releases/ART-002/r7/models",
+ "file_count": 18,
+ "files": {
+  "hero002": {
+   "file": "hero002.glb",
+   "bytes": 1077636,
+   "sha256": "15258faf08d3a1ae5ecf556a853fcd081055d50a0a1e7428b42ac8eac495789b",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero005": {
+   "file": "hero005.glb",
+   "bytes": 959800,
+   "sha256": "7ac9ec719ce73a8df985bac3558de59baad4d62a49857f33430ee37d5a9acbb9",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero006": {
+   "file": "hero006.glb",
+   "bytes": 929472,
+   "sha256": "0c90d6e226b2492aab585a202939cf5b965d582abc1afbd1ffdac314137116ad",
+   "clips": {
+    "idle": 1958.333,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 1000.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero007": {
+   "file": "hero007.glb",
+   "bytes": 1021652,
+   "sha256": "da1cec8af15c4026bb8df94a5d2ed325de7855a6ba423054a8204e710e4c696b",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero008": {
+   "file": "hero008.glb",
+   "bytes": 1248460,
+   "sha256": "cf228f10edc7bbd16319ec84e3b5290345eca41f5bfa1dbb59a16d7b28f2460d",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero010": {
+   "file": "hero010.glb",
+   "bytes": 884632,
+   "sha256": "089eda2b91928620df2dddcbd78ddb7fb744c22d7e5717811be4c8348c76ca3f",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero011": {
+   "file": "hero011.glb",
+   "bytes": 984984,
+   "sha256": "ddad399dc601ca71457aba9e20cf859b138a2c53ebce8fb097fb45eba281e5e5",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero012": {
+   "file": "hero012.glb",
+   "bytes": 907048,
+   "sha256": "c490ce1f52f96a7bcd90e1429908325960924198d1f2abaf3be3bcb794fc264f",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero013": {
+   "file": "hero013.glb",
+   "bytes": 802368,
+   "sha256": "3495b5a1aaffd3d85e07412503654d16ec5bfc82c21bfa1b6b6a1fc55a4b0ec4",
+   "clips": {
+    "idle": 1958.333,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 1000.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero014": {
+   "file": "hero014.glb",
+   "bytes": 795464,
+   "sha256": "7d0f79be8573cd6e17d307fecea7012b44fba0f99456e20d0156254ff41aab9f",
+   "clips": {
+    "idle": 1958.333,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 1000.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero015": {
+   "file": "hero015.glb",
+   "bytes": 923828,
+   "sha256": "235542b3bbbc6b625ed2ac7ecbd572c48a7bf6ef7ef3f225bc52ddc278d868d0",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero017": {
+   "file": "hero017.glb",
+   "bytes": 914552,
+   "sha256": "98b5680c7fb0103ea5a6ddffc47177df3577f031f37df0a6ce1c5e670df8c946",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero019": {
+   "file": "hero019.glb",
+   "bytes": 931060,
+   "sha256": "915f071311c1685afc5bf1890ab786154bba5c17df3bfcf83afe922bbd0a5664",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero021": {
+   "file": "hero021.glb",
+   "bytes": 891200,
+   "sha256": "5550ce4cf82fc57db92115fde0df02eeb7d79da2f7a3eb483f1ff24183a980df",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero022": {
+   "file": "hero022.glb",
+   "bytes": 903796,
+   "sha256": "5bb4a80773015b0af09d93057c6b719736fe7b831b9086599e9160db19ca3b83",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero023": {
+   "file": "hero023.glb",
+   "bytes": 989608,
+   "sha256": "22d528ed50046663d102335796ca9d65b81325bbe2293d4aca4c69e54293541d",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero024": {
+   "file": "hero024.glb",
+   "bytes": 877192,
+   "sha256": "9ae7e8c2535c099595668adeaf8884a24f934f7a97e4240fad3ae12afdb46b4c",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  },
+  "hero025": {
+   "file": "hero025.glb",
+   "bytes": 921032,
+   "sha256": "87e3950bf685a6d7205bdd404e64e377811de4d66a6395b31da28ca010462189",
+   "clips": {
+    "idle": 2000.0,
+    "walk": 1000.0,
+    "attack": 1000.0,
+    "hit": 750.0
+   },
+   "joints": [
+    "arm.L",
+    "arm.R",
+    "body",
+    "foot.L",
+    "foot.R",
+    "hand.L",
+    "hand.R",
+    "head",
+    "leg.L",
+    "leg.R",
+    "root"
+   ],
+   "weapon_nodes": [
+    "hand.L",
+    "hand.R"
+   ],
+   "probe_ok": true
+  }
+ }
+}

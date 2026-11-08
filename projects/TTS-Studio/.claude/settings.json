@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(uv.lock)"
+    ],
+    "ask": [
+      "Edit(.python-version)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); d=\"${CLAUDE_PROJECT_DIR:-}\"; [ -n \"$d\" ] || exit 0; case \"$f\" in \"$d\"/*.py) cd \"$d\" && uv run sh -c 'ruff check --fix \"$1\"; a=$?; ruff format \"$1\"; b=$?; [ \"$a\" = 0 ] && [ \"$b\" = 0 ] || exit 2' _ \"$f\";; esac",
+            "statusMessage": "ruff check --fix + format",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

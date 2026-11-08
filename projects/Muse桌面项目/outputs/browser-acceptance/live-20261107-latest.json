@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://mxyai88.com/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://mxyai88.com/tool/jasper/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://mxyai88.com/codex-missing-20261107",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://ativ.cc/",
+    "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>"
+  },
+  {
+    "url": "https://ativ.cc/how-we-pick/",
+    "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>"
+  },
+  {
+    "url": "https://ativ.cc/codex-missing-20261107",
+    "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>"
+  }
+]

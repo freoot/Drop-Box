@@ -1,0 +1,103 @@
+/* Feet remain on the floor; the two walk poses supply the gait. */
+.tavern-room .grounded-guest{animation:none!important;transform:translate(-50%,-100%)!important;width:12%;height:auto;aspect-ratio:704/512;pointer-events:none}
+.grounded-guest:before{content:"";position:absolute;width:42%;height:8%;left:29%;bottom:3%;background:#33251755;border-radius:50%;filter:blur(2px)}
+.tavern-walk-sprite{display:block;position:absolute;inset:0;background-repeat:no-repeat;background-size:700% 100%;transform-origin:50% 92%}
+.tavern-room .grounded-guest>span{position:absolute;top:100%;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10px;color:#fff5dd;text-shadow:0 1px 3px #372310;background:#45302199;border-radius:5px;padding:1px 4px}
+/* Tavern v2: character scale is based on painted body height, not sheet padding. */
+.tavern-v2{position:relative;padding:0!important;background:#36291e;min-height:100%;color:#fff0d3}
+.wine-title{position:absolute;z-index:100;left:24px;top:16px;pointer-events:none;text-shadow:0 2px 10px #1e130c}
+.wine-title span{font-size:10px;letter-spacing:3px;color:#f2d4a3}.wine-title h1{font-family:serif;font-size:30px;margin:5px 0}.wine-title p{font-size:11px;margin:0;color:#e1c39c}
+.tavern-v2 .tavern-room{border-radius:0;min-width:720px;overflow:hidden}
+.tavern-v2 .tavern-scroll{border-radius:20px;overflow:auto}
+.tavern-v2 .grounded-guest{width:30%;height:auto;aspect-ratio:704/512}
+.tavern-walk-canvas{width:100%;height:100%;display:block;position:absolute;inset:0;transform-origin:50% 94%}
+.tavern-v2 .grounded-guest:before{width:22%;left:39%;bottom:5%;height:4%}
+.tavern-v2 .grounded-guest>span{top:96%;font-size:11px;background:#27190bb3;padding:2px 7px}
+.keeper-placement{position:absolute;left:68%;top:14%;width:19%;height:48%;z-index:20}
+.keeper-character{position:absolute;inset:0;border:0;background:none;padding:0;cursor:pointer;filter:drop-shadow(0 2px 3px #241a1666)}
+.keeper-character img{width:100%;height:100%;object-fit:contain;object-position:center top}
+.counter-foreground{position:absolute;inset:0;background:url('assets/q/scenes/tavern-q.jpg') center/100% 100%;clip-path:polygon(54.2% 42.1%,88% 54.5%,100% 51.5%,100% 80%,54.2% 80%);pointer-events:none;z-index:21}
+.keeper-sign{position:absolute;left:77%;top:53%;transform:translateX(-50%);z-index:110;border:1px solid #e6bd73;background:linear-gradient(#553722,#2a2019);box-shadow:0 3px 12px #20140f88;color:#ffe9b7;border-radius:12px;padding:8px 13px;font-size:14px;cursor:pointer;white-space:nowrap}
+.keeper-sign span{font-size:12px}.keeper-sign i{position:absolute;top:-20px;right:-10px;border-radius:9px;background:#ffdfa0;color:#684022;font-size:10px;padding:3px 6px;font-style:normal}
+.wine-scene-hint{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);z-index:100;font-size:10px;color:#f8e7c5;white-space:nowrap;text-shadow:0 1px 5px #000;pointer-events:none}
+.tavern-dialog.summon-scene{inset:50% auto auto 50%;transform:translate(-50%,-50%);width:min(920px,calc(100vw - 24px));height:min(680px,calc(100dvh - 32px));box-sizing:border-box;border:1px solid #e1b57380;padding:24px;border-radius:28px;isolation:isolate;background:linear-gradient(180deg,#172a26dd,#2b1c14ee 80%),url('assets/q/scenes/tavern-q.jpg') center/cover;color:#ffecc9;overflow:auto;box-shadow:0 28px 90px #100b07aa,0 0 0 100vmax #120e0dc9;animation:open-wine .28s ease-out}
+.summon-close{position:absolute;right:16px;top:14px;z-index:10;width:40px;height:40px;border:1px solid #dfbf7955;border-radius:50%;background:#ffffff12;color:#ffe6af;font-size:26px;cursor:pointer}
+.summon-heading{text-align:center;position:relative;z-index:2}.summon-heading small{letter-spacing:4px;font-size:11px;color:#d1b47e}.summon-heading h2{font-family:serif;font-size:36px;margin:10px 0;color:#fff0c5;letter-spacing:6px}.summon-heading>span{display:inline-block;font-size:12px;padding:6px 16px;border:1px solid #dbc99444;border-radius:30px;background:#091c1966}
+.keeper-dialogue{height:205px;display:flex;align-items:center;justify-content:center;position:relative;margin:4px auto -8px;gap:22px}.keeper-dialogue img{height:230px;align-self:flex-start;object-fit:contain;mask-image:linear-gradient(#000 68%,transparent 99%)}.keeper-dialogue blockquote{font-family:serif;font-size:22px;line-height:1.7;margin:0;color:#f5dfb4}.keeper-dialogue small{display:block;font:11px sans-serif;margin-top:12px;opacity:.65}
+.invitation-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative;z-index:3}.invitation{position:relative;min-height:202px;border-radius:20px;border:1px solid #d6b27166;background:linear-gradient(135deg,#3c5956,#1a2b2b);overflow:hidden;color:#ffe7b7;padding:0;cursor:pointer;text-align:left;box-shadow:0 7px 20px #0005;transition:transform .2s,border-color .2s}.invitation:hover{transform:translateY(-5px);border-color:#ffe9aa}.invitation.red{background:linear-gradient(135deg,#644448,#322025)}.invitation.gold{background:linear-gradient(135deg,#6f5633,#35261d)}
+.invitation-art{position:absolute;inset:-25px -15px 0 20%;opacity:.9}.invitation-art .hero-portrait{width:100%!important;height:100%!important;background:transparent!important;border:0!important;box-shadow:none!important}.invitation-art .portrait-name,.invitation-art .portrait-icon{display:none}
+.invitation-copy{position:absolute;inset:auto 0 0;padding:45px 14px 14px;background:linear-gradient(transparent,#101b1bea 45%);display:flex;flex-direction:column;gap:4px}.invitation-copy small{font-size:10px;opacity:.75}.invitation-copy b{font-family:serif;font-size:23px;letter-spacing:2px}.invitation-copy strong{font-size:12px;padding:8px 10px;background:linear-gradient(120deg,#f9dfaa,#d3a365);color:#3e2a17;border-radius:9px;text-align:center;margin-top:5px}
+.summon-bottom{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-top:18px;font-size:11px;color:#c9b38d}.summon-bottom button{background:none;border:0;color:#f6d89d;font-size:12px;white-space:nowrap}.summon-bottom details{max-width:60%;text-align:right}.summon-bottom summary{cursor:pointer}.summon-bottom p{line-height:1.8;text-align:left}
+.summon-reveal{text-align:center;position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center}.summon-reveal header{z-index:2}.summon-reveal header small{letter-spacing:4px;font-size:11px;color:#cfb07b}.summon-reveal h2{font-family:serif;font-size:32px;letter-spacing:4px;margin:12px 0}.summon-rays{position:absolute;inset:0;z-index:-1;background:repeating-conic-gradient(from 20deg at 50% 45%,#ffd58c00 0deg 15deg,#ffd58c12 15deg 21deg);mask-image:radial-gradient(ellipse,#000,transparent 70%);animation:wine-rays 32s linear infinite;pointer-events:none}
+.summoned-heroes{display:flex;justify-content:center;width:100%;flex:1}.summoned-hero{position:relative;animation:hero-arrival .8s both;animation-delay:var(--arrival);width:80%;max-width:400px}.summoned-hero>.hero-portrait{display:block;width:100%!important;height:310px!important;background:radial-gradient(ellipse at 50% 80%,#dfc27b44,transparent 65%)!important;border:0!important;box-shadow:none!important;margin:auto}.summoned-hero .portrait-name{display:none}.summoned-hero h3{font-family:serif;font-size:30px;margin:8px 0}.summoned-hero p{font-size:12px;color:#d7c5a2}.summon-confirm{background:linear-gradient(120deg,#f5db9d,#c79252);color:#3d2716;font-weight:700;border:1px solid #fbe5b4;border-radius:13px;min-width:220px;padding:14px 24px;margin-top:12px;cursor:pointer;z-index:2}.summon-saved{font-size:10px;opacity:.6;margin-top:10px}
+.is-ten .summoned-heroes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-content:center}.is-ten .summoned-hero{width:100%;border:1px solid #f5d99a33;border-radius:14px;background:#13282366;padding-bottom:8px}.is-ten .summoned-hero>.hero-portrait{height:125px!important}.is-ten .summoned-hero h3{font-size:17px}.is-ten .summoned-hero p{font-size:9px}.is-ten .quality{font-size:9px}
+@keyframes open-wine{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@keyframes hero-arrival{from{opacity:0;transform:translateY(25px) scale(.82);filter:brightness(2)}to{opacity:1;transform:none;filter:none}}
+@keyframes wine-rays{to{transform:rotate(360deg)}}
+@media(max-width:600px){.tavern-dialog.summon-scene{padding:20px 12px;border-radius:22px}.summon-heading h2{font-size:28px}.keeper-dialogue{height:170px;gap:4px}.keeper-dialogue img{height:200px}.keeper-dialogue blockquote{font-size:18px}.invitation-row{gap:7px}.invitation{min-height:185px;border-radius:14px}.invitation-copy{padding:35px 8px 10px}.invitation-copy b{font-size:18px;letter-spacing:0}.invitation-copy strong{font-size:11px;padding:8px 3px}.invitation-copy small{font-size:9px}.is-ten .summoned-heroes{grid-template-columns:repeat(2,1fr)}.is-ten .summoned-hero>.hero-portrait{height:120px!important}.summon-reveal h2{font-size:26px}.summoned-hero>.hero-portrait{height:280px!important}}
+@media(prefers-reduced-motion:reduce){.summon-scene,.summoned-hero,.summon-rays{animation:none!important}.invitation{transition:none}}
+.keeper-character img,.keeper-dialogue img{clip-path:polygon(48% 1%,64% 2%,71% 10%,68% 17%,79% 24%,89% 32%,90% 42%,87% 59%,81% 73%,79% 90%,85% 95%,82% 98%,56% 97%,53% 90%,45% 91%,40% 98%,22% 98%,21% 94%,26% 86%,21% 81%,19% 68%,14% 58%,18% 49%,14% 40%,14% 32%,20% 24%,37% 17%,38% 10%)}
+.tavern-v2 .grounded-guest{width:36%}
+.keeper-placement{top:22%}
+.tavern-dialog.summon-scene{z-index:1000}
+@media(max-width:600px){.invitation-art{inset:-8px -22px 40px -22px}.invitation-art .character-image{object-position:center top}.invitation-copy{padding-top:25px}}
+/* Keeper feet stand behind the bar; the foreground counter covers the apron. */
+.keeper-placement{left:66%;top:23%;width:19%;height:48%}
+.keeper-character{transform-origin:50% 75%;animation:keeper-chat 10s ease-in-out infinite}
+.keeper-character .keeper-laugh{position:absolute;inset:0;opacity:0;animation:keeper-laugh 10s ease-in-out infinite}
+.keeper-speech{position:absolute;left:-90%;top:1%;width:155px;height:52px;pointer-events:none;color:#563723;font-size:12px;text-align:center;filter:none}
+.keeper-speech>span{position:absolute;inset:0;background:#fff2d4ed;border:1px solid #cfae6a;border-radius:16px;padding:12px 8px;opacity:0;animation:keeper-line 18s infinite}.keeper-speech>span:nth-child(2){animation-delay:6s}.keeper-speech>span:nth-child(3){animation-delay:12s}
+@keyframes keeper-chat{0%,50%,70%,100%{transform:rotate(0)}56%,64%{transform:rotate(-1.5deg)}60%,68%{transform:rotate(1.5deg)}}
+@keyframes keeper-laugh{0%,48%,74%,100%{opacity:0}53%,68%{opacity:1}}
+@keyframes keeper-line{0%,27%{opacity:1;translate:0 0}31%,100%{opacity:0;translate:0 3px}}
+.hero-story{margin:12px 0;padding:12px 14px;border:1px solid #cba96f66;border-radius:12px;text-align:left;background:#83694312;font-size:12px;line-height:1.8}.hero-story summary{cursor:pointer;font-weight:700}.hero-story p{font-size:12px!important;line-height:1.9}.hero-story small,.hero-story em{display:block;font-size:10px;opacity:.8;font-style:normal}.summoned-hero .hero-story{color:#f7e2b9;max-height:180px;overflow:auto}.is-ten .hero-story{font-size:10px;padding:7px}
+@media(prefers-reduced-motion:reduce){.keeper-character,.keeper-laugh,.keeper-speech>span{animation:none!important}.keeper-speech>span:first-child{opacity:1}}
+/* Resting guests use weaponless masters; short strolls are driven by distance. */
+.tavern-v2 .tavern-guest.rest-guest{position:absolute;width:17%;height:auto;aspect-ratio:2/3;transform:translate(-50%,-100%);animation:none!important;pointer-events:none;filter:none}
+.rest-canvas{display:block;width:100%;height:100%;filter:drop-shadow(0 5px 2px #25140a45)}
+.tavern-v2 .rest-guest .rest-name{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);background:#332216aa;color:#fff2cf;padding:2px 7px;border-radius:8px;font-size:11px;white-space:nowrap}
+.tavern-v2 .rest-guest .guest-chat{position:absolute;left:50%;bottom:90%;width:156px;padding:10px 12px;border-radius:15px;background:#fff3d9;color:#533922;border:1px solid #c69e5a;box-shadow:0 4px 15px #21120c35;font-size:12px;line-height:1.5;transform:translateX(-50%);white-space:normal}
+.guest-chat:empty{display:none}.talking .guest-chat{animation:rest-chat-in .25s ease-out}
+@keyframes rest-chat-in{from{opacity:0;translate:0 4px}to{opacity:1;translate:0 0}}
+.keeper-placement{left:71%;top:29%;width:12%;height:34%}
+.power-badge{display:inline-block;margin:8px 0;padding:5px 12px;border-radius:18px;background:#b88b3e24;color:#9c6824;font-weight:800;font-size:14px}
+.arena-hero-powers{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}.arena-hero-powers article{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;border-radius:18px;background:linear-gradient(#fff7dc,#ebd6ab);border:1px solid #cda75e;text-align:center}.arena-hero-powers .character-art{width:86px;height:100px}.arena-hero-powers strong{color:#84501a}.arena-hero-powers small{font-size:12px}
+.summon-reveal:not(.is-ten) .summoned-hero{display:grid;grid-template-columns:minmax(200px,1fr) minmax(230px,1fr);align-items:center;gap:18px;width:100%;max-width:760px}.summon-character{min-width:0}.summoned-hero .story-visible{max-height:none;overflow:visible}.story-visible h4{margin:0;font-size:15px}.summoned-hero>.hero-story{margin:0;text-align:left}.summoned-hero>p{grid-column:1/-1}.summoned-hero .power-badge{color:#f4d390}.is-ten .summon-character .character-art{height:110px}.is-ten .story-visible{font-size:11px}
+@media(max-width:600px){.summon-reveal:not(.is-ten) .summoned-hero{grid-template-columns:1fr;gap:8px}.summon-character .character-art{height:220px}.arena-hero-powers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.talking .guest-chat{animation:none}}
+.prebattle-roster{margin:18px 12px;padding:18px;border-radius:22px;background:linear-gradient(145deg,#fff8e7,#e8ddc2);border:1px solid #c6a878;color:#4d3926}.prebattle-roster>header{display:flex;justify-content:space-between;align-items:center;gap:12px}.prebattle-roster h3{margin:5px 0 14px}.power-comparison{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.power-comparison>span{padding:12px;border-radius:12px;background:#296761;color:#fff4d5}.power-comparison>span+span{background:#914b3b}.power-comparison strong{display:block;font-size:28px;margin-top:6px;font-variant-numeric:tabular-nums}.scout-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}.scout-card{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:12px 8px;border-radius:16px;background:linear-gradient(#fff8dc,#e3c98d);border:2px solid #b48c49;text-align:center;box-shadow:0 4px 0 #73502d20}.scout-card .hero-art{width:90px;height:104px;flex-shrink:0}.scout-card b{font-size:14px}.scout-card strong{color:#6d441b;font-size:17px}.scout-card small{font-size:12px}.scout-card.chosen{border-color:#3b8376}.scout-card.enemy{background:linear-gradient(#fff0d7,#dec2b1);border-color:#b87964}.scout-card .outline-btn{width:100%;min-height:40px;padding:8px 3px;font-size:12px}.reserve-list{margin:16px 0}.reserve-list summary{cursor:pointer;padding:12px 0;font-weight:700}.prebattle-roster h4{margin:20px 0 12px}@media(max-width:600px){.prebattle-roster{padding:12px;margin:12px 6px}.scout-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.power-comparison strong{font-size:24px}}
+
+/* CMD-003 · P0 招贤欲望环：收集进度 / 保底读数 / 抽后去向 */
+.dex-progress{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding:8px 11px;margin:0 0 10px;border-radius:12px;background:#fff6e6;border:1px solid #f0dcc2;color:#8a6b56;font-size:10px;line-height:1.5}
+.dex-progress b{font-size:11px;color:#6b4a3b}
+.pity-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:9px 0 2px}
+.pity-chip,.shard-chip{font-size:9px;padding:5px 9px;border-radius:99px;background:#f6e8d6;color:#8a6b56;border:1px solid #efdcc4;white-space:nowrap}
+.summon-scene .dex-progress{background:#ffffff10;border-color:#ffffff26;color:#e6d3b0}
+.summon-scene .dex-progress b{color:#ffecc9}
+.summon-scene .pity-chip,.summon-scene .shard-chip{background:#ffffff12;border-color:#ffffff2b;color:#e2cda8}
+.summon-actions{position:relative;z-index:2;display:grid;gap:8px;width:min(100%,460px);margin:16px auto 4px}
+.summon-next{background:linear-gradient(120deg,#f5db9d,#c79252);color:#3d2716;font-weight:700;border:1px solid #fbe5b4;border-radius:13px;padding:12px 18px;font-size:14px;cursor:pointer}
+.summon-again{background:#ffffff14;color:#f2ddb8;border:1px solid #f0dcb655;border-radius:12px;padding:10px 14px;font-size:12px;cursor:pointer}
+.summon-pity{text-align:center;font-size:10px;color:#cbb08a;margin:0}
+.summon-pity .pity-chip{background:#ffffff12;border-color:#ffffff2e;color:#d8c2a0}
+@media(max-width:600px){.summon-actions{width:100%}.summon-next{font-size:13px;padding:11px 14px}}
+
+/* CMD-003 · 十连结果页压缩：卡面高度收敛，避免动作区被推到长滚动区 */
+.summon-reveal.is-ten .summoned-hero .hero-portrait{height:132px!important}
+.summon-reveal.is-ten .summoned-hero h3{font-size:15px;margin:4px 0}
+.summon-reveal.is-ten .summoned-hero .power-badge{font-size:11px}
+.summon-reveal.is-ten .summoned-hero .hero-story,.summon-reveal.is-ten .summoned-hero .story-visible{display:none}
+.summon-reveal.is-ten .summoned-heroes{gap:8px}
+/* CMD-003 · 抽后去向常驻弹层底部 */
+.summon-actions{position:sticky;bottom:0;display:grid;grid-template-columns:1fr;gap:8px;padding:10px 0 6px;margin-top:6px;background:linear-gradient(180deg,#24181200 0%,#241812e6 26%,#241812f7 100%)}
+
+/* CMD-003 · 十连动作栏内的紧凑「收下」 */
+.summon-take{background:#ffffff0f;color:#e8d3ac;border:1px solid #f0dcb64d;border-radius:11px;padding:9px 14px;font-size:12px;cursor:pointer;width:100%}
+.summon-take:hover{color:#fbeaca;border-color:#f0dcb688}
+
+/* CMD-003 · 为常驻动作栏预留底部空间，避免遮住卡面信息 */
+.summon-reveal .summoned-heroes{padding-bottom:152px}
+
+/* CMD-003 · 单抽结果：压低立绘高度，让姓名与动作栏同屏 */
+.summon-reveal:not(.is-ten) .summoned-hero .hero-portrait{height:225px!important}
+.summon-reveal:not(.is-ten) .summoned-hero h3{font-size:24px;margin:6px 0}

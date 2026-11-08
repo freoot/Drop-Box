@@ -1,0 +1,2405 @@
+{
+ "schema": "act006-r8-verify-all/1",
+ "generated_at": "2026-10-29T10:55:47",
+ "generator": "tools/motion/verify_r8_all.py",
+ "baseline": "docs/motion/ACT-006/probe/r7_baseline.json",
+ "hero_count": 18,
+ "check_count": 252,
+ "fail_count": 0,
+ "results": [
+  {
+   "hero": "hero002",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "1078408 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=15258faf08d3a1ae 现=15258faf08d3a1ae"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=1077636 现=1077636"
+    }
+   ],
+   "summary": {
+    "hero": "hero002",
+    "r7": {
+     "bytes": 1077636,
+     "sha256": "15258faf08d3a1ae5ecf556a853fcd081055d50a0a1e7428b42ac8eac495789b",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 1078408,
+     "sha256": "b58b02c8869ab47ec674b7a87c4729aff2d330fbca68912caf01b9e219241db8",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero005",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "946880 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=7ac9ec719ce73a8d 现=7ac9ec719ce73a8d"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=959800 现=959800"
+    }
+   ],
+   "summary": {
+    "hero": "hero005",
+    "r7": {
+     "bytes": 959800,
+     "sha256": "7ac9ec719ce73a8df985bac3558de59baad4d62a49857f33430ee37d5a9acbb9",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 946880,
+     "sha256": "257c261975e403ddae97cd347eb8e23e1cc6fb8c6f5a64734c89cc3249cbd42f",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero006",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "959940 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=1958.333 ms → r8=1958.333 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=0c90d6e226b2492a 现=0c90d6e226b2492a"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=929472 现=929472"
+    }
+   ],
+   "summary": {
+    "hero": "hero006",
+    "r7": {
+     "bytes": 929472,
+     "sha256": "0c90d6e226b2492aab585a202939cf5b965d582abc1afbd1ffdac314137116ad",
+     "clips": {
+      "idle": 1958.333,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 959940,
+     "sha256": "e58bd9c14b05c52751277e4a19e67418dbce8719950f1ff26681e8e511e5ca61",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 1000.0,
+      "idle": 1958.333,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero007",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "1020440 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=da1cec8af15c4026 现=da1cec8af15c4026"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=1021652 现=1021652"
+    }
+   ],
+   "summary": {
+    "hero": "hero007",
+    "r7": {
+     "bytes": 1021652,
+     "sha256": "da1cec8af15c4026bb8df94a5d2ed325de7855a6ba423054a8204e710e4c696b",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 1020440,
+     "sha256": "49e821ccdccb4a1aa5e6b3f8d73fc0a18e4b4cd87232d61bfd58d0d42b643084",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero008",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "1259724 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=cf228f10edc7bbd1 现=cf228f10edc7bbd1"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=1248460 现=1248460"
+    }
+   ],
+   "summary": {
+    "hero": "hero008",
+    "r7": {
+     "bytes": 1248460,
+     "sha256": "cf228f10edc7bbd16319ec84e3b5290345eca41f5bfa1dbb59a16d7b28f2460d",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 1259724,
+     "sha256": "c02cbf5aa3793c7c697058da5ed8c3b09ea7c3581d22845fb5ac636f1894adc9",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero010",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "858760 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=089eda2b91928620 现=089eda2b91928620"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=884632 现=884632"
+    }
+   ],
+   "summary": {
+    "hero": "hero010",
+    "r7": {
+     "bytes": 884632,
+     "sha256": "089eda2b91928620df2dddcbd78ddb7fb744c22d7e5717811be4c8348c76ca3f",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 858760,
+     "sha256": "c9a32f0269c5df604e9681a80050491c568f1a730c452d7c3769af6e51333647",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero011",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "971336 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=ddad399dc601ca71 现=ddad399dc601ca71"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=984984 现=984984"
+    }
+   ],
+   "summary": {
+    "hero": "hero011",
+    "r7": {
+     "bytes": 984984,
+     "sha256": "ddad399dc601ca71457aba9e20cf859b138a2c53ebce8fb097fb45eba281e5e5",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 971336,
+     "sha256": "bfb5dd2d9da5d0cf003550f9151df5397b7ecc14b5afeac00ed40513690a917d",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero012",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "893920 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=c490ce1f52f96a7b 现=c490ce1f52f96a7b"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=907048 现=907048"
+    }
+   ],
+   "summary": {
+    "hero": "hero012",
+    "r7": {
+     "bytes": 907048,
+     "sha256": "c490ce1f52f96a7bcd90e1429908325960924198d1f2abaf3be3bcb794fc264f",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 893920,
+     "sha256": "b91971f507a3a7e79a734bc92346900f59a0c36b0525a675734e64b2708736b9",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero013",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "819744 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=1958.333 ms → r8=1958.333 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=3495b5a1aaffd3d8 现=3495b5a1aaffd3d8"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=802368 现=802368"
+    }
+   ],
+   "summary": {
+    "hero": "hero013",
+    "r7": {
+     "bytes": 802368,
+     "sha256": "3495b5a1aaffd3d85e07412503654d16ec5bfc82c21bfa1b6b6a1fc55a4b0ec4",
+     "clips": {
+      "idle": 1958.333,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 819744,
+     "sha256": "83ec76156361f08141973a3200536f514f9d67c9b86675d2195a4b64be56bd00",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 1000.0,
+      "idle": 1958.333,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero014",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "812932 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=1958.333 ms → r8=1958.333 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=7d0f79be8573cd6e 现=7d0f79be8573cd6e"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=795464 现=795464"
+    }
+   ],
+   "summary": {
+    "hero": "hero014",
+    "r7": {
+     "bytes": 795464,
+     "sha256": "7d0f79be8573cd6e17d307fecea7012b44fba0f99456e20d0156254ff41aab9f",
+     "clips": {
+      "idle": 1958.333,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 812932,
+     "sha256": "cae69c6de548a9d6db1e796aa09851e347e0a8eb9a59c2ee08730a8d10a369d1",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 1000.0,
+      "idle": 1958.333,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero015",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "898340 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=235542b3bbbc6b62 现=235542b3bbbc6b62"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=923828 现=923828"
+    }
+   ],
+   "summary": {
+    "hero": "hero015",
+    "r7": {
+     "bytes": 923828,
+     "sha256": "235542b3bbbc6b625ed2ac7ecbd572c48a7bf6ef7ef3f225bc52ddc278d868d0",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 898340,
+     "sha256": "84e538bd8803b40d78c16c89a442d5a6f37530bfbbbd9ce8663f56d31b1d2b24",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero017",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "900908 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=98b5680c7fb0103e 现=98b5680c7fb0103e"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=914552 现=914552"
+    }
+   ],
+   "summary": {
+    "hero": "hero017",
+    "r7": {
+     "bytes": 914552,
+     "sha256": "98b5680c7fb0103ea5a6ddffc47177df3577f031f37df0a6ce1c5e670df8c946",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 900908,
+     "sha256": "13f1e2301fc1d22a3700815b48501a059640dae17bfda062858809816496bc24",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero019",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "917928 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=915f071311c1685a 现=915f071311c1685a"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=931060 现=931060"
+    }
+   ],
+   "summary": {
+    "hero": "hero019",
+    "r7": {
+     "bytes": 931060,
+     "sha256": "915f071311c1685afc5bf1890ab786154bba5c17df3bfcf83afe922bbd0a5664",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 917928,
+     "sha256": "d32cce484bcaecdf21991f31227b11bf1d23a295c9cd4efd4dbf8d26ff3d4ba9",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero021",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "877676 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=5550ce4cf82fc57d 现=5550ce4cf82fc57d"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=891200 现=891200"
+    }
+   ],
+   "summary": {
+    "hero": "hero021",
+    "r7": {
+     "bytes": 891200,
+     "sha256": "5550ce4cf82fc57db92115fde0df02eeb7d79da2f7a3eb483f1ff24183a980df",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 877676,
+     "sha256": "5ef8b88d3131dc633c9f99b5d0221ff126ad727d03e5df766e1ebfcbd6ccf7aa",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero022",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "890268 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=5bb4a80773015b0a 现=5bb4a80773015b0a"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=903796 现=903796"
+    }
+   ],
+   "summary": {
+    "hero": "hero022",
+    "r7": {
+     "bytes": 903796,
+     "sha256": "5bb4a80773015b0af09d93057c6b719736fe7b831b9086599e9160db19ca3b83",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 890268,
+     "sha256": "785ae6b6fb5431cff3fca913550f99082b2bbfd478bde0db1e9211d920efad27",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero023",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "978148 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=22d528ed50046663 现=22d528ed50046663"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=989608 现=989608"
+    }
+   ],
+   "summary": {
+    "hero": "hero023",
+    "r7": {
+     "bytes": 989608,
+     "sha256": "22d528ed50046663d102335796ca9d65b81325bbe2293d4aca4c69e54293541d",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 978148,
+     "sha256": "b6cf0cc0dcf5be29e396f968a412a6ae156e456038d0c5ce8ae7176258cd3a34",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero024",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "863668 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=9ae7e8c2535c0995 现=9ae7e8c2535c0995"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=877192 现=877192"
+    }
+   ],
+   "summary": {
+    "hero": "hero024",
+    "r7": {
+     "bytes": 877192,
+     "sha256": "9ae7e8c2535c099595668adeaf8884a24f934f7a97e4240fad3ae12afdb46b4c",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 863668,
+     "sha256": "e3fd294e4d4eaa25c10966df1d499c9eeb255afd2c2e93cf81a2d57af1b6ebae",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "hero": "hero025",
+   "checks": [
+    {
+     "item": "r8 文件存在",
+     "pass": true,
+     "detail": "907928 bytes"
+    },
+    {
+     "item": "r8 存在原生 death clip",
+     "pass": true,
+     "detail": "clips=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "death 时长 ≈ 1600ms",
+     "pass": true,
+     "detail": "实测 1583.333 ms（容差 ±40）"
+    },
+    {
+     "item": "保留 clip idle 且时长未变",
+     "pass": true,
+     "detail": "r7=2000.0 ms → r8=2000.0 ms"
+    },
+    {
+     "item": "保留 clip walk 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip attack 且时长未变",
+     "pass": true,
+     "detail": "r7=1000.0 ms → r8=1000.0 ms"
+    },
+    {
+     "item": "保留 clip hit 且时长未变",
+     "pass": true,
+     "detail": "r7=750.0 ms → r8=750.0 ms"
+    },
+    {
+     "item": "clip 集合 = r7 ∪ {death}",
+     "pass": true,
+     "detail": "r7=['attack', 'hit', 'idle', 'walk'] → r8=['attack', 'death', 'hit', 'idle', 'walk']"
+    },
+    {
+     "item": "存在挂点节点 weapon.R",
+     "pass": true,
+     "detail": "命中=[('weapon.R', 'hand.R')]"
+    },
+    {
+     "item": "挂点父级为 hand.R",
+     "pass": true,
+     "detail": "父级=['hand.R']"
+    },
+    {
+     "item": "挂点属于 skin joint（会跟随手部）",
+     "pass": true,
+     "detail": "is_skin_joint=[True]"
+    },
+    {
+     "item": "骨骼集合 = r7 ∪ {weapon.R}",
+     "pass": true,
+     "detail": "r7=11 根 → r8=12 根，新增=['weapon.R']"
+    },
+    {
+     "item": "r7 sha256 与基线一致",
+     "pass": true,
+     "detail": "基线=87e3950bf685a6d7 现=87e3950bf685a6d7"
+    },
+    {
+     "item": "r7 字节数与基线一致",
+     "pass": true,
+     "detail": "基线=921032 现=921032"
+    }
+   ],
+   "summary": {
+    "hero": "hero025",
+    "r7": {
+     "bytes": 921032,
+     "sha256": "87e3950bf685a6d7205bdd404e64e377811de4d66a6395b31da28ca010462189",
+     "clips": {
+      "idle": 2000.0,
+      "walk": 1000.0,
+      "attack": 1000.0,
+      "hit": 750.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ]
+    },
+    "r8": {
+     "bytes": 907928,
+     "sha256": "28a7ec6a93b8b003abdc5ce80f7c0d85cd51caed8a1fe393151224036fc1a883",
+     "clips": {
+      "attack": 1000.0,
+      "death": 1583.333,
+      "hit": 750.0,
+      "idle": 2000.0,
+      "walk": 1000.0
+     },
+     "joints": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "weapon": [
+      {
+       "name": "weapon.R",
+       "parent": "hand.R",
+       "is_joint": true
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

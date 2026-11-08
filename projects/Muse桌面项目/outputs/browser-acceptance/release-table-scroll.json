@@ -1,0 +1,15 @@
+{
+  "observed": "2026-11-07",
+  "page": "/blog/best-ai-note-taking-tools-for-solopreneurs/",
+  "viewport": [
+    375,
+    812
+  ],
+  "selector": ".table-scroll:has(caption)",
+  "action": "click then two ArrowRight presses",
+  "before": 0,
+  "after_settled": 80,
+  "clientWidth": 333,
+  "scrollWidth": 660,
+  "initial_attempt": "non-unique .table-scroll rejected; not counted as pass"
+}

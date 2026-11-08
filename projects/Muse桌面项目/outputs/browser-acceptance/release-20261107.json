@@ -1,0 +1,22 @@
+{
+  "mxyai88": {
+    "sha256": "543ce5006d9da96dadc56255e84029c7b64fdea0eb79e1253bbd68499788b4f6",
+    "bytes": 2698502,
+    "check": {
+      "dist": "/Users/user/Documents/Codex/2026-11-04/muse-desktop-valthra-shared-muse-inbox/work/release-20261107/mxyai88",
+      "pages": 73,
+      "links_checked": 2974,
+      "problems": []
+    }
+  },
+  "ativ": {
+    "sha256": "fcd4e70a9ce51d0268aefa4be1bcccff34cbeefe749b1b7149fa4677dee72d23",
+    "bytes": 3176951,
+    "check": {
+      "dist": "/Users/user/Documents/Codex/2026-11-04/muse-desktop-valthra-shared-muse-inbox/work/release-20261107/ativ",
+      "pages": 20,
+      "links_checked": 795,
+      "problems": []
+    }
+  }
+}

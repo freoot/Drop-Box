@@ -1,0 +1,9 @@
+{
+  "name": "是好汉就上山 · 梁山聚义战棋",
+  "short_name": "是好汉就上山",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbf3e7",
+  "theme_color": "#e9a85f",
+  "orientation": "any"
+}

@@ -1,0 +1,37 @@
+[project]
+name = "kokoro-studio"
+version = "0.19.0"
+description = "Streamlit application for generating multilingual speech using Hexgrad Kokoro on Apple Silicon with MLX."
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+    "espeakng-loader",
+    "misaki[ja]",
+    "misaki[zh]",
+    "mlx-audio",
+    "num2words",
+    "numpy>=1.26.0",
+    "phonemizer-fork",
+    "soundfile",
+    "spacy",
+    "streamlit",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+    "ty",
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ty.environment]
+python-version = "3.12"

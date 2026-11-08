@@ -1,0 +1,16 @@
+{
+  "scene_mode": "baked_scene_mode",
+  "art_source": "host_image",
+  "asset": "assets/tavern-interior.png",
+  "logical_resolution": [1536,1024],
+  "origin": "top-left",
+  "camera": "fixed elevated view, uniform scale; horizontal scrolling on narrow screens",
+  "layout": {"counter":"L-shaped back and right", "tables":4,"walk_aisle_x_percent":[46,52],"innkeeper_percent":[62,22]},
+  "interaction": "innkeeper opens recruitment panel; guests are decorative owned heroes",
+  "render_order": ["painted room","guest sprites","innkeeper hotspot","recruitment dialog"],
+  "motion": "bounded CSS translation inside central aisle; not continuous walking frames",
+  "prompt": "Premium cute Song dynasty tavern, polished painted 2.5D dollhouse, warm amber lanterns, honey wood, jade trim; L-shaped back/right bar, exactly four round tables, wide clear central aisle, no people, text or UI. Original water-margin cozy tavern.",
+  "visual_review": "generated background reviewed: four round tables and L counter present; runtime screenshot blocked by approval service usage limit",
+  "model": "host-selected",
+  "estimateUsd": null
+}

@@ -1,0 +1,83 @@
+{
+  "asset_type": "character",
+  "asset_id": "C01",
+  "version": "v1.0",
+  "status": "assets_approved",
+  "reference_images": [
+    "/Users/user/.codex/.chatgpt-projects/g-p-6ab9cc04ec3081919552de59c1293d42/assets/characters/C01-v1.png"
+  ],
+  "required_views": [
+    "front_full_body",
+    "side_90_full_body",
+    "back_full_body",
+    "medium_head_to_waist"
+  ],
+  "view_coverage": [
+    {
+      "view": "front_full_body",
+      "panel": "top-left"
+    },
+    {
+      "view": "side_90_full_body",
+      "panel": "top-right"
+    },
+    {
+      "view": "back_full_body",
+      "panel": "bottom-left"
+    },
+    {
+      "view": "medium_head_to_waist",
+      "panel": "bottom-right"
+    }
+  ],
+  "locked_features": {
+    "minimum_age_years": 70,
+    "asian_appearance": true,
+    "photorealistic": true,
+    "sheet_format": "16:9, 1280x720",
+    "approximate_age_years": 74,
+    "gender_presentation": "woman",
+    "hair": "short silver-gray side-parted hair",
+    "outfit": "muted brown cardigan, cream shirt, taupe trousers, walking shoes"
+  },
+  "design_basis": {
+    "script_sources": [
+      "User-provided sections 3 and 4"
+    ],
+    "reading_scope": "Only sections 3 and 4 were included in the prompt.",
+    "scene_context": "Proposed recurring older adult for the health-information scene and everyday routines.",
+    "story_style": "Quiet observational lifestyle film.",
+    "imaging_style": "Photographic realism.",
+    "facts": [
+      "Older adults are the focus; the user specified age 70+ and Asian appearance; genders may vary."
+    ],
+    "design_assumptions": [
+      "74-year-old woman; average build; short silver-gray hair; muted brown cardigan, cream shirt, taupe trousers and walking shoes.",
+      "The three 'someone' vignettes in section 3 are provisionally treated as distinct people."
+    ],
+    "critical_unknowns": [
+      "Which elder, if any, recurs between the chapter 2 and chapter 4 scenes remains open for the user's review."
+    ]
+  },
+  "material_keywords": [
+    "natural skin texture",
+    "silver-gray hair",
+    "knit cardigan",
+    "cotton shirt",
+    "soft neutral studio light"
+  ],
+  "state_contract": {
+    "initial": "Neutral standing pose in reference sheet.",
+    "change_nodes": [],
+    "final": "Same age, face, hair and outfit across views."
+  },
+  "source_skill": "character-asset",
+  "quality_check": {
+    "image_review": "complete",
+    "user_review": "approved",
+    "notes": [
+      "Four required views are present; identity and outfit appear consistent across panels."
+    ]
+  },
+  "approved_at": "2026-09-28"
+}

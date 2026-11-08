@@ -1,0 +1,350 @@
+{
+ "schema": "act007-asset-hashes/1",
+ "generator": "tools/motion/hash_manifest.py",
+ "hero_count": 18,
+ "rows": [
+  {
+   "hero": "hero002",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero002.glb",
+    "bytes": 1077636,
+    "sha256": "15258faf08d3a1ae5ecf556a853fcd081055d50a0a1e7428b42ac8eac495789b"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero002.glb",
+    "bytes": 1078408,
+    "sha256": "b58b02c8869ab47ec674b7a87c4729aff2d330fbca68912caf01b9e219241db8"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero002.blend",
+    "bytes": 683673,
+    "sha256": "ebf3dde637ed290776c62ed55baf621b5e677511bf9bcae68308cd3110a06d8a"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero005",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero005.glb",
+    "bytes": 959800,
+    "sha256": "7ac9ec719ce73a8df985bac3558de59baad4d62a49857f33430ee37d5a9acbb9"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero005.glb",
+    "bytes": 946880,
+    "sha256": "257c261975e403ddae97cd347eb8e23e1cc6fb8c6f5a64734c89cc3249cbd42f"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero005.blend",
+    "bytes": 657938,
+    "sha256": "6ca4ad72d0ce2d181caa3ac9e1d6a6f68382c1b749879ae8222c99ce967414b4"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero006",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero006.glb",
+    "bytes": 929472,
+    "sha256": "0c90d6e226b2492aab585a202939cf5b965d582abc1afbd1ffdac314137116ad"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero006.glb",
+    "bytes": 959940,
+    "sha256": "e58bd9c14b05c52751277e4a19e67418dbce8719950f1ff26681e8e511e5ca61"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero006.blend",
+    "bytes": 625343,
+    "sha256": "37472bb20f8e45315f74a7b917c47cc3b7810f4f3a6ad4707d52fc9e42b0a9d0"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero007",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero007.glb",
+    "bytes": 1021652,
+    "sha256": "da1cec8af15c4026bb8df94a5d2ed325de7855a6ba423054a8204e710e4c696b"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero007.glb",
+    "bytes": 1020440,
+    "sha256": "49e821ccdccb4a1aa5e6b3f8d73fc0a18e4b4cd87232d61bfd58d0d42b643084"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero007.blend",
+    "bytes": 678251,
+    "sha256": "013682e4461a38703e7adf3b083eca1567c6606b6ac8994b321412e4e23e7526"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero008",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero008.glb",
+    "bytes": 1248460,
+    "sha256": "cf228f10edc7bbd16319ec84e3b5290345eca41f5bfa1dbb59a16d7b28f2460d"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero008.glb",
+    "bytes": 1259724,
+    "sha256": "c02cbf5aa3793c7c697058da5ed8c3b09ea7c3581d22845fb5ac636f1894adc9"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero008.blend",
+    "bytes": 735270,
+    "sha256": "4bf4f28d2487a016aea96764f6d6bbaa4064346b72df9714376e4f9fc2ee18d0"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero010",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero010.glb",
+    "bytes": 884632,
+    "sha256": "089eda2b91928620df2dddcbd78ddb7fb744c22d7e5717811be4c8348c76ca3f"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero010.glb",
+    "bytes": 858760,
+    "sha256": "c9a32f0269c5df604e9681a80050491c568f1a730c452d7c3769af6e51333647"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero010.blend",
+    "bytes": 643261,
+    "sha256": "15dbcb8ac800fb77b9f86a4effe374ac07e7560b70fdc68128d75df2acf3329d"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero011",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero011.glb",
+    "bytes": 984984,
+    "sha256": "ddad399dc601ca71457aba9e20cf859b138a2c53ebce8fb097fb45eba281e5e5"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero011.glb",
+    "bytes": 971336,
+    "sha256": "bfb5dd2d9da5d0cf003550f9151df5397b7ecc14b5afeac00ed40513690a917d"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero011.blend",
+    "bytes": 674999,
+    "sha256": "4d28ae2d8881788546f60d3bdc8ee9f0f7802a690b7f04aa712563d6c445e4a4"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero012",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero012.glb",
+    "bytes": 907048,
+    "sha256": "c490ce1f52f96a7bcd90e1429908325960924198d1f2abaf3be3bcb794fc264f"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero012.glb",
+    "bytes": 893920,
+    "sha256": "b91971f507a3a7e79a734bc92346900f59a0c36b0525a675734e64b2708736b9"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero012.blend",
+    "bytes": 627680,
+    "sha256": "d92914b32d016b1b324a68a5c04798642fb0da9279437c88ba0345da8632fd46"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero013",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero013.glb",
+    "bytes": 802368,
+    "sha256": "3495b5a1aaffd3d85e07412503654d16ec5bfc82c21bfa1b6b6a1fc55a4b0ec4"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero013.glb",
+    "bytes": 819744,
+    "sha256": "83ec76156361f08141973a3200536f514f9d67c9b86675d2195a4b64be56bd00"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero013.blend",
+    "bytes": 572982,
+    "sha256": "146b2a0d31ebe34b094cdaded18135561d57ac4634007ea5eece607f8220d670"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero014",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero014.glb",
+    "bytes": 795464,
+    "sha256": "7d0f79be8573cd6e17d307fecea7012b44fba0f99456e20d0156254ff41aab9f"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero014.glb",
+    "bytes": 812932,
+    "sha256": "cae69c6de548a9d6db1e796aa09851e347e0a8eb9a59c2ee08730a8d10a369d1"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero014.blend",
+    "bytes": 567828,
+    "sha256": "20831eca0e89077c9fcaeed183146ea8720c3295440466b0b0aab1967816eb96"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero015",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero015.glb",
+    "bytes": 923828,
+    "sha256": "235542b3bbbc6b625ed2ac7ecbd572c48a7bf6ef7ef3f225bc52ddc278d868d0"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero015.glb",
+    "bytes": 898340,
+    "sha256": "84e538bd8803b40d78c16c89a442d5a6f37530bfbbbd9ce8663f56d31b1d2b24"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero015.blend",
+    "bytes": 640038,
+    "sha256": "5deb760f14d75f2df4cf4f942e941d45ba4ab056c963f86d07eafa51d16cd94f"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero017",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero017.glb",
+    "bytes": 914552,
+    "sha256": "98b5680c7fb0103ea5a6ddffc47177df3577f031f37df0a6ce1c5e670df8c946"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero017.glb",
+    "bytes": 900908,
+    "sha256": "13f1e2301fc1d22a3700815b48501a059640dae17bfda062858809816496bc24"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero017.blend",
+    "bytes": 635044,
+    "sha256": "1d75916c4d728feb50cf5338a54b38728798c6489e35a2e0c233e0ca31ab0825"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero019",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero019.glb",
+    "bytes": 931060,
+    "sha256": "915f071311c1685afc5bf1890ab786154bba5c17df3bfcf83afe922bbd0a5664"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero019.glb",
+    "bytes": 917928,
+    "sha256": "d32cce484bcaecdf21991f31227b11bf1d23a295c9cd4efd4dbf8d26ff3d4ba9"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero019.blend",
+    "bytes": 639920,
+    "sha256": "09217e6b154495c86da0d6713de791ca59df1428b1cd7c7988f9394462dba595"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero021",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero021.glb",
+    "bytes": 891200,
+    "sha256": "5550ce4cf82fc57db92115fde0df02eeb7d79da2f7a3eb483f1ff24183a980df"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero021.glb",
+    "bytes": 877676,
+    "sha256": "5ef8b88d3131dc633c9f99b5d0221ff126ad727d03e5df766e1ebfcbd6ccf7aa"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero021.blend",
+    "bytes": 639460,
+    "sha256": "0af61b8346507eeb42899e386653bf07673499c8f1f550ec71e254df4e7c2312"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero022",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero022.glb",
+    "bytes": 903796,
+    "sha256": "5bb4a80773015b0af09d93057c6b719736fe7b831b9086599e9160db19ca3b83"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero022.glb",
+    "bytes": 890268,
+    "sha256": "785ae6b6fb5431cff3fca913550f99082b2bbfd478bde0db1e9211d920efad27"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero022.blend",
+    "bytes": 638566,
+    "sha256": "6d492454799ad355892b558513c61733c93c2ff73780099eeb6f0477adc0fbc0"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero023",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero023.glb",
+    "bytes": 989608,
+    "sha256": "22d528ed50046663d102335796ca9d65b81325bbe2293d4aca4c69e54293541d"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero023.glb",
+    "bytes": 978148,
+    "sha256": "b6cf0cc0dcf5be29e396f968a412a6ae156e456038d0c5ce8ae7176258cd3a34"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero023.blend",
+    "bytes": 658569,
+    "sha256": "28c9ab2e889980219b0ba59d1c3093aa56c80e66c200d3cc9cfaba6b0bb8eff0"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero024",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero024.glb",
+    "bytes": 877192,
+    "sha256": "9ae7e8c2535c099595668adeaf8884a24f934f7a97e4240fad3ae12afdb46b4c"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero024.glb",
+    "bytes": 863668,
+    "sha256": "e3fd294e4d4eaa25c10966df1d499c9eeb255afd2c2e93cf81a2d57af1b6ebae"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero024.blend",
+    "bytes": 629791,
+    "sha256": "43ea7806dcbae74f2c24da3c9fd19c44f1e2bcd7d24c7173e3648dacf9fe280a"
+   },
+   "r7_unchanged": true
+  },
+  {
+   "hero": "hero025",
+   "r7_glb": {
+    "path": "assets/releases/ART-002/r7/models/hero025.glb",
+    "bytes": 921032,
+    "sha256": "87e3950bf685a6d7205bdd404e64e377811de4d66a6395b31da28ca010462189"
+   },
+   "r8_glb": {
+    "path": "assets/releases/ART-002/r8/models/hero025.glb",
+    "bytes": 907928,
+    "sha256": "28a7ec6a93b8b003abdc5ce80f7c0d85cd51caed8a1fe393151224036fc1a883"
+   },
+   "r8_blend": {
+    "path": "assets/releases/ART-002/r8/source/hero025.blend",
+    "bytes": 639061,
+    "sha256": "101e8b2ac4c944962a9f1d6e8d688fa25b284309730308db87cccf793620ce9c"
+   },
+   "r7_unchanged": true
+  }
+ ],
+ "problems": []
+}

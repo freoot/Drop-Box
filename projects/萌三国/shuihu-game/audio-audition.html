@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>梁山听音 · 默认曲与候选曲统一试听</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--ink:#20201c;--paper:#f4efe2;--line:#d8cdb4;--accent:#8a5a2b;--muted:#6d6555}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;padding:18px 20px;border-bottom:1px solid var(--line)}
+header a{color:var(--accent);text-decoration:none}
+header h1{margin:0;font-size:22px}
+header p{margin:4px 0 0;color:var(--muted);font-size:14px}
+main{max-width:940px;margin:0 auto;padding:20px}
+section{margin:0 0 28px}
+h2{font-size:18px;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.player{background:#fffdf7;border:1px solid var(--line);border-radius:10px;padding:16px}
+.player audio{width:100%;margin:10px 0}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{font:inherit;padding:6px 14px;border:1px solid var(--accent);background:#fff;color:var(--accent);border-radius:6px;cursor:pointer}
+button:disabled{opacity:.45;cursor:default}
+.tracks{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.track{border:1px solid var(--line);border-radius:8px;padding:12px;background:#fffdf7}
+.track.playing{border-color:var(--accent);box-shadow:0 0 0 2px rgba(138,90,43,.15)}
+.track h3{margin:0 0 4px;font-size:16px}
+.track .meta{color:var(--muted);font-size:13px;margin:0 0 8px}
+.badge{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);margin-left:6px}
+.badge.cand{border-color:var(--muted);color:var(--muted)}
+.note{background:#fffdf7;border:1px dashed var(--line);border-radius:8px;padding:12px;font-size:14px;color:var(--muted)}
+#status{font-size:14px;color:var(--muted);min-height:1.6em}
+details{margin-top:8px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html">返回山寨</a>
+  <div>
+    <h1>梁山听音 · 统一试听入口</h1>
+    <p>当前默认曲 2 首 + AUDIO-002 候选曲 5 首，同一播放器对比。选择只记在本页，<strong>不会更换游戏默认音乐</strong>。</p>
+  </div>
+</header>
+<main>
+  <section class="player" aria-labelledby="now-title">
+    <span id="now-kind">选一首开始试听</span>
+    <h2 id="now-title">尚未选择曲目</h2>
+    <p id="now-desc">所有曲目按同一试听音量播放，可循环。</p>
+    <audio id="player" controls preload="metadata" loop></audio>
+    <div class="controls">
+      <button id="stop" type="button">停止</button>
+      <button id="compare" type="button" disabled>切回上一首</button>
+      <label><input id="loop" type="checkbox" checked>循环</label>
+      <label>试听音量 <input id="volume" type="range" min="0" max="1" step="0.05" value="0.65"></label>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在载入曲目</p>
+  </section>
+
+  <section aria-labelledby="default-h">
+    <h2 id="default-h">游戏当前默认曲</h2>
+    <div id="default-tracks" class="tracks"></div>
+  </section>
+
+  <section aria-labelledby="cand-h">
+    <h2 id="cand-h">候选曲（选定前不替换默认曲）</h2>
+    <div id="candidate-tracks" class="tracks"></div>
+  </section>
+
+  <section>
+    <h2>记下你的倾向</h2>
+    <p id="selection" aria-live="polite">尚未选择</p>
+    <button id="copy" type="button">复制选择</button>
+    <p class="note">本页只写自己的偏好键 <code>shuihu-audition-v1</code>，不读取、不修改游戏存档，也不改动 <code>bgm.js</code> 的默认曲目。要真正更换默认曲，需要指挥官明确指令并由主程序改代码。</p>
+  </section>
+
+  <details>
+    <summary>来源与授权说明</summary>
+    <p>默认曲两首由工程内脚本 <code>tools/blender/char108/generate_music.py</code> 程序合成，未使用采样或外部音源。候选曲五首为原创乐谱，使用本机 macOS 系统音色库渲染；系统长笛、尼龙吉他、Koto 分别近似笛子、琵琶、古筝，不是实录民乐。系统音源的商业使用许可未在本工程内核验，对外发布前需另行确认。完整登记见 <code>docs/audio/SOURCES_AND_LICENSES.md</code>。</p>
+  </details>
+</main>
+
+<script>
+(() => {
+  const STORE_KEY = 'shuihu-audition-v1';
+  // 与 bgm.js 的 TRACKS 保持一致；此处只做只读展示，不修改游戏配置。
+  const DEFAULT_TRACKS = [
+    { id: 'city', title: '梁山主城', kind: '默认 · 主城', file: 'assets/releases/CHAR-108/audio/liangshan_city.mp3',
+      desc: '程序合成，无采样。当前游戏内主城默认曲。' },
+    { id: 'battle', title: '出山鼓声', kind: '默认 · 战斗', file: 'assets/releases/CHAR-108/audio/battle_theme.mp3',
+      desc: '程序合成，无采样。当前游戏内战斗默认曲。' },
+  ];
+  const player = document.getElementById('player');
+  const el = id => document.getElementById(id);
+  let tracks = [];
+  let current = null, previous = null;
+  let picks = {};
+
+  function loadPicks() {
+    try { picks = JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch (e) { picks = {}; }
+  }
+  function savePicks() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(picks)); } catch (e) { /* 忽略 */ }
+  }
+
+  function card(t, isDefault) {
+    const box = document.createElement('article');
+    box.className = 'track';
+    box.dataset.id = t.id;
+    const badge = isDefault
+      ? '<span class="badge">当前默认</span>'
+      : '<span class="badge cand">候选</span>';
+    box.innerHTML =
+      '<h3>' + t.title + badge + '</h3>' +
+      '<p class="meta">' + t.kind + (t.seconds ? ' · ' + t.seconds.toFixed(1) + ' 秒' : '') +
+        (t.bpm ? ' · ' + t.bpm + ' BPM' : '') + '</p>' +
+      '<p class="meta">' + (t.desc || '') + '</p>';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = '试听';
+    btn.addEventListener('click', () => play(t));
+    box.appendChild(btn);
+    return box;
+  }
+
+  function render(list, host, isDefault) {
+    host.innerHTML = '';
+    list.forEach(t => host.appendChild(card(t, isDefault)));
+  }
+
+  function play(t) {
+    if (current && current.id !== t.id) previous = current;
+    current = t;
+    player.src = t.file;
+    player.loop = el('loop').checked;
+    player.volume = Number(el('volume').value);
+    const p = player.play();
+    if (p && p.catch) p.catch(() => { el('status').textContent = '浏览器拦截了自动播放，请点一下播放键。'; });
+    el('now-kind').textContent = t.kind;
+    el('now-title').textContent = t.title;
+    el('now-desc').textContent = t.desc || '';
+    el('status').textContent = '正在播放：' + t.title + (t.seconds ? '（约 ' + t.seconds.toFixed(1) + ' 秒）' : '');
+    el('compare').disabled = !previous;
+    document.querySelectorAll('.track').forEach(n => n.classList.toggle('playing', n.dataset.id === t.id));
+    picks[t.kind.indexOf('默认') === 0 ? 'default' : 'candidate'] = t.id;
+    savePicks();
+    showSelection();
+  }
+
+  function showSelection() {
+    const parts = [];
+    if (picks.default) parts.push('默认组倾向：' + picks.default);
+    if (picks.candidate) parts.push('候选组倾向：' + picks.candidate);
+    el('selection').textContent = parts.length ? parts.join('；') : '尚未选择';
+  }
+
+  el('stop').addEventListener('click', () => { player.pause(); player.currentTime = 0; el('status').textContent = '已停止。'; });
+  el('compare').addEventListener('click', () => { if (previous) play(previous); });
+  el('loop').addEventListener('change', () => { player.loop = el('loop').checked; });
+  el('volume').addEventListener('input', () => { player.volume = Number(el('volume').value); });
+  el('copy').addEventListener('click', () => {
+    const text = el('selection').textContent;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        () => { el('status').textContent = '已复制：' + text; },
+        () => { el('status').textContent = '复制未获授权，可手动选中文本：' + text; });
+    } else {
+      el('status').textContent = '当前环境不支持剪贴板，可手动选中文本：' + text;
+    }
+  });
+
+  loadPicks();
+  render(DEFAULT_TRACKS, el('default-tracks'), true);
+  showSelection();
+
+  fetch('assets/releases/AUDIO-002/manifest.json')
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(m => {
+      const list = (m.tracks || []).map(t => ({
+        id: t.id, title: t.title, kind: '候选 · ' + t.kind,
+        file: 'assets/releases/AUDIO-002/' + t.file,
+        seconds: t.seconds, bpm: t.bpm, desc: t.desc,
+      }));
+      tracks = DEFAULT_TRACKS.concat(list);
+      render(list, el('candidate-tracks'), false);
+      el('status').textContent = '已载入默认曲 ' + DEFAULT_TRACKS.length + ' 首、候选曲 ' + list.length + ' 首。';
+    })
+    .catch(err => {
+      el('status').textContent = '候选曲清单载入失败（' + err.message + '）。需经 HTTP 打开本页；file:// 直接打开无法读取清单。默认曲仍可试听。';
+    });
+})();
+</script>
+</body>
+</html>

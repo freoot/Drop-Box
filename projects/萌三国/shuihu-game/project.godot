@@ -1,0 +1,35 @@
+; Godot migration shell for the browser-first prototype.
+config_version=5
+
+[application]
+
+config/name="是好汉就上山"
+config/description="Q版水浒2.5D战棋"
+run/main_scene="res://godot/journey_map/journey_map.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+textures/vram_compression/import_s3tc_bptc=true
+
+[input]
+
+confirm={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194309,"unicode":13)]
+}
+toggle_auto={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":65,"unicode":97)]
+}

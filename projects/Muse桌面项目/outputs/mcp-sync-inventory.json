@@ -1,0 +1,253 @@
+{
+  "generated_at": "2026-11-08",
+  "scope": "Configured MCP entries in known user/app configs plus installed plugin-cache MCP manifests; temporary marketplace catalogs excluded. Credentials and unrelated settings never copied.",
+  "config_files": [
+    {
+      "path": "/Users/user/.codex/config.toml",
+      "bytes": 3517,
+      "kind": "user_configuration",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/.claude.json",
+      "bytes": 4098,
+      "kind": "user_configuration",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/.claude/settings.json",
+      "bytes": 2651,
+      "kind": "user_configuration",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/Library/Application Support/Claude/claude_desktop_config.json",
+      "bytes": 3030,
+      "kind": "user_configuration",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/.codex/plugins/cache/openai-curated-remote/notion/3.0.8/.mcp.json",
+      "bytes": 112,
+      "kind": "plugin_manifest",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/.codex/plugins/cache/openai-bundled/unified-computer-use/26.1029.61003/.mcp.json",
+      "bytes": 7567,
+      "kind": "plugin_manifest",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/.codex/plugins/cache/openai-bundled/code-review/26.1013.40934/.mcp.json",
+      "bytes": 833,
+      "kind": "plugin_manifest",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/.codex/plugins/cache/openai-bundled/codex-app-tools/26.1029.61003/.mcp.json",
+      "bytes": 1352,
+      "kind": "plugin_manifest",
+      "parsed": true
+    },
+    {
+      "path": "/Users/user/.codex/plugins/cache/openai-curated-remote/notion/3.0.8/mcp.json",
+      "bytes": 195,
+      "kind": "plugin_manifest",
+      "parsed": true
+    }
+  ],
+  "servers": [
+    {
+      "name": "node_repl",
+      "config_file": "/Users/user/.codex/config.toml",
+      "scope": "top-level",
+      "command": "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl",
+      "transport": "stdio",
+      "environment_variable_names": [
+        "BROWSER_USE_ACCESS_EXECUTOR_ID",
+        "BROWSER_USE_ACCESS_PIPE_PATH",
+        "BROWSER_USE_ACCESS_VERIFYING_IDENTITY",
+        "BROWSER_USE_AVAILABLE_BACKENDS",
+        "BROWSER_USE_CODEX_APP_BUILD_FLAVOR",
+        "BROWSER_USE_CODEX_APP_VERSION",
+        "BROWSER_USE_TINYSKY_ENABLED",
+        "CODEX_CLI_PATH",
+        "CODEX_HOME",
+        "NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER",
+        "NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME",
+        "NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE",
+        "NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS",
+        "NODE_REPL_NODE_MODULE_DIRS",
+        "NODE_REPL_NODE_PATH",
+        "NODE_REPL_TRUSTED_CODE_PATHS",
+        "NODE_REPL_TRUSTED_SERVICES",
+        "SKY_CUA_SERVICE_PATH"
+      ],
+      "has_inline_auth_configuration": false
+    },
+    {
+      "name": "godotmcp",
+      "config_file": "/Users/user/.codex/config.toml",
+      "scope": "top-level",
+      "command": "/Users/user/.local/share/pnpm/bin/godot-mcp",
+      "transport": "stdio",
+      "environment_variable_names": [
+        "GODOT_PATH"
+      ],
+      "has_inline_auth_configuration": false,
+      "local_paths": [
+        {
+          "path": "/Users/user/.local/share/pnpm/bin/godot-mcp",
+          "kind": "file",
+          "git": null
+        }
+      ]
+    },
+    {
+      "name": "rea",
+      "config_file": "/Users/user/.codex/config.toml",
+      "scope": "top-level",
+      "command": "npx",
+      "transport": "stdio",
+      "environment_variable_names": [],
+      "has_inline_auth_configuration": false,
+      "packages_or_modules": [
+        "rea-agents@6.8.0"
+      ]
+    },
+    {
+      "name": "prompts-chat",
+      "config_file": "/Users/user/.codex/config.toml",
+      "scope": "top-level",
+      "transport": "http",
+      "url_origin": "https://prompts.chat",
+      "environment_variable_names": [],
+      "has_inline_auth_configuration": false
+    },
+    {
+      "name": "notion",
+      "config_file": "/Users/user/.codex/plugins/cache/openai-curated-remote/notion/3.0.8/.mcp.json",
+      "scope": "top-level",
+      "transport": "http",
+      "url_origin": "https://mcp.notion.com",
+      "environment_variable_names": [],
+      "has_inline_auth_configuration": false
+    },
+    {
+      "name": "cua_repl",
+      "config_file": "/Users/user/.codex/plugins/cache/openai-bundled/unified-computer-use/26.1029.61003/.mcp.json",
+      "scope": "top-level",
+      "command": "/bin/sh",
+      "transport": "stdio",
+      "environment_variable_names": [
+        "BROWSER_USE_ACCESS_EXECUTOR_ID",
+        "BROWSER_USE_ACCESS_PIPE_PATH",
+        "BROWSER_USE_ACCESS_VERIFYING_IDENTITY",
+        "BROWSER_USE_AVAILABLE_BACKENDS",
+        "BROWSER_USE_CODEX_APP_BUILD_FLAVOR",
+        "BROWSER_USE_CODEX_APP_VERSION",
+        "BROWSER_USE_TINYSKY_ENABLED",
+        "CODEX_CLI_PATH",
+        "CODEX_HOME",
+        "CUA_REPL_ENABLED_SURFACES",
+        "NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER",
+        "NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME",
+        "NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE",
+        "NODE_REPL_JS_BANNER",
+        "NODE_REPL_JS_COMPLETION_SUMMARY",
+        "NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS",
+        "NODE_REPL_NODE_MODULE_DIRS",
+        "NODE_REPL_NODE_PATH",
+        "NODE_REPL_TOOL_OVERRIDES",
+        "NODE_REPL_TRUSTED_CODE_PATHS",
+        "NODE_REPL_TRUSTED_SERVICES",
+        "NODE_REPL_UNTRUSTED_ENV_ALLOWLIST",
+        "SKY_CUA_SERVICE_PATH"
+      ],
+      "has_inline_auth_configuration": false,
+      "enabled": true
+    },
+    {
+      "name": "code-review",
+      "config_file": "/Users/user/.codex/plugins/cache/openai-bundled/code-review/26.1013.40934/.mcp.json",
+      "scope": "top-level",
+      "command": "/bin/sh",
+      "transport": "stdio",
+      "environment_variable_names": [
+        "ALL_PROXY",
+        "CODEX_API_BASE_URL",
+        "CODEX_API_ENDPOINT",
+        "CODEX_API_KEY",
+        "CODEX_CLI_PATH",
+        "CODEX_HOME",
+        "CODEX_MANAGED_PACKAGE_ROOT",
+        "CODEX_MCP_NODE_PATH",
+        "GH_CONFIG_DIR",
+        "GH_ENTERPRISE_TOKEN",
+        "GH_HOST",
+        "GH_TOKEN",
+        "GITHUB_PROVIDER_URL",
+        "GITHUB_READ_INDEX",
+        "GITHUB_TOKEN",
+        "HTTPS_PROXY",
+        "HTTP_PROXY",
+        "NODE_EXTRA_CA_CERTS",
+        "NO_PROXY",
+        "PATH",
+        "SSL_CERT_FILE"
+      ],
+      "has_inline_auth_configuration": false,
+      "enabled": false
+    },
+    {
+      "name": "codex_app",
+      "config_file": "/Users/user/.codex/plugins/cache/openai-bundled/codex-app-tools/26.1029.61003/.mcp.json",
+      "scope": "top-level",
+      "command": "/Users/user/.codex/plugins/cache/openai-bundled/codex-app-tools/26.1029.61003/scripts/launch_codex_app_tools_mcp",
+      "transport": "stdio",
+      "environment_variable_names": [
+        "CODEX_APP_TOOLS_DEFERRED",
+        "CODEX_APP_TOOLS_PIPE_PATH",
+        "CODEX_BROWSER_USE_NODE_PATH",
+        "CODEX_CLI_PATH",
+        "CODEX_ELECTRON_RESOURCES_PATH",
+        "CODEX_MCP_NODE_PATH",
+        "HOME",
+        "LOCALAPPDATA",
+        "PATH",
+        "USERPROFILE",
+        "XDG_CACHE_HOME"
+      ],
+      "has_inline_auth_configuration": false,
+      "enabled": false,
+      "local_paths": [
+        {
+          "path": "/Users/user/.codex/plugins/cache/openai-bundled/codex-app-tools/26.1029.61003/scripts/launch_codex_app_tools_mcp",
+          "kind": "file",
+          "git": null
+        },
+        {
+          "path": "/Users/user/.codex/plugins/cache/openai-bundled/codex-app-tools/26.1029.61003",
+          "kind": "directory",
+          "git": null
+        }
+      ]
+    },
+    {
+      "name": "notion",
+      "config_file": "/Users/user/.codex/plugins/cache/openai-curated-remote/notion/3.0.8/mcp.json",
+      "scope": "top-level",
+      "transport": "streamable-http",
+      "url_origin": "https://mcp.notion.com",
+      "environment_variable_names": [],
+      "has_inline_auth_configuration": false
+    }
+  ],
+  "notes": [
+    "Plugin-cache declarations are inventory only, not proof that their plugin is enabled.",
+    "Cloud connector credentials/OAuth grants are intentionally absent and must be re-authorized after restore.",
+    "Only environment variable names are recorded. No values, headers, URL paths/queries, app session history, or credentials are exported.",
+    "Source directories are identified from existing local command/argument paths; binaries and caches are not automatically included."
+  ]
+}

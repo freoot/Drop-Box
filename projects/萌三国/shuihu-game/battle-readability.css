@@ -1,0 +1,25 @@
+/* Persistent protection is driven by actual remaining shield, not by the cast timer. */
+.shield-dome{position:absolute;pointer-events:none;z-index:9;inset:-4% -8% 6%;border:3px solid #ffe391;border-radius:48% 48% 42% 42%;background:radial-gradient(ellipse at 35% 25%,#fff6ce66,transparent 45%,#ffc94d38 75%);box-shadow:inset 0 0 15px #ffd66c88,0 0 12px #ffdb7970;animation:ward-breathe 2s ease-in-out infinite}
+.shield-dome:after{content:'护';position:absolute;bottom:7%;left:40%;color:#fff3bc;font-size:15px;text-shadow:0 1px 4px #9c661b}
+@keyframes ward-breathe{50%{opacity:.7;box-shadow:inset 0 0 22px #ffe3a088,0 0 17px #ffdb7970}}
+.battle-rest-art{display:none;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.unit-sprite[data-hero="hero-009"]:not(.attacking):not(.hit):not(.moving):not(.dead) .frame-strip{display:none}
+.unit-sprite[data-hero="hero-009"]:not(.attacking):not(.hit):not(.moving):not(.dead) .battle-rest-art{display:block;position:absolute;bottom:0;width:110%;max-width:none;height:110%}
+.unit-sprite[data-hero="hero-006"] .unit-art{scale:1.15;transform-origin:center bottom}
+.deploy-notice{display:flex;align-items:center;gap:14px;padding:12px 16px;background:linear-gradient(110deg,#244e49,#427467);border:1px solid #d7bc79;border-radius:13px;color:#fff4d5;margin:8px}
+.deploy-notice b{white-space:nowrap;font-family:Songti SC,serif;font-size:20px}.deploy-notice span{font-size:12px;line-height:1.6}
+.city-q .city-spot{border:1px solid #f1d5a0!important;border-radius:7px!important;background:linear-gradient(135deg,#3e5549f5,#233b35f2)!important;color:#fff2cf!important;padding:9px 13px!important;box-shadow:0 4px 0 #20372eb0,0 9px 16px #172c3a38!important}
+.city-q .city-spot b{font-family:'Songti SC','STSong',serif;font-size:17px;letter-spacing:2px}.city-q .city-spot small{color:#decda7;font-size:10px}.city-q .city-spot i{font-size:18px}
+.city-q .city-stage:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 10%,#fff3c138,transparent 55%);box-shadow:inset 0 0 60px #173a3e20}
+.city-q .quest-stamp{font-family:'Songti SC',serif;background:#9d4e3c}.city-q .quest-copy b{letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){.shield-dome{animation:none}}
+
+/* ART-002: city geometry is owned by game.css; this sheet only adjusts appearance. */
+.city-q .building.city-spot{background:linear-gradient(180deg,#fffdf4f5,#f6e7c9f2)!important;border:1px solid #ffffff!important;border-radius:16px!important;color:#493e31!important;padding:8px 12px!important;box-shadow:0 3px 10px #343c3428!important;animation:none;min-height:44px}
+.city-q .building.city-spot b{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#493e31;font-size:14px;letter-spacing:.5px;font-weight:700}
+.city-q .building.city-spot small{color:#76664f;font-size:10px}.city-q .quest-card{border-radius:18px;background:#fffaf0ed;backdrop-filter:blur(12px)}
+.city-q .city-footer-note{padding:5px 10px;border-radius:12px;background:#fffaf0d9;color:#5c6753}
+.profile-name{padding:0;background:none;color:inherit;text-align:left;font:inherit;font-weight:800;min-height:24px}.profile-name small{opacity:.65}
+#profile-setup{position:relative;z-index:1000}.profile-backdrop{position:fixed;inset:0;display:grid;place-items:center;padding:20px;background:linear-gradient(120deg,#14312ed9,#385849b8);backdrop-filter:blur(14px);overflow:auto}
+.profile-sheet{width:min(440px,100%);padding:32px;border-radius:28px;background:#fffaf1;box-shadow:0 24px 80px #132b4566;color:#384b42;display:flex;flex-direction:column;gap:12px;max-height:95dvh;overflow:auto}.profile-seal{display:grid;place-items:center;width:52px;height:52px;border-radius:15px;background:#b95743;color:#fff6df;font:30px 'Songti SC',serif}.profile-sheet h1{font-size:27px;margin:0}.profile-sheet p{font-size:14px;line-height:1.7;margin:0;color:#748078}.profile-sheet label{font-size:13px;font-weight:700;margin-top:10px}.profile-sheet input{width:100%;font:18px inherit;font-size:18px;padding:15px;border:1px solid #c9d4c9;border-radius:14px;background:#fff;color:#263a31}.profile-sheet input:focus{outline:3px solid #a8cdb4}.profile-sheet button{padding:15px;border-radius:14px;background:#356b55;color:white;font-size:16px;font-weight:700}.profile-sheet button[type=button]{background:#e9eee5;color:#52684f}.profile-sheet small{color:#879184;font-size:11px}.profile-sheet #profile-error{color:#ae493b;font-size:12px}
+@media(max-width:600px){#app[data-page=city] .topbar{left:10px;right:10px;padding:9px 11px}.topline{flex-wrap:wrap;gap:6px}.resources{flex-wrap:wrap}.city-q .city-spot b{font-size:13px}.city-q .quest-card{bottom:auto}.profile-sheet{padding:24px}.city-q .city-stage-scroll{scrollbar-width:thin}}

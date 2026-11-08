@@ -1,0 +1,171 @@
+{
+  "schema": "wechat-sop-sabc/1",
+  "project_name": "周末去哪儿",
+  "source_article_id": "acc_demo_002-5c449ece",
+  "relevance": "low",
+  "dimensions": [
+    {
+      "key": "market_size",
+      "name": "容量",
+      "score": 2,
+      "max": 5,
+      "reason": "未见到需求规模描述",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "beginner",
+      "name": "新手友好",
+      "score": 1,
+      "max": 5,
+      "reason": "没有可执行步骤，新手无从下手",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "funnel",
+      "name": "链路",
+      "score": 1,
+      "max": 5,
+      "reason": "没有从内容到用户的路径描述",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "monetization",
+      "name": "变现路径",
+      "score": 1,
+      "max": 5,
+      "reason": "没有明确收益方式",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "timing",
+      "name": "趋势窗口",
+      "score": 2,
+      "max": 5,
+      "reason": "未提及时间窗口",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "evidence",
+      "name": "证据强度",
+      "score": 2,
+      "max": 5,
+      "reason": "仅 2 条证据，样本偏少",
+      "evidence_ref": "这周我们跑了城郊 5 个营地，都是不需要预约、不收门票的地方。"
+    },
+    {
+      "key": "sop_ability",
+      "name": "可SOP化",
+      "score": 1,
+      "max": 5,
+      "reason": "无步骤，不可SOP化",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "feedback",
+      "name": "反馈周期",
+      "score": 2,
+      "max": 5,
+      "reason": "未说明多久见效",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "differentiation",
+      "name": "差异化",
+      "score": 2,
+      "max": 5,
+      "reason": "命中差异化词：小众（无直接证据，按 investigate-first 封顶 2 分）",
+      "evidence_ref": "",
+      "insufficient_evidence": true
+    },
+    {
+      "key": "compliance",
+      "name": "合规/可复制稳定性",
+      "score": 5,
+      "max": 5,
+      "reason": "风险条目少，未见违规手段",
+      "evidence_ref": "平台规则可能变化，执行前需自行核对最新政策；本卡不构成任何承诺。"
+    }
+  ],
+  "total": 19,
+  "max_total": 50,
+  "grade": "C",
+  "summary": "总分 19/50 → C 级；最强「合规/可复制稳定性」5 分，最弱「新手友好」1 分。",
+  "evidence_check": {
+    "checked": [
+      {
+        "key": "market_size",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "beginner",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "funnel",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "monetization",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "timing",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "evidence",
+        "ref": "这周我们跑了城郊 5 个营地，都是不需要预约、不收门票的地方。",
+        "valid": true
+      },
+      {
+        "key": "sop_ability",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "feedback",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "differentiation",
+        "ref": "",
+        "valid": false
+      },
+      {
+        "key": "compliance",
+        "ref": "平台规则可能变化，执行前需自行核对最新政策；本卡不构成任何承诺。",
+        "valid": true
+      }
+    ],
+    "weak": [
+      "market_size",
+      "beginner",
+      "funnel",
+      "monetization",
+      "timing",
+      "sop_ability",
+      "feedback",
+      "differentiation"
+    ],
+    "total": 10
+  },
+  "skills_applied": [
+    "research-brief",
+    "investigate-first",
+    "competitor-research"
+  ],
+  "generated_at": "2026-10-29T11:20:36+08:00"
+}

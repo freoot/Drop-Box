@@ -1,0 +1,8 @@
+{
+  "topics": ["泛知识", "社会话题", "商业", "科技"],
+  "sources": ["小宇宙", "YouTube", "X", "微博", "公开播客 RSS 与媒体网站"],
+  "max_items": 8,
+  "lookback_days": 3,
+  "language": "中文优先，重要外文内容用中文整理",
+  "schedule": "每天 09:00（Asia/Shanghai），由 Codex 自动化执行"
+}

@@ -1,0 +1,13 @@
+{
+  "format": "1280x720 16:9 PNG",
+  "status": "production_keyframes",
+  "items": [
+    {"id":"KF00","file":"KF00-notes-tea.png","use":"Chapter 1 hook; notes and half-finished tea; C01 home"},
+    {"id":"KF01","file":"KF01-phone-handoff.png","use":"Chapter 2; C01 receives phone from family hand"},
+    {"id":"KF02","file":"KF02-courtyard-walk.png","use":"Chapters 3 and 4; C02 on residential path"},
+    {"id":"KF03","file":"KF03-home-cooking.png","use":"Chapter 3; C03 prepares a family meal"},
+    {"id":"KF04","file":"KF04-evening-book.png","use":"Chapters 3 and 4; C01 closes book at dusk"},
+    {"id":"KF05","file":"KF05-shoes-door.png","use":"Chapter 2 to 3 transition; empty shoes at C01 doorway"},
+    {"id":"KF06","file":"KF06-final-window.png","use":"Chapter 4 ending; C01 at window at dusk"}
+  ]
+}

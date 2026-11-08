@@ -1,0 +1,21 @@
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v2.py:214: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v2.py:30: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v2.py:73: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/_render_samples_v2.py:359: DeprecationWarning: 'Scene.use_nodes' is expected to be removed in Blender 6.0
+  scene.use_nodes = True
+00:02.516  render           | Saved: '/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v2_mystic_lantern.png'
+00:04.179  render           | Saved: '/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v2_wanderer_blade.png'
+=== Fiverr preview v2 renders start ===
+Blender 5.2.2 LTS
+Using engine: BLENDER_EEVEE
+WROTE /Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v2_mystic_lantern.png
+WROTE /Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v2_wanderer_blade.png
+=== DONE ===
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v2_mystic_lantern.png
+/Users/user/Documents/Codex/youxi/meng/samples/fiverr-preview/3d_v2_wanderer_blade.png
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

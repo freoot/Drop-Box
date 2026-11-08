@@ -1,0 +1,60 @@
+[
+  [
+    "1280x720",
+    {
+      "n": "50 tools shown",
+      "q": "",
+      "active": "All pricing",
+      "empty": false
+    },
+    {
+      "n": "0 tools shown",
+      "q": "zz_no_match_1937",
+      "active": "All pricing",
+      "empty": true
+    },
+    {
+      "n": "50 tools shown",
+      "q": "",
+      "active": "All pricing",
+      "empty": false
+    },
+    {
+      "n": "1 tool shown",
+      "q": "Jasper",
+      "active": "Paid",
+      "empty": false
+    }
+  ],
+  [
+    "375x812",
+    {
+      "n": "50 tools shown",
+      "q": "",
+      "active": "All pricing",
+      "empty": false
+    },
+    {
+      "n": "0 tools shown",
+      "q": "zz_no_match_1937",
+      "active": "All pricing",
+      "empty": true
+    },
+    {
+      "n": "50 tools shown",
+      "q": "",
+      "active": "All pricing",
+      "empty": false
+    },
+    {
+      "n": "1 tool shown",
+      "q": "Jasper",
+      "active": "Paid",
+      "empty": false
+    }
+  ],
+  {
+    "Make": true,
+    "has_9_dollars": false
+  }
+]

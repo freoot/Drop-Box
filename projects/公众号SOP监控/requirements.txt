@@ -1,0 +1,4 @@
+# 尽量轻：核心流程只用标准库；下面两个仅在「接真实 LLM / 读 YAML 配置」时才需要。
+# 安装：python3 -m pip install -r requirements.txt
+requests>=2.31,<3
+PyYAML>=6.0,<7

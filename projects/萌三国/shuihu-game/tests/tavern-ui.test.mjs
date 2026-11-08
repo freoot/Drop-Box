@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {createRequire} from 'node:module';
+const root=new URL('../',import.meta.url);
+const gait=createRequire(import.meta.url)('../tavern-gait.js');
+function game(){
+ const saved=new Map(),nodes=new Map();
+ class El{constructor(action){this.dataset={action};this.style={};this.classList={add(){},remove(){}};this.innerHTML=''}closest(){return this}querySelectorAll(){return[]}}
+ const ctx=vm.createContext({window:{},Element:El,document:{querySelector(s){if(!nodes.has(s))nodes.set(s,new El());return nodes.get(s)},addEventListener(){}},localStorage:{getItem(k){return saved.get(k)||null},setItem(k,v){saved.set(k,v)},removeItem(k){saved.delete(k)}},setTimeout(){},clearTimeout(){},requestAnimationFrame(){},confirm(){return true},console});
+ for(const f of ['data/shuihu.js','data/portraits.js','data/journey.js','journey.js','tavern-life.js','tavern-gait.js','tavern-ui.js','hero-power.js','data/hero-stories.js','game.js'])vm.runInContext(fs.readFileSync(new URL(f,root),'utf8'),ctx);
+ return {run:s=>vm.runInContext(s,ctx),saved,El,ctx};
+}
+test('keeper scene uses real artwork, foreground occlusion and three full-size rigged guests',()=>{const {run}=game();const html=run('recruitPage()');assert.match(html,/assets\/tavern\/keeper.png/);assert.match(html,/counter-foreground/);assert.equal((html.match(/class="tavern-guest"/g)||[]).length,3);assert.doesNotMatch(html,/recruit-card/);});
+test('owner opens invitation scene; free recruit saves once and reveal confirmation spends nothing',()=>{const g=game();g.ctx.e={target:new g.El('tavern-owner')};g.run("state.page='recruit';clickAction(e)");assert.match(g.run('recruitPage()'),/温酒候君来/);const before=g.run('state.recruitTokens');g.run("recruit('normal')");assert.equal(g.run('state.dailyA'),0);assert.equal(g.run('state.recruitTokens'),before);assert.match(g.run('recruitPage()'),/summon-reveal/);const count=g.run('state.heroes.length');g.ctx.e={target:new g.El('recruit-reveal-close')};g.run('clickAction(e)');assert.equal(g.run('state.heroes.length'),count);assert.equal(g.run('state.recruitTokens'),before);assert.equal(JSON.parse(g.saved.get('shangshan-shuihu-v1')).recruitReveal,false);});
+test('ten invites cost 200, reveal ten results and include a dark-gold hero',()=>{const {run}=game();run("state.page='recruit';state.tavernMenu=true;state.jade=200;recruit('ten')");assert.equal(run('state.jade'),0);assert.equal(run('state.lastRecruit.length'),10);assert.ok(run("state.lastRecruit.some(h=>h.quality==='diamond')"));assert.equal((run('recruitPage()').match(/class="summoned-hero /g)||[]).length,10);});
+test('insufficient resources cannot create a new reveal or consume resources',()=>{const {run}=game();run("state.jade=0;state.recruitReveal=false;recruit('ten')");assert.equal(run('state.recruitReveal'),false);assert.equal(run('state.jade'),0);});
+test('gait has stance, raised passing foot, alternating support and a continuous seam',()=>{assert.equal(gait.foot(.2).y,0);assert.ok(gait.foot(.8).y<-15);assert.equal(gait.foot(.3).y,0);assert.ok(Math.abs(gait.foot(.999999).x-gait.foot(0).x)<.001);assert.notEqual(gait.foot(.1).x,gait.foot(.6).x);});
+test('gait draw uses both separated leg regions and keeps idle unchanged',()=>{const commands=[];const ctx=new Proxy({},{get:(_,name)=>(...args)=>commands.push([name,...args])});gait.draw(ctx,{},'hero-006',4,true);assert.ok(commands.filter(c=>c[0]==='drawImage').length>=5);assert.ok(commands.some(c=>c[0]==='clip'&&c[1]==='evenodd'));commands.length=0;gait.draw(ctx,{},'hero-006',4,false);assert.equal(commands.filter(c=>c[0]==='drawImage').length,1);});
+// Written for the next validation round; this update is not executed per user request.
+test('campaign and tower expose individual combat power and actual enemy totals',()=>{const {run}=game();for(const mode of ['campaign','tower']){const html=run(`prebattleRoster('${mode}',1)`);assert.match(html,/我方上阵/);assert.match(html,/敌方守军/);assert.match(html,/武力值/);assert.match(html,/data-action="toggle-party"/);}const normal=run("enemiesFor('campaign',1,'normal').reduce((n,h)=>n+window.SHUIHU_POWER.calculate(h),0)");const elite=run("enemiesFor('campaign',1,'elite').reduce((n,h)=>n+window.SHUIHU_POWER.calculate(h),0)");assert.ok(elite>normal);assert.match(run('towerPage()'),/prebattle-roster/);assert.match(run('campaignPage()'),/prebattle-roster/);});

@@ -1,0 +1,47 @@
+{
+  "checked_at_utc": "2026-11-07T12:52:48.766321+00:00",
+  "scope": "ATIV changed FAQ and package static checks only; no browser/factual approval or MXY retest",
+  "zip": {
+    "path": "/Users/user/Desktop/valthra-shared/muse/code/ativ-dist.zip",
+    "sha256": "00cb266bc4133b224b04becccc07c8bd14da7164b8da94d719cd6415a88d3fb4",
+    "bytes": 3176991,
+    "entries": 72,
+    "files": 49,
+    "crc_error": null
+  },
+  "comparison": {
+    "prior_zip_sha256": "af90c8d0ff547dface07f44126086e2df82fa5bf556663bcb0ab82bfd6e7ca9f",
+    "basis": "Original af90 ZIP was not retained. Its prior verified diff changed only two FAQ answer copies against the retained fcd4e70 tree. Reconstructed af90 member content in memory from that exact observed FAQ text, then compared every current member. No comparison of ZIP container metadata is claimed.",
+    "retained_base": "/Users/user/Documents/Codex/2026-11-04/muse-desktop-valthra-shared-muse-inbox/work/release-20261107/ativ",
+    "added": [],
+    "removed": [],
+    "changed": [
+      "blog/best-ai-note-taking-tools-for-solopreneurs/index.html"
+    ],
+    "only_two_answer_replacements": true,
+    "prior_faq_answer": "It varies, and the models differ more than the marketing suggests. Reflect is now local-first: your notes are Markdown files in a folder you choose, and no Reflect-hosted server sits in the path. Its AI is off until you add your own provider key; what you send goes directly to that provider, and notes you mark private are never sent to external services at all. Sync and backup are optional and go to places you control: iCloud Drive, or a git repository you connect (private by default on GitHub). Tools like Notion and Mem instead process notes on their servers so AI features can work, under their published privacy policies. For sensitive client material, read the current policy, avoid pasting credentials or personal data into any notes app, and use code names where a contract demands discretion.",
+    "latest_faq_question": "Are my client notes private in these apps?",
+    "latest_faq_answer": "Privacy depends on the app and your settings. Reflect Open stores notes as local Markdown files. Optional AI sends selected content directly to your chosen provider. Notes marked private are excluded from AI note-reading tools, but content you paste into chat can still be sent. Optional Git backup includes private notes, so review your repository and sync settings. Read each app’s current privacy policy before using it for confidential client information.",
+    "changed_file_sha256": "384c023f98f1a41d12c435326bff7e0ffd43529361a0251f78f21e7b45748c75"
+  },
+  "faq_consistency": {
+    "faq_pages": 6,
+    "faq_items": 26,
+    "jsonld_blocks_parsed": 12,
+    "mismatches": []
+  },
+  "static_check": {
+    "script": "/Users/user/Desktop/valthra-shared/muse/code/tests/check_site.py",
+    "pages": 20,
+    "links_checked": 795,
+    "problems": [],
+    "exit_code": 0,
+    "stderr": ""
+  },
+  "source_zip_unchanged_after_check": true,
+  "not_verified": [
+    "Official-source factual accuracy of latest Reflect privacy wording",
+    "Browser rendering of latest FAQ",
+    "Deployment or live domain status"
+  ]
+}

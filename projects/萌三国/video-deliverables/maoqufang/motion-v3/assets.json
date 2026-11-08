@@ -1,0 +1,190 @@
+[
+  {
+    "id": "5f484b12dd",
+    "origin": "imported",
+    "hidden": false,
+    "folderId": null,
+    "name": "一年 · 手绘金线钩子",
+    "sortOrder": 1793087648007,
+    "projectId": "d85e2874-2604-467d-ac2e-163822cd867c",
+    "description": "",
+    "duration": 3600000,
+    "height": 480,
+    "path": "/Users/user/Documents/Codex/youxi/meng/video-deliverables/maoqufang/motion-v3/YearHook.jsx",
+    "properties": [
+      {
+        "key": "title",
+        "type": "text",
+        "label": "重点",
+        "defaultValue": "一年"
+      },
+      {
+        "key": "color",
+        "type": "color",
+        "label": "文字色",
+        "defaultValue": "#FFF4DB"
+      },
+      {
+        "key": "accentColor",
+        "type": "color",
+        "label": "强调色",
+        "defaultValue": "#E8BC6A"
+      },
+      {
+        "key": "fontFamily",
+        "type": "font",
+        "label": "标题字体",
+        "defaultValue": "Noto Serif SC"
+      }
+    ],
+    "runtime": "remotion",
+    "type": "motion-graphic",
+    "width": 700,
+    "mediaPoolVisibility": "visible",
+    "sourceAccess": {
+      "cloud": "not-available",
+      "desktopRegistered": false
+    }
+  },
+  {
+    "id": "faf6ff256e",
+    "origin": "imported",
+    "hidden": false,
+    "folderId": null,
+    "name": "2987 · 工艺滚动数字",
+    "sortOrder": 1793087995350,
+    "projectId": "d85e2874-2604-467d-ac2e-163822cd867c",
+    "description": "",
+    "duration": 5433333,
+    "height": 360,
+    "path": "/Users/user/Documents/Codex/youxi/meng/video-deliverables/maoqufang/motion-v3/ProcessReels.jsx",
+    "properties": [
+      {
+        "key": "title",
+        "label": "标题",
+        "type": "text",
+        "defaultValue": "传统大曲酱香"
+      },
+      {
+        "key": "color",
+        "label": "文字颜色",
+        "type": "color",
+        "defaultValue": "#FFF4DB"
+      },
+      {
+        "key": "accentColor",
+        "label": "强调颜色",
+        "type": "color",
+        "defaultValue": "#E8BC6A"
+      },
+      {
+        "key": "fontFamily",
+        "label": "字体",
+        "type": "font",
+        "defaultValue": "Noto Serif SC"
+      }
+    ],
+    "runtime": "remotion",
+    "type": "motion-graphic",
+    "width": 940,
+    "mediaPoolVisibility": "visible",
+    "sourceAccess": {
+      "cloud": "not-available",
+      "desktopRegistered": false
+    }
+  },
+  {
+    "id": "9963f13cda",
+    "origin": "imported",
+    "hidden": false,
+    "folderId": null,
+    "name": "四季 · 时间轴穿行",
+    "sortOrder": 1793088005844,
+    "projectId": "d85e2874-2604-467d-ac2e-163822cd867c",
+    "description": "",
+    "duration": 4200000,
+    "height": 400,
+    "path": "/Users/user/Documents/Codex/youxi/meng/video-deliverables/maoqufang/motion-v3/SeasonTravel.jsx",
+    "properties": [
+      {
+        "key": "title",
+        "label": "标题",
+        "type": "text",
+        "defaultValue": "一个基酒生产周期"
+      },
+      {
+        "key": "color",
+        "label": "文字颜色",
+        "type": "color",
+        "defaultValue": "#FFF4DB"
+      },
+      {
+        "key": "accentColor",
+        "label": "强调颜色",
+        "type": "color",
+        "defaultValue": "#E8BC6A"
+      },
+      {
+        "key": "fontFamily",
+        "label": "字体",
+        "type": "font",
+        "defaultValue": "Noto Serif SC"
+      }
+    ],
+    "runtime": "remotion",
+    "type": "motion-graphic",
+    "width": 940,
+    "mediaPoolVisibility": "visible",
+    "sourceAccess": {
+      "cloud": "not-available",
+      "desktopRegistered": false
+    }
+  },
+  {
+    "id": "1030b8f831",
+    "origin": "imported",
+    "hidden": false,
+    "folderId": null,
+    "name": "茅曲坊 · 字形漂移合拢",
+    "sortOrder": 1793088016027,
+    "projectId": "d85e2874-2604-467d-ac2e-163822cd867c",
+    "description": "",
+    "duration": 3500000,
+    "height": 940,
+    "path": "/Users/user/Documents/Codex/youxi/meng/video-deliverables/maoqufang/motion-v3/BrandAssembly.jsx",
+    "properties": [
+      {
+        "key": "title",
+        "label": "标题",
+        "type": "text",
+        "defaultValue": "茅曲坊"
+      },
+      {
+        "key": "color",
+        "label": "文字颜色",
+        "type": "color",
+        "defaultValue": "#FFF4DB"
+      },
+      {
+        "key": "accentColor",
+        "label": "强调颜色",
+        "type": "color",
+        "defaultValue": "#E8BC6A"
+      },
+      {
+        "key": "fontFamily",
+        "label": "字体",
+        "type": "font",
+        "defaultValue": "Noto Serif SC"
+      }
+    ],
+    "runtime": "remotion",
+    "type": "motion-graphic",
+    "width": 940,
+    "mediaPoolVisibility": "visible",
+    "sourceAccess": {
+      "cloud": "not-available",
+      "desktopRegistered": false
+    }
+  }
+]

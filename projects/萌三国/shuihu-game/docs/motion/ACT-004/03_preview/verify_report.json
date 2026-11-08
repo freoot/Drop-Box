@@ -1,0 +1,190 @@
+{
+  "all_pass": true,
+  "checks": [
+    {
+      "item": "idle: 帧数=25 与 meta(25) 一致",
+      "pass": true,
+      "detail": "files=25"
+    },
+    {
+      "item": "idle: 采样总时长 2000.0ms ≥ 统一表 2000.0ms",
+      "pass": true,
+      "detail": "span=2000.0ms total=2000.0ms"
+    },
+    {
+      "item": "move: 帧数=13 与 meta(13) 一致",
+      "pass": true,
+      "detail": "files=13"
+    },
+    {
+      "item": "move: 采样总时长 1000.0ms ≥ 统一表 1000.0ms",
+      "pass": true,
+      "detail": "span=1000.0ms total=1000.0ms"
+    },
+    {
+      "item": "attack: 帧数=15 与 meta(15) 一致",
+      "pass": true,
+      "detail": "files=15"
+    },
+    {
+      "item": "attack: 采样总时长 1166.7ms ≥ 统一表 1110.0ms",
+      "pass": true,
+      "detail": "span=1166.7ms total=1110.0ms"
+    },
+    {
+      "item": "attack: 覆盖收招段（收招 652.0ms）",
+      "pass": true,
+      "detail": "末帧 t=1166.7ms ≥ 总时长 1110.0ms"
+    },
+    {
+      "item": "hit: 帧数=10 与 meta(10) 一致",
+      "pass": true,
+      "detail": "files=10"
+    },
+    {
+      "item": "hit: 采样总时长 750.0ms ≥ 统一表 750.0ms",
+      "pass": true,
+      "detail": "span=750.0ms total=750.0ms"
+    },
+    {
+      "item": "hit: 覆盖收招段（收招 750.0ms）",
+      "pass": true,
+      "detail": "末帧 t=750.0ms ≥ 总时长 750.0ms"
+    },
+    {
+      "item": "death: 帧数=21 与 meta(21) 一致",
+      "pass": true,
+      "detail": "files=21"
+    },
+    {
+      "item": "death: 采样总时长 1666.7ms ≥ 统一表 1600.0ms",
+      "pass": true,
+      "detail": "span=1666.7ms total=1600.0ms"
+    },
+    {
+      "item": "death: 覆盖收招段（收招 1600.0ms）",
+      "pass": true,
+      "detail": "末帧 t=1666.7ms ≥ 总时长 1600.0ms"
+    },
+    {
+      "item": "sheet 尺寸 = cols×cw × rows×ch",
+      "pass": true,
+      "detail": "5000x1300 vs 5000x1300"
+    },
+    {
+      "item": "sheet 逐格像素与帧文件完全一致（84 格）",
+      "pass": true,
+      "detail": "不一致 0 格"
+    },
+    {
+      "item": "preview.html 无 http(s) 外链（已剔除 base64 段）",
+      "pass": true,
+      "detail": "外链数=0"
+    },
+    {
+      "item": "preview.html 无 CDN 域名引用（已剔除内嵌 base64）",
+      "pass": true,
+      "detail": "命中=[]"
+    },
+    {
+      "item": "preview.html 内嵌 base64 sprite sheet",
+      "pass": true,
+      "detail": "出现 1 次"
+    },
+    {
+      "item": "preview.html 含 5 个动作名",
+      "pass": true,
+      "detail": "idle,move,attack,hit,death"
+    },
+    {
+      "item": "preview.html 标注 death 非资产原生",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "item": "内嵌 JS 括号配平",
+      "pass": true,
+      "detail": "{=34 }=34"
+    },
+    {
+      "item": "内嵌 META 可解析为 JSON",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "meta": {
+    "hero": "hero005.glb",
+    "fps": 12,
+    "frame_ms": 83.333,
+    "cell_w": 200,
+    "cell_h": 260,
+    "order": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "death"
+    ],
+    "actions": {
+      "idle": {
+        "clip": "idle",
+        "native": true,
+        "loop": true,
+        "frames": 25,
+        "total_ms": 2000.0,
+        "windup_ms": 0,
+        "impact_ms": null,
+        "recovery_ms": null,
+        "rendered_rows_ok": true
+      },
+      "move": {
+        "clip": "walk",
+        "native": true,
+        "loop": true,
+        "frames": 13,
+        "total_ms": 1000.0,
+        "windup_ms": 0,
+        "impact_ms": null,
+        "recovery_ms": null,
+        "rendered_rows_ok": true
+      },
+      "attack": {
+        "clip": "attack",
+        "native": true,
+        "loop": false,
+        "frames": 15,
+        "total_ms": 1110.0,
+        "windup_ms": 458.0,
+        "impact_ms": 458.0,
+        "recovery_ms": 652.0,
+        "rendered_rows_ok": true
+      },
+      "hit": {
+        "clip": "hit",
+        "native": true,
+        "loop": false,
+        "frames": 10,
+        "total_ms": 750.0,
+        "windup_ms": 0,
+        "impact_ms": 0.0,
+        "recovery_ms": 750.0,
+        "rendered_rows_ok": true
+      },
+      "death": {
+        "clip": null,
+        "native": false,
+        "loop": false,
+        "frames": 21,
+        "total_ms": 1600.0,
+        "windup_ms": 0,
+        "impact_ms": null,
+        "recovery_ms": 1600.0,
+        "rendered_rows_ok": true
+      }
+    },
+    "sheet_png_bytes": 802826,
+    "death_is_synthetic": true,
+    "engine": "EEVEE",
+    "blender": "5.2.2 LTS"
+  }
+}

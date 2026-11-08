@@ -1,0 +1,63 @@
+{
+  "project_id": "d85e2874-2604-467d-ac2e-163822cd867c",
+  "editor": "ChatCut Desktop",
+  "title": "茅曲坊｜时间酿出来的酱香",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_target_seconds": [
+    60,
+    75
+  ],
+  "sources": [
+    {
+      "path": "/Users/user/Downloads/vx/c180195a174213ce2d1c66a26872d510.mp4",
+      "duration": 223.633333,
+      "usable_end": 210,
+      "role": "人物短镜头"
+    },
+    {
+      "path": "/Users/user/Downloads/vx/d3125d68dd81fb3f89a9bb65b06102ef.mp4",
+      "duration": 90.666667,
+      "usable_end": 80,
+      "role": "工艺主画面"
+    }
+  ],
+  "checks": [
+    "两段源视频均实际出现",
+    "无录屏界面与旧字幕",
+    "不出现其他品牌瓶特写",
+    "工艺数字正确",
+    "字幕安全区",
+    "无黑帧和音频截断",
+    "可编辑时间线保留",
+    "导出文件完整可解码",
+    "65秒主画面连续铺满9:16",
+    "三段右下角圆形人物小窗",
+    "无上下文字板"
+  ],
+  "layout": "9:16 full-frame footage with native overlay captions",
+  "pip": {
+    "shape": "circle",
+    "diameter": 340,
+    "center": [
+      850,
+      1400
+    ],
+    "segments": [
+      [
+        29.3,
+        32
+      ],
+      [
+        37.6,
+        40.2
+      ],
+      [
+        52.5,
+        55.2
+      ]
+    ]
+  },
+  "export": "茅曲坊-满屏竖版-v2.mp4"
+}

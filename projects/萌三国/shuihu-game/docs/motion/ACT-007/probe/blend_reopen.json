@@ -1,0 +1,1253 @@
+{
+ "schema": "act007-blend-reopen/1",
+ "generator": "tools/motion/verify_blend_sources.py",
+ "blender": "5.2.2 LTS",
+ "hero_count": 18,
+ "ok_count": 18,
+ "checks_total": 144,
+ "checks_ok": 144,
+ "results": [
+  {
+   "hero": "hero002",
+   "ok": true,
+   "blend_bytes": 683673,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero002.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "683673 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "1078408 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero005",
+   "ok": true,
+   "blend_bytes": 657938,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero005.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "657938 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "946880 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero006",
+   "ok": true,
+   "blend_bytes": 625343,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero006.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "625343 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "959940 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero007",
+   "ok": true,
+   "blend_bytes": 678251,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero007.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "678251 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "1020440 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero008",
+   "ok": true,
+   "blend_bytes": 735270,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero008.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "735270 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "1259724 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero010",
+   "ok": true,
+   "blend_bytes": 643261,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero010.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "643261 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "858760 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero011",
+   "ok": true,
+   "blend_bytes": 674999,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero011.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "674999 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "971336 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero012",
+   "ok": true,
+   "blend_bytes": 627680,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero012.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "627680 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "893920 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero013",
+   "ok": true,
+   "blend_bytes": 572982,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero013.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "572982 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "819744 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero014",
+   "ok": true,
+   "blend_bytes": 567828,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero014.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "567828 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "812932 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero015",
+   "ok": true,
+   "blend_bytes": 640038,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero015.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "640038 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "898340 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero017",
+   "ok": true,
+   "blend_bytes": 635044,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero017.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "635044 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "900908 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero019",
+   "ok": true,
+   "blend_bytes": 639920,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero019.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "639920 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "917928 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero021",
+   "ok": true,
+   "blend_bytes": 639460,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero021.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "639460 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "877676 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero022",
+   "ok": true,
+   "blend_bytes": 638566,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero022.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "638566 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "890268 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero023",
+   "ok": true,
+   "blend_bytes": 658569,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero023.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "658569 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "978148 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero024",
+   "ok": true,
+   "blend_bytes": 629791,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero024.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "629791 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "863668 bytes"
+    }
+   ]
+  },
+  {
+   "hero": "hero025",
+   "ok": true,
+   "blend_bytes": 639061,
+   "actions": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+   ],
+   "bones": [
+    "root",
+    "body",
+    "arm.L",
+    "hand.L",
+    "arm.R",
+    "hand.R",
+    "weapon.R",
+    "head",
+    "leg.L",
+    "foot.L",
+    "leg.R",
+    "foot.R"
+   ],
+   "reexport": "../../../../../../../tmp/r8_from_blend/hero025.from_blend.glb",
+   "checks": [
+    {
+     "check": "blend_exists",
+     "ok": true,
+     "detail": "639061 bytes"
+    },
+    {
+     "check": "reopen",
+     "ok": true,
+     "detail": "Blender 成功重新打开并载入场景"
+    },
+    {
+     "check": "has_armature",
+     "ok": true,
+     "detail": "Armature 数=1"
+    },
+    {
+     "check": "five_actions",
+     "ok": true,
+     "detail": "Action=['attack', 'death', 'hit', 'idle', 'walk'] 缺=无"
+    },
+    {
+     "check": "death_duration",
+     "ok": true,
+     "detail": "1600.0ms（帧范围 0.00→38.40，197 个关键帧；导出 GLB 后量化为 1583.3ms）"
+    },
+    {
+     "check": "weapon_bone",
+     "ok": true,
+     "detail": "骨骼表=['root', 'body', 'arm.L', 'hand.L', 'arm.R', 'hand.R', 'weapon.R', 'head', 'leg.L', 'foot.L', 'leg.R', 'foot.R']"
+    },
+    {
+     "check": "weapon_parent",
+     "ok": true,
+     "detail": "weapon.R 父骨=hand.R"
+    },
+    {
+     "check": "reexport_glb",
+     "ok": true,
+     "detail": "907928 bytes"
+    }
+   ]
+  }
+ ]
+}

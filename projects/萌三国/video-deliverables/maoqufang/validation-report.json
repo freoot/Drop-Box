@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "file": "茅曲坊-满屏竖版-v2.mp4",
+  "sha256": "b7ad4abffb5816763605575f3826fc4dae1face99c1264d56d8600fc784fce22",
+  "bytes": 95596688,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "duration_seconds": 65.0,
+  "full_decode": "pass",
+  "main_shots": 27,
+  "circular_presenter_segments": 3,
+  "captions": 25,
+  "sampled_frames": 130,
+  "black_frames": 0,
+  "flat_top_bottom_bars": 0,
+  "audio_peak_db": -3.2,
+  "audio_mean_db": -22.5
+}

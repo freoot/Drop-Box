@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="20" fill="#04070C"/>
+  <rect x="3" y="3" width="58" height="58" rx="17" fill="url(#shellGlow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#shellSurface)"/>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="15.25" stroke="url(#shellRim)" stroke-width="1.5"/>
+  <path d="M14 15C14 11.6863 16.6863 9 20 9H44C47.3137 9 50 11.6863 50 15V18.5C50 16.0147 47.9853 14 45.5 14H18.5C16.0147 14 14 16.0147 14 18.5V15Z" fill="white" fill-opacity="0.08"/>
+  <path d="M20 47V17H32.6C39.8 17 44 20.7 44 26.9C44 33.2 39.8 36.9 32.6 36.9H26.4V47H20ZM26.4 31.8H31C34.8 31.8 37.1 30.4 37.1 26.9C37.1 23.5 34.8 22.1 31 22.1H26.4V31.8Z" fill="url(#glyphLight)"/>
+  <defs>
+    <linearGradient id="shellGlow" x1="10" y1="8" x2="55" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1824"/>
+      <stop offset="1" stop-color="#060A11"/>
+    </linearGradient>
+    <linearGradient id="shellSurface" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B141F"/>
+      <stop offset="0.55" stop-color="#08111A"/>
+      <stop offset="1" stop-color="#050A11"/>
+    </linearGradient>
+    <linearGradient id="shellRim" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#55CDC4"/>
+      <stop offset="0.5" stop-color="#8FE3DB"/>
+      <stop offset="1" stop-color="#F5A758"/>
+    </linearGradient>
+    <linearGradient id="glyphLight" x1="22" y1="21" x2="49" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#D9E6F2"/>
+    </linearGradient>
+  </defs>
+</svg>

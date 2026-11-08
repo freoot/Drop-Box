@@ -1,0 +1,71 @@
+{
+  "project_name": "周末去哪儿",
+  "summary": "整理了城郊 5 个不需要预约的露营地，附停车和厕所情况。",
+  "copyable_steps": [],
+  "evidence": [
+    "这周我们跑了城郊 5 个营地，都是不需要预约、不收门票的地方。",
+    "白鹭湾：人最少的一个，需要步行 20 分钟。"
+  ],
+  "risks": [
+    "平台规则可能变化，执行前需自行核对最新政策；本卡不构成任何承诺。"
+  ],
+  "relevance": "low",
+  "signal_hits": [],
+  "extraction_mode": "rule",
+  "schema": "wechat-sop-project-card/1",
+  "source_article_id": "acc_demo_002-5c449ece",
+  "source_title": "周末去哪儿：城郊 5 个小众露营地，人少景好还免费",
+  "source_account": "城市漫游指南（示例）",
+  "source_url": "https://mp.weixin.qq.com/s/EXAMPLE_ONLY_DO_NOT_FETCH_002",
+  "published_at": "2026-09-20",
+  "source_excerpt": "天气转凉，正是露营的好时候。这周我们跑了城郊 5 个营地，都是不需要预约、不收门票的地方。\n\n1. 芦苇荡营地：导航搜「王家渡」，车能开到堤坝下，草地平整，适合搭天幕。附近没有厕所，建议自带。\n2. 松林坡：有一片天然的松树林，夏天很凉快。缺点是手机信号弱。\n3. 老码头：临水，可以钓鱼。周末人稍多，建议早上 9 点前到。\n4. 山坳草坪：视野开阔，适合看日落。路不太好走，底盘低的车慎入。\n5. 白鹭湾：人最少的一个，需要步行 20 分钟。景色最好，但不建议带太多装备。\n\n装备方面，天幕比帐篷更实用，白天遮阳晚上挡露水。桌椅选轻量的，别买太重的。\n\n最后提醒：所有营地都不提供垃圾桶，垃圾请自行带走。野外用火要看当地规定，很多地方是禁火的。",
+  "generated_at": "2026-10-29T11:20:36+08:00",
+  "brief_sections": {
+    "overview": {
+      "title": "Overview",
+      "items": "整理了城郊 5 个不需要预约的露营地，附停车和厕所情况。"
+    },
+    "key_facts": {
+      "title": "Key facts and figures",
+      "items": [
+        "这周我们跑了城郊 5 个营地，都是不需要预约、不收门票的地方。",
+        "白鹭湾：人最少的一个，需要步行 20 分钟。"
+      ]
+    },
+    "key_players": {
+      "title": "Key players / perspectives",
+      "items": [
+        "内容来源：城市漫游指南（示例）"
+      ]
+    },
+    "current_state": {
+      "title": "Current state",
+      "items": [
+        "原文发布：2026-09-20",
+        "已拆出 0 个可执行动作"
+      ]
+    },
+    "open_questions": {
+      "title": "Open questions",
+      "items": [
+        "平台规则可能变化，执行前需自行核对最新政策；本卡不构成任何承诺。"
+      ]
+    },
+    "reading": {
+      "title": "Recommended reading",
+      "items": [
+        "https://mp.weixin.qq.com/s/EXAMPLE_ONLY_DO_NOT_FETCH_002"
+      ]
+    }
+  },
+  "brief_source": "skills/research-brief/SKILL.md",
+  "skills_applied": [
+    "research-brief",
+    "investigate-first",
+    "competitor-research"
+  ],
+  "deai_needs_rewrite": 0,
+  "deai_applied": true,
+  "deai_changes": 0,
+  "deai_at": "2026-10-29T11:20:54+08:00"
+}

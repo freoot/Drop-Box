@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>梁山战棋 · 登录</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --ink-000: #060910;
+  --ink-100: #0b1220;
+  --ink-200: #131c2e;
+  --ink-400: #2c3a52;
+  --ink-500: #43526b;
+  --ink-600: #8b96a5;
+  --ink-700: #9dabbd;
+  --ink-800: #c4cddb;
+  --ink-900: #eaf0f8;
+
+  --gold: #e0b45c;
+  --gold-bright: #f0c877;
+  --gold-dim: #9c7a34;
+  --gold-glow: rgba(224, 180, 92, 0.16);
+
+  --danger: #e2705f;
+  --success: #63b394;
+
+  --line: rgba(234, 240, 248, 0.11);
+  --line-strong: rgba(234, 240, 248, 0.20);
+  --line-gold: rgba(224, 180, 92, 0.28);
+
+  --font-display: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  --font-body: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+  --font-mono: "SF Mono", "Menlo", "Consolas", monospace;
+
+  --radius: 2px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--ink-000);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ---------- 背景 ---------- */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url("assets/bg.jpg");
+  background-size: cover;
+  background-position: center 42%;
+  animation: drift 52s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  from { transform: scale(1.03); }
+  to   { transform: scale(1.07) translate3d(0, -1%, 0); }
+}
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(6, 9, 17, 0.52) 0%,
+      rgba(6, 9, 17, 0.10) 22%,
+      rgba(6, 9, 17, 0.00) 46%,
+      rgba(6, 9, 17, 0.16) 66%,
+      rgba(6, 9, 17, 0.58) 100%),
+    linear-gradient(90deg,
+      rgba(6, 9, 17, 0.52) 0%,
+      rgba(6, 9, 17, 0.06) 26%,
+      rgba(6, 9, 17, 0.00) 50%,
+      rgba(6, 9, 17, 0.34) 100%);
+}
+
+/* ---------- 三栏骨架 ---------- */
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(260px, 380px) 452px;
+  align-items: center;
+  gap: 40px;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 56px 56px 48px;
+}
+
+/* ---------- 左：品牌 ---------- */
+.brand { max-width: 460px; }
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 40px;
+}
+.brand-seal {
+  width: 38px; height: 38px;
+  border: 1px solid var(--gold-dim);
+  background: rgba(224, 180, 92, 0.06);
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 20px; color: var(--gold);
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 17px; letter-spacing: 0.30em;
+  color: var(--ink-900);
+}
+.brand h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(36px, 3.6vw, 52px);
+  line-height: 1.20; letter-spacing: 0.06em;
+  margin: 0 0 20px; color: #fff;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.72), 0 0 60px rgba(0, 0, 0, 0.35);
+}
+.brand h1 em { font-style: normal; color: var(--gold-bright); }
+.brand-lede {
+  font-size: 15px; line-height: 1.85;
+  color: var(--ink-800);
+  margin: 0 0 36px; max-width: 25em;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.75);
+}
+.brand-points {
+  list-style: none; margin: 0; padding: 0;
+  border-top: 1px solid var(--line-strong);
+  max-width: 400px;
+}
+.brand-points li {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-700);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+.brand-points .pk {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  color: var(--gold); flex-shrink: 0; width: 28px;
+}
+.brand-points .pv { color: var(--ink-800); }
+
+/* ---------- 中：九宫阵图 ---------- */
+.mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+.forma {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1.15;
+}
+.forma::before {
+  /* 底部光晕，让阵图从背景里浮出来 */
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background: radial-gradient(50% 50% at 50% 60%,
+    rgba(224, 180, 92, 0.10) 0%,
+    rgba(224, 180, 92, 0.04) 45%,
+    transparent 70%);
+  z-index: -1;
+}
+.forma-grid {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.forma-grid i {
+  border-right: 1px solid rgba(224, 180, 92, 0.26);
+  border-bottom: 1px solid rgba(224, 180, 92, 0.26);
+}
+.forma-grid i:nth-child(3n) { border-right: 0; }
+.forma-grid i:nth-child(n+7) { border-bottom: 0; }
+
+.forma-slot {
+  position: absolute;
+  width: 30%; height: 27%;
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 15px; letter-spacing: 0.08em;
+  color: var(--ink-700);
+  background: rgba(11, 18, 32, 0.55);
+  border: 1px solid rgba(234, 240, 248, 0.12);
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.forma-slot:hover { border-color: var(--gold-dim); color: var(--gold); }
+.forma-slot.lead {
+  border-color: var(--line-gold);
+  color: var(--gold-bright);
+  background: rgba(224, 180, 92, 0.12);
+  box-shadow: 0 0 0 1px rgba(224, 180, 92, 0.14), 0 0 34px -8px rgba(224, 180, 92, 0.5);
+}
+.forma-slot.s1 { left: 2.5%;  top: 2%; }
+.forma-slot.s2 { left: 35%;   top: 2%; }
+.forma-slot.s3 { left: 67.5%; top: 2%; }
+.forma-slot.s4 { left: 2.5%;  top: 36.5%; }
+.forma-slot.s5 { left: 35%;   top: 36.5%; }
+.forma-slot.s6 { left: 67.5%; top: 36.5%; }
+.forma-slot.s7 { left: 2.5%;  top: 71%; }
+.forma-slot.s8 { left: 35%;   top: 71%; }
+.forma-slot.s9 { left: 67.5%; top: 71%; }
+.forma-cap {
+  position: absolute; left: 0; right: 0; bottom: -44px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.22em;
+  color: rgba(196, 205, 219, 0.66);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* ---------- 右：面板 ---------- */
+.panel {
+  width: 452px;
+  background: rgba(11, 18, 32, 0.76);
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 38px 36px 32px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.035) inset,
+    0 34px 90px -24px rgba(0, 0, 0, 0.9);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .panel { background: rgba(11, 18, 32, 0.97); }
+}
+.panel-head { margin-bottom: 28px; }
+.panel-title {
+  font-family: var(--font-display);
+  font-size: 25px; font-weight: 600;
+  letter-spacing: 0.10em; margin: 0 0 8px; color: #fff;
+}
+.panel-sub { font-size: 13px; color: var(--ink-600); margin: 0; }
+
+/* ---------- 表单 ---------- */
+.field { margin-bottom: 17px; }
+.field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.18em;
+  color: var(--ink-600); margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.input-wrap { position: relative; }
+.field input {
+  width: 100%; height: 46px;
+  padding: 0 46px 0 14px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  transition: border-color 0.22s var(--ease), background 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+.field input::placeholder { color: var(--ink-500); }
+.field input:hover { border-color: rgba(234, 240, 248, 0.32); }
+.field input:focus {
+  outline: none;
+  border-color: var(--gold-dim);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px var(--gold-glow);
+}
+.field input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.toggle-vis {
+  position: absolute; right: 4px; top: 50%;
+  transform: translateY(-50%);
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  background: none; border: 0;
+  color: var(--ink-600); cursor: pointer;
+  transition: color 0.18s var(--ease), background 0.18s var(--ease);
+}
+.toggle-vis:hover { color: var(--ink-800); background: rgba(255, 255, 255, 0.06); }
+.toggle-vis:focus-visible { outline: 2px solid var(--gold-dim); }
+.toggle-vis svg { width: 17px; height: 17px; display: block; }
+
+.field.has-error input {
+  border-color: var(--danger);
+  background: rgba(226, 112, 95, 0.08);
+}
+.field-err {
+  display: none;
+  margin-top: 7px;
+  font-size: 12px; color: var(--danger);
+}
+.field.has-error .field-err { display: block; }
+
+.row-between {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin: 4px 0 22px;
+}
+.checkbox {
+  display: inline-flex; align-items: center; gap: 9px;
+  cursor: pointer; user-select: none;
+  font-size: 13px; color: var(--ink-700);
+}
+.checkbox input { position: absolute; opacity: 0; width: 0; height: 0; }
+.checkbox .box {
+  width: 16px; height: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 1px;
+  display: grid; place-items: center;
+  transition: border-color 0.18s var(--ease), background 0.18s var(--ease);
+}
+.checkbox .box svg { width: 10px; height: 10px; opacity: 0; transform: scale(0.6); transition: all 0.16s var(--ease); }
+.checkbox input:checked + .box { border-color: var(--gold-dim); background: var(--gold-dim); }
+.checkbox input:checked + .box svg { opacity: 1; transform: scale(1); }
+.checkbox input:focus-visible + .box { outline: 2px solid var(--gold-dim); outline-offset: 2px; }
+
+.link-quiet {
+  font-size: 13px; color: var(--ink-600);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.link-quiet:hover { color: var(--gold); border-bottom-color: var(--gold-dim); }
+
+.btn-primary {
+  width: 100%; height: 48px;
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius);
+  background: var(--gold);
+  color: #14100a;
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.22em; text-indent: 0.22em;
+  cursor: pointer; position: relative;
+  transition: background 0.2s var(--ease), transform 0.12s var(--ease), box-shadow 0.2s var(--ease);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.26) inset;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--gold-bright);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 8px 26px -8px rgba(224, 180, 92, 0.6);
+}
+.btn-primary:active:not(:disabled) { transform: translateY(1px); }
+.btn-primary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.btn-primary:disabled {
+  background: var(--ink-400); border-color: var(--ink-400);
+  color: var(--ink-600); cursor: not-allowed; box-shadow: none;
+}
+.btn-primary .spinner {
+  display: none;
+  width: 15px; height: 15px;
+  border: 2px solid rgba(20, 16, 10, 0.25);
+  border-top-color: #14100a;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.btn-primary.loading { color: transparent; }
+.btn-primary.loading .spinner {
+  display: block; position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+.divider {
+  display: flex; align-items: center; gap: 14px;
+  margin: 24px 0 18px;
+  color: var(--ink-500);
+  font-size: 11px; letter-spacing: 0.14em;
+}
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.alt-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.btn-alt {
+  height: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-700);
+  font-family: var(--font-body);
+  font-size: 12.5px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: border-color 0.18s var(--ease), color 0.18s var(--ease), background 0.18s var(--ease);
+}
+.btn-alt:hover {
+  border-color: rgba(234, 240, 248, 0.34);
+  color: var(--ink-900);
+  background: rgba(255, 255, 255, 0.055);
+}
+.btn-alt svg { width: 15px; height: 15px; }
+
+.panel-foot {
+  margin-top: 24px; padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-600); text-align: center;
+}
+.panel-foot a { color: var(--gold); text-decoration: none; }
+.panel-foot a:hover { border-bottom: 1px solid var(--gold); }
+
+/* ---------- 提示条 ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 30px;
+  transform: translate(-50%, 150%);
+  z-index: 60;
+  display: flex; align-items: center; gap: 11px;
+  padding: 13px 20px;
+  background: rgba(19, 28, 46, 0.98);
+  border: 1px solid var(--line-strong);
+  border-left: 2px solid var(--success);
+  font-size: 13.5px; color: var(--ink-900);
+  box-shadow: 0 20px 52px -14px rgba(0, 0, 0, 0.85);
+  transition: transform 0.42s var(--ease), opacity 0.3s var(--ease);
+  opacity: 0;
+  max-width: calc(100vw - 32px);
+}
+.toast.show { transform: translate(-50%, 0); opacity: 1; }
+.toast.error { border-left-color: var(--danger); }
+.toast svg { width: 16px; height: 16px; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1400px) {
+  .page { grid-template-columns: minmax(280px, 1fr) minmax(240px, 340px) 432px; gap: 32px; padding: 48px 40px 44px; }
+  .panel { width: 432px; padding: 34px 30px 28px; }
+}
+@media (max-width: 1180px) {
+  .page { grid-template-columns: 1fr 432px; gap: 48px; }
+  .mid { display: none; }
+}
+@media (max-width: 980px) {
+  .page { grid-template-columns: 1fr; justify-items: center; gap: 40px; padding: 60px 32px 52px; }
+  .brand { text-align: center; max-width: 540px; }
+  .brand-mark { justify-content: center; }
+  .brand-points { margin: 0 auto; text-align: left; }
+}
+@media (max-width: 560px) {
+  .page { padding: 36px 18px; gap: 28px; }
+  .panel { width: 100%; max-width: 432px; padding: 28px 20px 24px; }
+  .alt-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .page { padding: 28px 14px; }
+  .panel { padding: 24px 16px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg { animation: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .toast { transform: translate(-50%, 0); }
+  .toast:not(.show) { opacity: 0; pointer-events: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"></div>
+
+<main class="page">
+
+  <section class="brand">
+    <div class="brand-mark">
+      <div class="brand-seal" aria-hidden="true">梁</div>
+      <div class="brand-name">梁山战棋</div>
+    </div>
+
+    <h1>一百零八将<br>等你<em>排兵布阵</em></h1>
+
+    <p class="brand-lede">
+      从梁山泊的第一场遭遇战开始。招募好汉、研习阵法、在九宫之间调度攻守，把每一次出手都落在他最疼的地方。
+    </p>
+
+    <ul class="brand-points">
+      <li><span class="pk">壹</span><span class="pv">一百零八位好汉，各自独立的技能与阵位</span></li>
+      <li><span class="pk">贰</span><span class="pv">九宫布阵，前后排与出手顺序互相牵制</span></li>
+      <li><span class="pk">叁</span><span class="pv">战报可回放，每一手的判定范围都可查</span></li>
+    </ul>
+  </section>
+
+  <div class="mid" aria-hidden="true">
+    <div class="forma">
+      <div class="forma-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="forma-slot s1">先锋</div>
+      <div class="forma-slot s2 lead">主将</div>
+      <div class="forma-slot s3">副将</div>
+      <div class="forma-slot s4">策士</div>
+      <div class="forma-slot s5">中军</div>
+      <div class="forma-slot s6">策士</div>
+      <div class="forma-slot s7">游骑</div>
+      <div class="forma-slot s8">游骑</div>
+      <div class="forma-slot s9">辎重</div>
+      <div class="forma-cap">九 宫 阵 位</div>
+    </div>
+  </div>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2 class="panel-title">入 寨</h2>
+      <p class="panel-sub">用你的帐号继续上一场战局</p>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <div class="field" id="field-account">
+        <label for="account">帐号</label>
+        <div class="input-wrap">
+          <input type="text" id="account" name="account" placeholder="手机号或邮箱"
+                 autocomplete="username" spellcheck="false" aria-describedby="err-account">
+        </div>
+        <p class="field-err" id="err-account" role="alert"></p>
+      </div>
+
+      <div class="field" id="field-password">
+        <label for="password">口令</label>
+        <div class="input-wrap">
+          <input type="password" id="password" name="password" placeholder="输入口令"
+                 autocomplete="current-password" aria-describedby="err-password">
+          <button type="button" class="toggle-vis" id="toggleVis" aria-label="显示口令" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+              <circle cx="12" cy="12" r="2.8"/>
+            </svg>
+          </button>
+        </div>
+        <p class="field-err" id="err-password" role="alert"></p>
+      </div>
+
+      <div class="row-between">
+        <label class="checkbox">
+          <input type="checkbox" id="remember" name="remember">
+          <span class="box" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#14100a" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 6.2 4.8 9 10 3.4"/>
+            </svg>
+          </span>
+          <span>记住我</span>
+        </label>
+        <a href="#" class="link-quiet" id="forgot">忘了口令？</a>
+      </div>
+
+      <button type="submit" class="btn-primary" id="submitBtn">
+        <span class="btn-label">入 寨</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+    </form>
+
+    <div class="divider">或</div>
+
+    <div class="alt-row">
+      <button type="button" class="btn-alt" id="guestBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg>
+        游客试玩
+      </button>
+      <button type="button" class="btn-alt" id="restoreBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></svg>
+        恢复存档
+      </button>
+    </div>
+
+    <p class="panel-foot">还没有帐号？<a href="#" id="signup">创建新帐号</a></p>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+       stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+  <span id="toastText"></span>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $("loginForm"), account = $("account"), password = $("password");
+  var submitBtn = $("submitBtn"), toggleVis = $("toggleVis");
+  var toast = $("toast"), toastText = $("toastText");
+  var toastTimer = null, submitting = false;
+
+  function showToast(msg, kind) {
+    toastText.textContent = msg;
+    toast.classList.remove("success", "error");
+    toast.classList.add(kind === "error" ? "error" : "success");
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 3200);
+  }
+  function setError(fieldId, errId, msg) {
+    var f = $(fieldId), e = $(errId);
+    if (msg) { f.classList.add("has-error"); e.textContent = msg; }
+    else { f.classList.remove("has-error"); e.textContent = ""; }
+  }
+  function isPhone(v) { return /^1[3-9]\d{9}$/.test(v); }
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  function validateAccount() {
+    var v = account.value.trim();
+    if (!v) { setError("field-account", "err-account", "请填写帐号"); return false; }
+    if (!isPhone(v) && !isEmail(v)) {
+      setError("field-account", "err-account", "帐号格式不对，检查一下手机号或邮箱");
+      return false;
+    }
+    setError("field-account", "err-account", "");
+    return true;
+  }
+  function validatePassword() {
+    var v = password.value;
+    if (!v) { setError("field-password", "err-password", "请填入口令"); return false; }
+    if (v.length < 6) { setError("field-password", "err-password", "口令至少 6 位"); return false; }
+    setError("field-password", "err-password", "");
+    return true;
+  }
+
+  account.addEventListener("blur", function () { if (account.value.trim()) validateAccount(); });
+  password.addEventListener("blur", function () { if (password.value) validatePassword(); });
+  account.addEventListener("input", function () {
+    if ($("field-account").classList.contains("has-error")) setError("field-account", "err-account", "");
+  });
+  password.addEventListener("input", function () {
+    if ($("field-password").classList.contains("has-error")) setError("field-password", "err-password", "");
+  });
+
+  toggleVis.addEventListener("click", function () {
+    var show = password.type === "password";
+    password.type = show ? "text" : "password";
+    toggleVis.setAttribute("aria-pressed", show ? "true" : "false");
+    toggleVis.setAttribute("aria-label", show ? "隐藏口令" : "显示口令");
+    password.focus();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (submitting) return;
+    var okA = validateAccount(), okP = validatePassword();
+    if (!okA) { account.focus(); return; }
+    if (!okP) { password.focus(); return; }
+    submitting = true;
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
+    setTimeout(function () {
+      submitting = false;
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+      showToast("校验通过，正在进入山寨", "success");
+    }, 1200);
+  });
+
+  $("forgot").addEventListener("click", function (e) {
+    e.preventDefault(); showToast("找回口令的入口还没接，先记着这个位置", "success");
+  });
+  $("signup").addEventListener("click", function (e) {
+    e.preventDefault(); showToast("注册入口还没接，先记着这个位置", "success");
+  });
+  $("guestBtn").addEventListener("click", function () {
+    showToast("游客模式会跳过帐号校验，进度只存在本机", "success");
+  });
+  $("restoreBtn").addEventListener("click", function () {
+    showToast("读取本地存档的入口还没接", "success");
+  });
+
+  window.__login = {
+    validateAccount: validateAccount, validatePassword: validatePassword, showToast: showToast,
+    state: function () {
+      return {
+        accountErr: $("err-account").textContent,
+        passwordErr: $("err-password").textContent,
+        accountHasError: $("field-account").classList.contains("has-error"),
+        passwordHasError: $("field-password").classList.contains("has-error"),
+        submitting: submitBtn.classList.contains("loading"),
+        toastVisible: toast.classList.contains("show"),
+        toastText: toastText.textContent,
+        passwordType: password.type
+      };
+    }
+  };
+})();
+</script>
+</body>
+</html>

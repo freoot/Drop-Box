@@ -1,0 +1,43 @@
+services:
+  wb2api:
+    build: .
+    container_name: workbuddy2api
+    restart: unless-stopped
+    # 容器默认以 app 用户（uid 10001）运行。宿主机挂载目录属主不同会导致
+    # 「写入 auths/*.json.tmp 失败 permission denied」，三种解法任选：
+    #   1) 非 root · 让容器以你自己的 uid 运行（挂载目录本来就是你建的）：
+    #      PUID=$(id -u) PGID=$(id -g) docker compose up -d
+    #      或写进 .env 文件：PUID=1000 / PGID=1000
+    #   2) sudo chown -R 10001:10001 ./auths ./data ./config.json
+    #   3) user: "0:0" 以 root 运行（省事但容器逃逸面更大，自担）
+    user: "${PUID:-10001}:${PGID:-10001}"
+    environment:
+      - TZ=Asia/Shanghai
+      # TRAE 网页登录回调：容器内必须绑 0.0.0.0 才能被宿主机映射到；
+      # 下面 ports 已限定 127.0.0.1 前缀，外部机器仍然访问不到，安全边界不变。
+      - TW2A_CALLBACK_HOST=0.0.0.0
+    ports:
+      - "7863:7863"
+      - "127.0.0.1:18080:18080"
+    volumes:
+      - ./auths:/app/auths
+      # AutoClaw 凭证与状态（Go 原生实现，随主进程运行；与 workbuddy 凭证分目录）
+      - ./autoclaw-auths:/app/autoclaw-auths
+      # Qoder PAT 凭证（Go 原生实现；经 /qoder/api/pat 导入落盘）
+      - ./qoder-auths:/app/qoder-auths
+      - ./trae-auths:/app/trae-auths
+      # opencode 桥接：只读挂载宿主 opencode 状态目录（service.json 的端口/密码
+      # 每次 opencode 重启都会变，挂目录而非单文件，保证替换文件后仍可见）。
+      - C:/Users/Administrator/.local/state/opencode:/host-opencode:ro
+      - ./zcode-data:/app/zcode-data
+      - ./data:/app/data
+      # 注意：宿主机必须先有 config.json（cp config.example.json config.json）。
+      # 缺失时 Docker 会把挂载点创建成目录 → 容器启动失败（程序会自动生成配置，
+      # 但前提是它能以文件形式写入 —— 挂载目录会挡住这条路径）。
+      # 不挂 :ro：面板「配置」页需要写回此文件（保存后热生效）。
+      - ./config.json:/app/config.json
+
+# 单一固定网络名（沿用历史名）：部署目录改名不影响行为。
+networks:
+  default:
+    name: autoclaw2api-main_default

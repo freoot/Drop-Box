@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://godot/journey_map/journey_map.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/liangshan-journey-map.png" id="2_map"]
+
+[node name="JourneyMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_map")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.031, 0.102, 0.082, 0.18)
+
+[node name="Header" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 112.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 42
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.97, 0.94, 0.79, 1)
+theme_override_colors/font_shadow_color = Color(0.03, 0.09, 0.07, 0.8)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+text = "聚义山河 · THE ROAD TO LIANGSHAN"
+
+[node name="RouteNodes" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 86.0
+offset_bottom = -205.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Detail" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -190.0
+offset_right = -34.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="Detail"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="Row" type="HBoxContainer" parent="Detail/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Copy" type="VBoxContainer" parent="Detail/Margin/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ChapterTitle" type="Label" parent="Detail/Margin/Row/Copy"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "梁山泊 · 芦苇渡"
+
+[node name="ChapterCopy" type="Label" parent="Detail/Margin/Row/Copy"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "选择地图上的地点查看章节。"
+autowrap_mode = 2
+
+[node name="BeginButton" type="Button" parent="Detail/Margin/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(210, 86)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "进入剧情"

@@ -1,0 +1,2667 @@
+{
+ "schema": "act005-r8-verify/1",
+ "r7": {
+  "path": "/Users/user/Documents/Codex/youxi/meng/shuihu-game/assets/releases/ART-002/r7/models/hero005.glb",
+  "bytes": 959800,
+  "sha256": "7ac9ec719ce73a8df985bac3558de59baad4d62a49857f33430ee37d5a9acbb9",
+  "clips": {
+   "idle": 2000.0,
+   "walk": 1000.0,
+   "attack": 1000.0,
+   "hit": 750.0
+  },
+  "nodes": 13,
+  "weapon_nodes": []
+ },
+ "r8": {
+  "path": "/Users/user/Documents/Codex/youxi/meng/shuihu-game/assets/releases/ART-002/r8/models/hero005.glb",
+  "bytes": 946880,
+  "sha256": "257c261975e403ddae97cd347eb8e23e1cc6fb8c6f5a64734c89cc3249cbd42f",
+  "clips": {
+   "attack": 1000.0,
+   "death": 1583.333,
+   "hit": 750.0,
+   "idle": 2000.0,
+   "walk": 1000.0
+  },
+  "nodes": 14,
+  "weapon_nodes": [
+   {
+    "name": "weapon.R",
+    "parent": "hand.R",
+    "is_joint": true
+   }
+  ]
+ },
+ "death_clip_detail": {
+  "name": "death",
+  "channel_count": 36,
+  "sampler_count": 36,
+  "target_path_distribution": {
+   "translation": 12,
+   "rotation": 12,
+   "scale": 12
+  },
+  "interpolation_distribution": {
+   "LINEAR": 23,
+   "STEP": 13
+  },
+  "driven_nodes": [
+   {
+    "index": 1,
+    "name": "arm.L",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 4,
+    "name": "arm.R",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 6,
+    "name": "body",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 7,
+    "name": "foot.L",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 9,
+    "name": "foot.R",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 0,
+    "name": "hand.L",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 3,
+    "name": "hand.R",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 5,
+    "name": "head",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 8,
+    "name": "leg.L",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 10,
+    "name": "leg.R",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 11,
+    "name": "root",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   },
+   {
+    "index": 2,
+    "name": "weapon.R",
+    "paths": [
+     "rotation",
+     "scale",
+     "translation"
+    ]
+   }
+  ],
+  "driven_node_names": [
+   "arm.L",
+   "arm.R",
+   "body",
+   "foot.L",
+   "foot.R",
+   "hand.L",
+   "hand.R",
+   "head",
+   "leg.L",
+   "leg.R",
+   "root",
+   "weapon.R"
+  ],
+  "keyframe_timestamp_count": 39,
+  "keyframe_timestamp_count_max_per_sampler": 39,
+  "keyframe_timestamp_count_min_per_sampler": 2,
+  "time_min_s": 0.0,
+  "time_max_s": 1.583333,
+  "duration_s": 1.583333,
+  "duration_ms": 1583.333,
+  "unique_timestamps_s": [
+   0.0,
+   0.041667,
+   0.083333,
+   0.125,
+   0.166667,
+   0.208333,
+   0.25,
+   0.291667,
+   0.333333,
+   0.375,
+   0.416667,
+   0.458333,
+   0.5,
+   0.541667,
+   0.583333,
+   0.625,
+   0.666667,
+   0.708333,
+   0.75,
+   0.791667,
+   0.833333,
+   0.875,
+   0.916667,
+   0.958333,
+   1.0,
+   1.041667,
+   1.083333,
+   1.125,
+   1.166667,
+   1.208333,
+   1.25,
+   1.291667,
+   1.333333,
+   1.375,
+   1.416667,
+   1.458333,
+   1.5,
+   1.541667,
+   1.583333
+  ],
+  "unique_timestamps_truncated": false
+ },
+ "checks": [
+  {
+   "item": "r8 存在原生 death clip",
+   "pass": true,
+   "detail": "r8 clip 列表=['attack', 'death', 'hit', 'idle', 'walk']"
+  },
+  {
+   "item": "death 实测时长 ≈ 1600ms",
+   "pass": true,
+   "detail": "实测 1583.333 ms（容差 ±40ms）"
+  },
+  {
+   "item": "r8 保留 clip idle 且时长未变",
+   "pass": true,
+   "detail": "r7=2000.0 ms → r8=2000.0 ms"
+  },
+  {
+   "item": "r8 保留 clip walk 且时长未变",
+   "pass": true,
+   "detail": "r7=1000.0 ms → r8=1000.0 ms"
+  },
+  {
+   "item": "r8 保留 clip attack 且时长未变",
+   "pass": true,
+   "detail": "r7=1000.0 ms → r8=1000.0 ms"
+  },
+  {
+   "item": "r8 保留 clip hit 且时长未变",
+   "pass": true,
+   "detail": "r7=750.0 ms → r8=750.0 ms"
+  },
+  {
+   "item": "r8 存在武器/道具专用挂点节点",
+   "pass": true,
+   "detail": "命中节点=[('weapon.R', 'hand.R')]"
+  },
+  {
+   "item": "武器挂点父级为 hand.R",
+   "pass": true,
+   "detail": "父级=['hand.R']"
+  },
+  {
+   "item": "r7 仍无武器挂点（未被改动）",
+   "pass": true,
+   "detail": "r7 命中=[]"
+  },
+  {
+   "item": "r7 文件字节与 sha256 未变",
+   "pass": true,
+   "detail": "字节=959800 sha=7ac9ec719ce73a8d"
+  }
+ ],
+ "probe_raw": {
+  "r7": {
+   "file": "hero005.glb",
+   "path": "/Users/user/Documents/Codex/youxi/meng/shuihu-game/assets/releases/ART-002/r7/models/hero005.glb",
+   "probe_ok": true,
+   "parse_errors": [],
+   "size_bytes": 959800,
+   "sha256": "7ac9ec719ce73a8df985bac3558de59baad4d62a49857f33430ee37d5a9acbb9",
+   "glb": {
+    "magic": "glTF",
+    "version": 2,
+    "declared_length": 959800,
+    "actual_length": 959800,
+    "chunk_count": 2,
+    "chunk_types": [
+     "JSON",
+     "BIN"
+    ],
+    "json_chunk_bytes": 42892,
+    "bin_chunk_bytes": 916880,
+    "generator": "Khronos glTF Blender I/O v5.2.40",
+    "gltf_version": "2.0",
+    "extensions_used": []
+   },
+   "counts": {
+    "nodes": 13,
+    "meshes": 1,
+    "materials": 11,
+    "animations": 4,
+    "skins": 1,
+    "accessors": 179,
+    "buffer_views": 179
+   },
+   "scene_roots": [
+    {
+     "index": 12,
+     "name": "hero005_rig",
+     "parent": null
+    }
+   ],
+   "nodes": [
+    {
+     "index": 0,
+     "name": "hand.L",
+     "parent": 1,
+     "parent_name": "arm.L",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": true
+    },
+    {
+     "index": 1,
+     "name": "arm.L",
+     "parent": 5,
+     "parent_name": "body",
+     "children": [
+      0
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 2,
+     "name": "hand.R",
+     "parent": 3,
+     "parent_name": "arm.R",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": true
+    },
+    {
+     "index": 3,
+     "name": "arm.R",
+     "parent": 5,
+     "parent_name": "body",
+     "children": [
+      2
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 4,
+     "name": "head",
+     "parent": 5,
+     "parent_name": "body",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 5,
+     "name": "body",
+     "parent": 10,
+     "parent_name": "root",
+     "children": [
+      1,
+      3,
+      4
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 6,
+     "name": "foot.L",
+     "parent": 7,
+     "parent_name": "leg.L",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 7,
+     "name": "leg.L",
+     "parent": 10,
+     "parent_name": "root",
+     "children": [
+      6
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 8,
+     "name": "foot.R",
+     "parent": 9,
+     "parent_name": "leg.R",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 9,
+     "name": "leg.R",
+     "parent": 10,
+     "parent_name": "root",
+     "children": [
+      8
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 10,
+     "name": "root",
+     "parent": 12,
+     "parent_name": "hero005_rig",
+     "children": [
+      5,
+      7,
+      9
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 11,
+     "name": "hero005_costume_and_body",
+     "parent": 12,
+     "parent_name": "hero005_rig",
+     "children": [],
+     "is_skin_joint": false,
+     "has_mesh": true,
+     "has_skin": true,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 12,
+     "name": "hero005_rig",
+     "parent": null,
+     "parent_name": null,
+     "children": [
+      11,
+      10
+     ],
+     "is_skin_joint": false,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    }
+   ],
+   "animations": [
+    {
+     "name": "idle",
+     "channel_count": 33,
+     "sampler_count": 33,
+     "target_path_distribution": {
+      "translation": 11,
+      "rotation": 11,
+      "scale": 11
+     },
+     "interpolation_distribution": {
+      "LINEAR": 33
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ],
+     "keyframe_timestamp_count": 49,
+     "keyframe_timestamp_count_max_per_sampler": 49,
+     "keyframe_timestamp_count_min_per_sampler": 49,
+     "time_min_s": 0.0,
+     "time_max_s": 2.0,
+     "duration_s": 2.0,
+     "duration_ms": 2000.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75,
+      0.791667,
+      0.833333,
+      0.875,
+      0.916667,
+      0.958333,
+      1.0,
+      1.041667,
+      1.083333,
+      1.125,
+      1.166667,
+      1.208333,
+      1.25,
+      1.291667,
+      1.333333,
+      1.375,
+      1.416667,
+      1.458333,
+      1.5,
+      1.541667,
+      1.583333,
+      1.625,
+      1.666667,
+      1.708333,
+      1.75,
+      1.791667,
+      1.833333,
+      1.875,
+      1.916667,
+      1.958333,
+      2.0
+     ],
+     "unique_timestamps_truncated": false
+    },
+    {
+     "name": "walk",
+     "channel_count": 33,
+     "sampler_count": 33,
+     "target_path_distribution": {
+      "translation": 11,
+      "rotation": 11,
+      "scale": 11
+     },
+     "interpolation_distribution": {
+      "LINEAR": 33
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ],
+     "keyframe_timestamp_count": 25,
+     "keyframe_timestamp_count_max_per_sampler": 25,
+     "keyframe_timestamp_count_min_per_sampler": 25,
+     "time_min_s": 0.0,
+     "time_max_s": 1.0,
+     "duration_s": 1.0,
+     "duration_ms": 1000.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75,
+      0.791667,
+      0.833333,
+      0.875,
+      0.916667,
+      0.958333,
+      1.0
+     ],
+     "unique_timestamps_truncated": false
+    },
+    {
+     "name": "attack",
+     "channel_count": 33,
+     "sampler_count": 33,
+     "target_path_distribution": {
+      "translation": 11,
+      "rotation": 11,
+      "scale": 11
+     },
+     "interpolation_distribution": {
+      "LINEAR": 33
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ],
+     "keyframe_timestamp_count": 25,
+     "keyframe_timestamp_count_max_per_sampler": 25,
+     "keyframe_timestamp_count_min_per_sampler": 25,
+     "time_min_s": 0.0,
+     "time_max_s": 1.0,
+     "duration_s": 1.0,
+     "duration_ms": 1000.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75,
+      0.791667,
+      0.833333,
+      0.875,
+      0.916667,
+      0.958333,
+      1.0
+     ],
+     "unique_timestamps_truncated": false
+    },
+    {
+     "name": "hit",
+     "channel_count": 33,
+     "sampler_count": 33,
+     "target_path_distribution": {
+      "translation": 11,
+      "rotation": 11,
+      "scale": 11
+     },
+     "interpolation_distribution": {
+      "LINEAR": 33
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root"
+     ],
+     "keyframe_timestamp_count": 19,
+     "keyframe_timestamp_count_max_per_sampler": 19,
+     "keyframe_timestamp_count_min_per_sampler": 19,
+     "time_min_s": 0.0,
+     "time_max_s": 0.75,
+     "duration_s": 0.75,
+     "duration_ms": 750.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75
+     ],
+     "unique_timestamps_truncated": false
+    }
+   ],
+   "skins": [
+    {
+     "index": 0,
+     "name": "hero005_rig",
+     "skeleton_root_index": null,
+     "skeleton_root_name": null,
+     "joint_count": 11,
+     "joints": [
+      {
+       "index": 10,
+       "name": "root",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 5,
+       "name": "body",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 1,
+       "name": "arm.L",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "has_weapon_keyword": true
+      },
+      {
+       "index": 3,
+       "name": "arm.R",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 2,
+       "name": "hand.R",
+       "has_weapon_keyword": true
+      },
+      {
+       "index": 4,
+       "name": "head",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 7,
+       "name": "leg.L",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 6,
+       "name": "foot.L",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 9,
+       "name": "leg.R",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 8,
+       "name": "foot.R",
+       "has_weapon_keyword": false
+      }
+     ],
+     "joint_names_in_order": [
+      "root",
+      "body",
+      "arm.L",
+      "hand.L",
+      "arm.R",
+      "hand.R",
+      "head",
+      "leg.L",
+      "foot.L",
+      "leg.R",
+      "foot.R"
+     ]
+    }
+   ],
+   "weapon_attach_candidates": [
+    {
+     "index": 0,
+     "name": "hand.L",
+     "matched_keywords": [
+      "hand"
+     ],
+     "prop_keywords": [],
+     "is_prop_attach_node": false,
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "children": []
+    },
+    {
+     "index": 2,
+     "name": "hand.R",
+     "matched_keywords": [
+      "hand"
+     ],
+     "prop_keywords": [],
+     "is_prop_attach_node": false,
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "children": []
+    }
+   ],
+   "weapon_attach_candidates_count": 2,
+   "weapon_prop_attach_count": 0,
+   "meshes": [
+    {
+     "index": 0,
+     "name": "Sphere.030",
+     "primitive_count": 11,
+     "vertex_count": 14409
+    }
+   ],
+   "materials": [
+    {
+     "index": 0,
+     "name": "Clothhero005"
+    },
+    {
+     "index": 1,
+     "name": "ink.001"
+    },
+    {
+     "index": 2,
+     "name": "gold.001"
+    },
+    {
+     "index": 3,
+     "name": "ivory.001"
+    },
+    {
+     "index": 4,
+     "name": "skin.001"
+    },
+    {
+     "index": 5,
+     "name": "silver.001"
+    },
+    {
+     "index": 6,
+     "name": "Hairhero005"
+    },
+    {
+     "index": 7,
+     "name": "eye.001"
+    },
+    {
+     "index": 8,
+     "name": "white.001"
+    },
+    {
+     "index": 9,
+     "name": "Accenthero005"
+    },
+    {
+     "index": 10,
+     "name": "brown.001"
+    }
+   ],
+   "vertices_total": 14409,
+   "indices_total": 61770
+  },
+  "r8": {
+   "file": "hero005.glb",
+   "path": "/Users/user/Documents/Codex/youxi/meng/shuihu-game/assets/releases/ART-002/r8/models/hero005.glb",
+   "probe_ok": true,
+   "parse_errors": [],
+   "size_bytes": 946880,
+   "sha256": "257c261975e403ddae97cd347eb8e23e1cc6fb8c6f5a64734c89cc3249cbd42f",
+   "glb": {
+    "magic": "glTF",
+    "version": 2,
+    "declared_length": 946880,
+    "actual_length": 946880,
+    "chunk_count": 2,
+    "chunk_types": [
+     "JSON",
+     "BIN"
+    ],
+    "json_chunk_bytes": 45340,
+    "bin_chunk_bytes": 901512,
+    "generator": "Khronos glTF Blender I/O v5.2.40",
+    "gltf_version": "2.0",
+    "extensions_used": []
+   },
+   "counts": {
+    "nodes": 14,
+    "meshes": 1,
+    "materials": 11,
+    "animations": 5,
+    "skins": 1,
+    "accessors": 154,
+    "buffer_views": 154
+   },
+   "scene_roots": [
+    {
+     "index": 13,
+     "name": "hero005_rig",
+     "parent": null
+    }
+   ],
+   "nodes": [
+    {
+     "index": 0,
+     "name": "hand.L",
+     "parent": 1,
+     "parent_name": "arm.L",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": true
+    },
+    {
+     "index": 1,
+     "name": "arm.L",
+     "parent": 6,
+     "parent_name": "body",
+     "children": [
+      0
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 2,
+     "name": "weapon.R",
+     "parent": 3,
+     "parent_name": "hand.R",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": true
+    },
+    {
+     "index": 3,
+     "name": "hand.R",
+     "parent": 4,
+     "parent_name": "arm.R",
+     "children": [
+      2
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": true
+    },
+    {
+     "index": 4,
+     "name": "arm.R",
+     "parent": 6,
+     "parent_name": "body",
+     "children": [
+      3
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 5,
+     "name": "head",
+     "parent": 6,
+     "parent_name": "body",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 6,
+     "name": "body",
+     "parent": 11,
+     "parent_name": "root",
+     "children": [
+      1,
+      4,
+      5
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 7,
+     "name": "foot.L",
+     "parent": 8,
+     "parent_name": "leg.L",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 8,
+     "name": "leg.L",
+     "parent": 11,
+     "parent_name": "root",
+     "children": [
+      7
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 9,
+     "name": "foot.R",
+     "parent": 10,
+     "parent_name": "leg.R",
+     "children": [],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 10,
+     "name": "leg.R",
+     "parent": 11,
+     "parent_name": "root",
+     "children": [
+      9
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 11,
+     "name": "root",
+     "parent": 13,
+     "parent_name": "hero005_rig",
+     "children": [
+      6,
+      8,
+      10
+     ],
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 12,
+     "name": "hero005_costume_and_body",
+     "parent": 13,
+     "parent_name": "hero005_rig",
+     "children": [],
+     "is_skin_joint": false,
+     "has_mesh": true,
+     "has_skin": true,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    },
+    {
+     "index": 13,
+     "name": "hero005_rig",
+     "parent": null,
+     "parent_name": null,
+     "children": [
+      12,
+      11
+     ],
+     "is_skin_joint": false,
+     "has_mesh": false,
+     "has_skin": false,
+     "has_camera": false,
+     "has_light": false,
+     "has_weapon_keyword": false
+    }
+   ],
+   "animations": [
+    {
+     "name": "attack",
+     "channel_count": 36,
+     "sampler_count": 36,
+     "target_path_distribution": {
+      "translation": 12,
+      "rotation": 12,
+      "scale": 12
+     },
+     "interpolation_distribution": {
+      "STEP": 32,
+      "LINEAR": 4
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 11,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "weapon.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "keyframe_timestamp_count": 25,
+     "keyframe_timestamp_count_max_per_sampler": 25,
+     "keyframe_timestamp_count_min_per_sampler": 2,
+     "time_min_s": 0.0,
+     "time_max_s": 1.0,
+     "duration_s": 1.0,
+     "duration_ms": 1000.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75,
+      0.791667,
+      0.833333,
+      0.875,
+      0.916667,
+      0.958333,
+      1.0
+     ],
+     "unique_timestamps_truncated": false
+    },
+    {
+     "name": "death",
+     "channel_count": 36,
+     "sampler_count": 36,
+     "target_path_distribution": {
+      "translation": 12,
+      "rotation": 12,
+      "scale": 12
+     },
+     "interpolation_distribution": {
+      "LINEAR": 23,
+      "STEP": 13
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 11,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "weapon.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "keyframe_timestamp_count": 39,
+     "keyframe_timestamp_count_max_per_sampler": 39,
+     "keyframe_timestamp_count_min_per_sampler": 2,
+     "time_min_s": 0.0,
+     "time_max_s": 1.583333,
+     "duration_s": 1.583333,
+     "duration_ms": 1583.333,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75,
+      0.791667,
+      0.833333,
+      0.875,
+      0.916667,
+      0.958333,
+      1.0,
+      1.041667,
+      1.083333,
+      1.125,
+      1.166667,
+      1.208333,
+      1.25,
+      1.291667,
+      1.333333,
+      1.375,
+      1.416667,
+      1.458333,
+      1.5,
+      1.541667,
+      1.583333
+     ],
+     "unique_timestamps_truncated": false
+    },
+    {
+     "name": "hit",
+     "channel_count": 36,
+     "sampler_count": 36,
+     "target_path_distribution": {
+      "translation": 12,
+      "rotation": 12,
+      "scale": 12
+     },
+     "interpolation_distribution": {
+      "STEP": 32,
+      "LINEAR": 4
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 11,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "weapon.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "keyframe_timestamp_count": 19,
+     "keyframe_timestamp_count_max_per_sampler": 19,
+     "keyframe_timestamp_count_min_per_sampler": 2,
+     "time_min_s": 0.0,
+     "time_max_s": 0.75,
+     "duration_s": 0.75,
+     "duration_ms": 750.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75
+     ],
+     "unique_timestamps_truncated": false
+    },
+    {
+     "name": "idle",
+     "channel_count": 36,
+     "sampler_count": 36,
+     "target_path_distribution": {
+      "translation": 12,
+      "rotation": 12,
+      "scale": 12
+     },
+     "interpolation_distribution": {
+      "STEP": 34,
+      "LINEAR": 2
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 11,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "weapon.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "keyframe_timestamp_count": 49,
+     "keyframe_timestamp_count_max_per_sampler": 49,
+     "keyframe_timestamp_count_min_per_sampler": 2,
+     "time_min_s": 0.0,
+     "time_max_s": 2.0,
+     "duration_s": 2.0,
+     "duration_ms": 2000.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75,
+      0.791667,
+      0.833333,
+      0.875,
+      0.916667,
+      0.958333,
+      1.0,
+      1.041667,
+      1.083333,
+      1.125,
+      1.166667,
+      1.208333,
+      1.25,
+      1.291667,
+      1.333333,
+      1.375,
+      1.416667,
+      1.458333,
+      1.5,
+      1.541667,
+      1.583333,
+      1.625,
+      1.666667,
+      1.708333,
+      1.75,
+      1.791667,
+      1.833333,
+      1.875,
+      1.916667,
+      1.958333,
+      2.0
+     ],
+     "unique_timestamps_truncated": false
+    },
+    {
+     "name": "walk",
+     "channel_count": 36,
+     "sampler_count": 36,
+     "target_path_distribution": {
+      "translation": 12,
+      "rotation": 12,
+      "scale": 12
+     },
+     "interpolation_distribution": {
+      "LINEAR": 8,
+      "STEP": 28
+     },
+     "driven_nodes": [
+      {
+       "index": 1,
+       "name": "arm.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 4,
+       "name": "arm.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 6,
+       "name": "body",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 7,
+       "name": "foot.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 9,
+       "name": "foot.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 3,
+       "name": "hand.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 5,
+       "name": "head",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 8,
+       "name": "leg.L",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 10,
+       "name": "leg.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 11,
+       "name": "root",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      },
+      {
+       "index": 2,
+       "name": "weapon.R",
+       "paths": [
+        "rotation",
+        "scale",
+        "translation"
+       ]
+      }
+     ],
+     "driven_node_names": [
+      "arm.L",
+      "arm.R",
+      "body",
+      "foot.L",
+      "foot.R",
+      "hand.L",
+      "hand.R",
+      "head",
+      "leg.L",
+      "leg.R",
+      "root",
+      "weapon.R"
+     ],
+     "keyframe_timestamp_count": 25,
+     "keyframe_timestamp_count_max_per_sampler": 25,
+     "keyframe_timestamp_count_min_per_sampler": 2,
+     "time_min_s": 0.0,
+     "time_max_s": 1.0,
+     "duration_s": 1.0,
+     "duration_ms": 1000.0,
+     "unique_timestamps_s": [
+      0.0,
+      0.041667,
+      0.083333,
+      0.125,
+      0.166667,
+      0.208333,
+      0.25,
+      0.291667,
+      0.333333,
+      0.375,
+      0.416667,
+      0.458333,
+      0.5,
+      0.541667,
+      0.583333,
+      0.625,
+      0.666667,
+      0.708333,
+      0.75,
+      0.791667,
+      0.833333,
+      0.875,
+      0.916667,
+      0.958333,
+      1.0
+     ],
+     "unique_timestamps_truncated": false
+    }
+   ],
+   "skins": [
+    {
+     "index": 0,
+     "name": "hero005_rig",
+     "skeleton_root_index": null,
+     "skeleton_root_name": null,
+     "joint_count": 12,
+     "joints": [
+      {
+       "index": 11,
+       "name": "root",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 6,
+       "name": "body",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 1,
+       "name": "arm.L",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 0,
+       "name": "hand.L",
+       "has_weapon_keyword": true
+      },
+      {
+       "index": 4,
+       "name": "arm.R",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 3,
+       "name": "hand.R",
+       "has_weapon_keyword": true
+      },
+      {
+       "index": 2,
+       "name": "weapon.R",
+       "has_weapon_keyword": true
+      },
+      {
+       "index": 5,
+       "name": "head",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 8,
+       "name": "leg.L",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 7,
+       "name": "foot.L",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 10,
+       "name": "leg.R",
+       "has_weapon_keyword": false
+      },
+      {
+       "index": 9,
+       "name": "foot.R",
+       "has_weapon_keyword": false
+      }
+     ],
+     "joint_names_in_order": [
+      "root",
+      "body",
+      "arm.L",
+      "hand.L",
+      "arm.R",
+      "hand.R",
+      "weapon.R",
+      "head",
+      "leg.L",
+      "foot.L",
+      "leg.R",
+      "foot.R"
+     ]
+    }
+   ],
+   "weapon_attach_candidates": [
+    {
+     "index": 0,
+     "name": "hand.L",
+     "matched_keywords": [
+      "hand"
+     ],
+     "prop_keywords": [],
+     "is_prop_attach_node": false,
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "children": []
+    },
+    {
+     "index": 2,
+     "name": "weapon.R",
+     "matched_keywords": [
+      "weapon"
+     ],
+     "prop_keywords": [
+      "weapon"
+     ],
+     "is_prop_attach_node": true,
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "children": []
+    },
+    {
+     "index": 3,
+     "name": "hand.R",
+     "matched_keywords": [
+      "hand"
+     ],
+     "prop_keywords": [],
+     "is_prop_attach_node": false,
+     "is_skin_joint": true,
+     "has_mesh": false,
+     "children": [
+      2
+     ]
+    }
+   ],
+   "weapon_attach_candidates_count": 3,
+   "weapon_prop_attach_count": 1,
+   "meshes": [
+    {
+     "index": 0,
+     "name": "Sphere.030",
+     "primitive_count": 11,
+     "vertex_count": 14649
+    }
+   ],
+   "materials": [
+    {
+     "index": 0,
+     "name": "Clothhero005"
+    },
+    {
+     "index": 1,
+     "name": "ink.001"
+    },
+    {
+     "index": 2,
+     "name": "gold.001"
+    },
+    {
+     "index": 3,
+     "name": "ivory.001"
+    },
+    {
+     "index": 4,
+     "name": "skin.001"
+    },
+    {
+     "index": 5,
+     "name": "silver.001"
+    },
+    {
+     "index": 6,
+     "name": "Hairhero005"
+    },
+    {
+     "index": 7,
+     "name": "eye.001"
+    },
+    {
+     "index": 8,
+     "name": "white.001"
+    },
+    {
+     "index": 9,
+     "name": "Accenthero005"
+    },
+    {
+     "index": 10,
+     "name": "brown.001"
+    }
+   ],
+   "vertices_total": 14649,
+   "indices_total": 61770
+  }
+ }
+}
