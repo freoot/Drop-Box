@@ -1,11 +1,12 @@
 # AI 接入状态
 
-更新时间：2026-11-08
+更新时间：2026-11-21
 
 本地 AI 读取 `/Users/user/Obsidian/Drop-Box`；云端 AI 读取 GitHub 上已推送的 `freoot/Drop-Box` 副本。本机文件不会因为连接 GitHub 就自动出现在云端 AI 的本地文件系统中。
 
 | 工具 | 接入方式 | 当前状态 | 验证 |
 |---|---|---|---|
+| Antigravity | 本机目录 + `gh` | 已接通 | 已读取规则与验证短语 `DROPBOX-SHARED-READY-2026` |
 | WorkBuddy | 本机目录 + `gh` | 已接通 | 已读取共享验证文件并推送 GitHub |
 | Devin | 本机目录 + GitHub `freoot` | 已接通 | 已读取验证短语 |
 | Codex | 本机信任项目 | 已配置 | 配置检查通过；实际读取受账号额度限制 |
